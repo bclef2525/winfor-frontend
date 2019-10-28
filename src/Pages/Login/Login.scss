@@ -1,0 +1,210 @@
+.login-body {
+  position: relative;
+  padding: 170px 0 200px;
+
+  .login-page {
+    box-shadow: 2px 1px 1px 1px rgb(182, 181, 181);
+    width: 450px;
+    min-height: 682px;
+    margin: 0 auto;
+    border: solid 0.1px rgb(182, 181, 181);
+    .login-inner {
+      margin: 0 40px;
+      .login-logo {
+        width: 215px;
+        height: 45px;
+        margin: 40px auto;
+        font-weight: 800;
+        font-size: 45px;
+        color: #c9aa70;
+      }
+      .login-title {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+      }
+      .login-form-container {
+        form {
+          .login-facebook {
+            width: 100%;
+            background-image: url("../../Image/facebook.png");
+            background-size: 100%;
+            height: 53px;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+            margin-top: 10px;
+          }
+          .login-or-container {
+            height: 20px;
+            display: flex;
+            justify-content: space-around;
+            .login-or {
+              color: gray;
+              margin-top: 10px;
+            }
+            .login-line {
+              width: 40%;
+              border-bottom: solid 1px gray;
+            }
+          }
+          .login-email-title {
+            margin-top: 62px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+          }
+          .login-email-container {
+            position: relative;
+            width: 100%;
+            margin-top: 27px;
+            .login-email-text {
+              font-size: 16px;
+              width: 100%;
+              border-style: none;
+              border-bottom: solid 1px gray;
+              display: block;
+              height: 26px;
+            }
+            .login-email-label {
+              position: absolute;
+              top: 3px;
+              color: #7b858e;
+              font-size: 16px;
+            }
+            .login-failed {
+              position: absolute;
+              font-size: 10px;
+              top: -20px;
+
+              color: red;
+            }
+          }
+          .login-password-container {
+            position: relative;
+            width: 100%;
+            margin-top: 27px;
+            .login-password-text {
+              font-size: 16px;
+              width: 100%;
+              border-style: none;
+              border-bottom: solid 1px gray;
+              display: block;
+              height: 26px;
+            }
+            .login-password-label {
+              position: absolute;
+              top: 3px;
+              color: #7b858e;
+              font-size: 16px;
+            }
+          }
+          .denied-off {
+            color: red;
+            text-align: center;
+            display: none;
+          }
+          .denied-on {
+            color: red;
+            text-align: center;
+          }
+          .remember-forgot-container {
+            display: flex;
+            justify-content: space-between;
+            .login-remember-container {
+              margin-top: 15px;
+
+              height: 20px;
+
+              .login-remember-checkbox-state {
+                width: 32px;
+                height: 32px;
+                color: gray;
+                padding-top: 3px;
+                .login-remember-checkbox {
+                  font-size: 150%;
+                }
+              }
+            }
+            .login-forgot-container {
+              margin-top: 15px;
+            }
+            .login-forgot-container:visited {
+              color: #1ea1f7;
+              margin-top: 15px;
+            }
+          }
+          .login-button {
+            margin-top: 40px;
+            font-size: 16px;
+            border-radius: 3px;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 0;
+            height: 56px;
+            width: 100%;
+            background-color: rgb(182, 181, 181);
+          }
+          .login-button-on {
+            margin-top: 40px;
+            font-size: 16px;
+            border-radius: 3px;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 0;
+            height: 56px;
+            width: 100%;
+            background-color: #1ea1f7;
+          }
+
+          .login-signup-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-around;
+            .login-signup-text {
+            }
+            .login-sign-up {
+              color: #1ea1f7;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.login-email-label-trans {
+  position: absolute;
+  top: -10px;
+  color: #7b858e;
+  font-size: 16px;
+  animation: label-trans 0.5s;
+  animation-fill-mode: both;
+}
+.login-password-label-trans {
+  position: absolute;
+  top: -10px;
+  color: #7b858e;
+  font-size: 16px;
+  animation: label-trans 0.5s;
+  animation-fill-mode: both;
+}
+@keyframes label-trans {
+  from {
+    font-size: 16px;
+    top: -10px;
+    color: #7b858e;
+  }
+  to {
+    font-size: 10px;
+    top: -20px;
+    color: #1ea1f7;
+  }
+}
+.login-password-text:focus {
+  outline: none;
+}
+.login-email-text:focus {
+  outline: none;
+}
