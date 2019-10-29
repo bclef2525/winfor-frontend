@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 .signup-body {
   background-color: #f4f4f5;
   display: flex;
@@ -75,6 +76,9 @@
   margin: 0em;
   font: 400 16px system-ui;
 }
+.signup-input-box:focus {
+  outline: none;
+}
 .signup-input-label {
   color: #7b858e;
   position: absolute;
@@ -107,6 +111,12 @@
 }
 .btn-signup {
   background-color: #dddfe4;
+  border: 0;
+  font-weight: 700;
+  color: #fff;
+}
+.btn-signup-good {
+  background-color: #3faefc;
   border: 0;
   font-weight: 700;
   color: #fff;
