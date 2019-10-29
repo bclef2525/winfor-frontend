@@ -1,0 +1,23 @@
+.statics-champions-background {
+    display: flex;
+    justify-content: center;
+
+    .statics-champions-body {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+
+        .statics-champions-desc-text {
+            font-size: 15px;
+            padding: 15px 0;
+            color: #555e5e;
+        }
+
+        .statics-champions-content {
+            margin-top: 20px;
+            border: 1px solid #b8bfbf;
+            width: 100%;
+            //padding: 5px 0;
+        }
+    }
+}
