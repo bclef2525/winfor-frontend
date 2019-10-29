@@ -14,6 +14,8 @@ export default class Signup extends Component {
             pwInputClass:"signup-input-state-pw",
             idNotionClass:"signup-idNotion",
             pwNotionClass:"signup-pwNotion",
+            IdLabelClass:"signup-idInput-label",
+            PwLabelClass:"signup-pwInput-label"
 
         }
     }    
@@ -21,7 +23,11 @@ export default class Signup extends Component {
         this.setState({
             idValue:e.target.value
         }, ()=> this.setState({buttonClass:this.state.idValue.length > 5 && this.state.pwValue.length > 6 ? "signup-btn btn-signup-good" : "signup-btn btn-signup"},
-                              ()=> this.setState({idNotionClass:this.state.idValue.length < 5 ? "signup-idNotion-active" : "signup-idNotion"}))
+                              ()=> this.setState({idNotionClass:this.state.idValue.length < 5 ? "signup-idNotion-active" : "signup-idNotion"},
+                                                ()=> this.setState({IdLabelClass: this.state.idValue.length > 0 ? "signup-idInput-label-none" : "signup-idInput-label"}
+                                                )
+                               )
+            )
         )
         
 
@@ -31,9 +37,12 @@ export default class Signup extends Component {
         this.setState({
             pwValue : e.target.value
         }, ()=> this.setState({buttonClass:this.state.idValue.length > 5 && this.state.pwValue.length > 6 ? "signup-btn btn-signup-good" : "signup-btn btn-signup"},
-                              ()=> this.setState({pwNotionClass:this.state.pwValue.length < 6 ? "signup-pwNotion-active" : "signup-pwNotion"}))
+                              ()=> this.setState({pwNotionClass:this.state.pwValue.length < 6 ? "signup-pwNotion-active" : "signup-pwNotion"},
+                                                ()=> this.setState({PwLabelClass: this.state.pwValue.length > 0 ? "signup-pwInput-label-none" : "signup-pwInput-label"}
+                                                )
+                                                )
+                              )
         )
-        
     }
 
     handleIdInput=(e)=>{
@@ -73,7 +82,7 @@ export default class Signup extends Component {
                       type="text"
                       autoComplete="off"
                     />
-                    <label for="signup-email" className="signup-input-label">
+                    <label for="signup-email" className={this.state.IdLabelClass}>
                       {" "}
                       이메일 주소
                     </label>
@@ -88,7 +97,7 @@ export default class Signup extends Component {
                       type="password"
                       autoComplete="off"
                     />
-                    <label for="signup-pw" className="signup-input-label">
+                    <label for="signup-pw" className={this.state.PwLabelClass}>
                       {" "}
                       비밀번호
                     </label>
@@ -128,7 +137,6 @@ export default class Signup extends Component {
     }
 }
 
-// 인풋 클릭시 라벨 파란색,위로,작게
-
-// 버튼 (취소) 온클릭 - 메인으로이동 <라우터
-//     (가입하기) 온클릭 - 로그인된 상태로 메인으로 이동
+// 라우터
+// (취소) - 메인으로이동 
+// (가입하기) - 로그인된 상태로 메인으로 이동

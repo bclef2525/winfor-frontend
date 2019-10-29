@@ -100,7 +100,7 @@
 .signup-input-box:focus {
   outline: none;
 }
-.signup-input-label {
+.signup-idInput-label {
   color: #7b858e;
   position: absolute;
   bottom: 3px;
@@ -111,6 +111,24 @@
   line-height: 19px;
   width: 100%;
   cursor: default;
+}
+.signup-idInput-label-none {
+  display: none;
+}
+.signup-pwInput-label {
+  color: #7b858e;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  top: 11px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  width: 100%;
+  cursor: default;
+}
+.signup-pwInput-label-none {
+  display: none;
 }
 .signup-idNotion {
   font-size: 14px;
