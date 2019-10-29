@@ -1,0 +1,106 @@
+.STRBox {
+  border: 1px solid #cdd2d2;
+  box-shadow: 0 1px #dcdfdf;
+  background: #f2f2f2;
+  border-radius: 2px;
+  width: 320px;
+}
+.STRTitle {
+  font-size: 15px;
+  padding: 11px 0 11px 18px;
+  border-bottom: 1px solid #cdd2d2;
+  color: #555e5e;
+  font-weight: 800;
+  background: white;
+}
+.STRContent {
+  background: #ededed;
+}
+.STRTable {
+  width: 100%;
+  color: #555e5e;
+
+  border-color: grey;
+}
+.STRThead {
+  vertical-align: middle;
+}
+.STRThead-tr {
+  display: table-row;
+  vertical-align: inherit;
+
+  color: #555e5e;
+}
+.STRThead-th {
+  vertical-align: inherit;
+  font-weight: bold;
+  height: 32px;
+  background-color: #ededed;
+  font-size: 14px;
+  text-align: left;
+  width: 320px;
+}
+.STRhead-names {
+  display: flex;
+  justify-content: space-between;
+}
+.STRhead-tier {
+  padding-left: 9px;
+}
+.STRhead-count {
+  right: 500px;
+}
+.STRhead-nu {
+  padding-right: 70px;
+}
+.STRBody {
+  vertical-align: middle;
+
+  color: #555e5e;
+}
+
+.STR-databar {
+  vertical-align: inherit;
+  font-size: 6px;
+  text-align: left;
+  width: 320px;
+  font-weight: 520;
+  background-color: rgb(255, 217, 217);
+  padding: 0;
+}
+.STR-datas {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ededed;
+}
+.STR-bar {
+  background-color: rgb(255, 83, 83);
+  width: 5px;
+  height: 22px;
+}
+.STR-tier {
+  padding-left: 10px;
+}
+.STR-user {
+  padding-left: 26px;
+}
+.STR-nu {
+  padding-left: 38px;
+}
+.STRbottom {
+  background-color: white;
+}
+.STRbottom-info {
+  text-align: center;
+  font-size: 6px;
+  padding-top: 20px;
+  opacity: 0.5;
+}
+.STRbottom-update {
+  opacity: 0.8;
+  text-align: right;
+  font-size: 12px;
+  margin-top: 16px;
+  padding-bottom: 14px;
+  margin-right: 18px;
+}

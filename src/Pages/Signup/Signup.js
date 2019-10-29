@@ -87,7 +87,7 @@ export default class Signup extends Component {
                       이메일 주소
                     </label>
                   </div>
-                  <div className={this.state.idNotionClass}> 이메일 길이는 최소 5자이상 </div>
+                  <div className={this.state.idNotionClass}> 이메일 양식에 맞춰 작성해주세요! </div>
                   
                   <div className={this.state.pwInputClass}>
                     <input
