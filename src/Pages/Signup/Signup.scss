@@ -1,6 +1,6 @@
-* {
-  box-sizing: border-box;
-}
+// * {
+//   box-sizing: border-box;
+// }
 
 .signup-body {
   background-color: #f4f4f5;
@@ -47,10 +47,31 @@
   display: block;
 }
 
-.signup-input-state {
+.signup-input-state-id {
   position: relative;
   padding: 10px 0 11px;
   border-bottom: 1px solid #dddfe4;
+  display: block;
+  margin-top: 40px;
+}
+.signup-input-state-pw {
+  position: relative;
+  padding: 10px 0 11px;
+  border-bottom: 1px solid #dddfe4;
+  display: block;
+  margin-top: 40px;
+}
+.signup-input-state-id-active {
+  position: relative;
+  padding: 10px 0 11px;
+  border-bottom: 1px solid #27a5ff;
+  display: block;
+  margin-top: 40px;
+}
+.signup-input-state-pw-active {
+  position: relative;
+  padding: 10px 0 11px;
+  border-bottom: 1px solid #27a5ff;
   display: block;
   margin-top: 40px;
 }
@@ -91,6 +112,39 @@
   width: 100%;
   cursor: default;
 }
+.signup-idNotion {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-left: 4px;
+  color: red;
+  display: none;
+}
+.signup-idNotion-active {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-left: 4px;
+  color: red;
+}
+.signup-pwNotion {
+  font-size: 15px;
+  margin-top: 5px;
+  margin-left: 4px;
+  margin-bottom: 16px;
+  display: none;
+}
+.signup-pwNotion-active {
+  font-size: 15px;
+  margin-top: 5px;
+  margin-left: 4px;
+  margin-bottom: 16px;
+}
+.signup-pwNotion-spec {
+  font-size: 13px;
+  margin-top: 3px;
+  line-height: 20px;
+  color: red;
+}
+
 .signup-warn {
   margin-top: 9px;
   color: #98a0a7;

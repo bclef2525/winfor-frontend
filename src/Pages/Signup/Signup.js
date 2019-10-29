@@ -7,29 +7,51 @@ export default class Signup extends Component {
     constructor(props){
         super(props);
         this.state = {
-            
             idValue:'',
             pwValue:'',
-            buttonClass:"signup-btn btn-signup"
+            buttonClass:"signup-btn btn-signup",
+            idInputClass:"signup-input-state-id",
+            pwInputClass:"signup-input-state-pw",
+            idNotionClass:"signup-idNotion",
+            pwNotionClass:"signup-pwNotion",
+
         }
     }    
     handleId=(e)=>{
         this.setState({
             idValue:e.target.value
-        }, ()=> this.setState({buttonClass:this.state.idValue.length > 5 && this.state.pwValue.length > 5 ? "signup-btn btn-signup-good" : "signup-btn btn-signup"}
-        ), ()=> this.setState()
+        }, ()=> this.setState({buttonClass:this.state.idValue.length > 5 && this.state.pwValue.length > 6 ? "signup-btn btn-signup-good" : "signup-btn btn-signup"},
+                              ()=> this.setState({idNotionClass:this.state.idValue.length < 5 ? "signup-idNotion-active" : "signup-idNotion"}))
         )
-        console.log(this.state.idValue.length)
+        
+
+        
     }
     handlePw=(e)=>{
         this.setState({
             pwValue : e.target.value
-        }, ()=> this.setState({buttonClass:this.state.idValue.length > 5 && this.state.pwValue.length > 5 ? "signup-btn btn-signup-good" : "signup-btn btn-signup"}
-        ))
-       
-        console.log(this.state)
+        }, ()=> this.setState({buttonClass:this.state.idValue.length > 5 && this.state.pwValue.length > 6 ? "signup-btn btn-signup-good" : "signup-btn btn-signup"},
+                              ()=> this.setState({pwNotionClass:this.state.pwValue.length < 6 ? "signup-pwNotion-active" : "signup-pwNotion"}))
+        )
+        
     }
-    
+
+    handleIdInput=(e)=>{
+        this.setState({idInputClass:"signup-input-state-id-active"})
+    }
+
+    handleIdInput2=(e)=>{
+        this.setState({idInputClass:"signup-input-state-id"})
+    }
+
+    handlePwInput=(e)=>{
+        this.setState({pwInputClass:"signup-input-state-pw-active"})
+    }
+
+    handlePwInput2=(e)=>{
+        this.setState({pwInputClass:"signup-input-state-pw"})
+    }
+
     render() {
         return (
           <div className="signup-body">
@@ -42,10 +64,10 @@ export default class Signup extends Component {
                   작성해주세요. <br /> 한번 정한 이메일과 비밀번호는 변경하기
                   어렵습니다.
                 </div>
-                <div className="signup-inputsection">
-                  <div className="signup-input-state">
+                <div className="signup-inputSection">
+                  <div className={this.state.idInputClass}>
                     <input
-                    onChange={this.handleId}
+                    onChange={this.handleId} onFocus={this.handleIdInput} onBlur={this.handleIdInput2}
                       id="signup-email"
                       className="signup-input-box"
                       type="text"
@@ -56,10 +78,11 @@ export default class Signup extends Component {
                       이메일 주소
                     </label>
                   </div>
+                  <div className={this.state.idNotionClass}> 이메일 길이는 최소 5자이상 </div>
                   
-                  <div className="signup-input-state">
+                  <div className={this.state.pwInputClass}>
                     <input
-                    onChange={this.handlePw}
+                    onChange={this.handlePw} onFocus={this.handlePwInput} onBlur={this.handlePwInput2}
                       id="signup-pw"
                       className="signup-input-box"
                       type="password"
@@ -69,6 +92,15 @@ export default class Signup extends Component {
                       {" "}
                       비밀번호
                     </label>
+                  </div>
+                  <div className={this.state.pwNotionClass}>
+                      비밀번호 요구사항<br/>
+                      <div className="signup-pwNotion-spec">
+                          이메일 주소 혹은 닉네임을 포함하지 않음<br/>
+                          특수문자 사용 불가<br/>
+                          비밀번호 길이는 최소 6자 이상
+                      </div>
+
                   </div>
                   <div className="signup-warn">
                     개인정보를 기입하여 발생될 수 있는 피해는 Winfor가 일절
@@ -96,9 +128,7 @@ export default class Signup extends Component {
     }
 }
 
-// 인풋 클릭시 라벨, 보더 파란색.
-// 인풋 조건 미달시 밑에 display:hidden , color:red 된 div 나타나게하기.
+// 인풋 클릭시 라벨 파란색,위로,작게
 
-// 인풋 onclick시 label 위로,작게,파란색 / border 파란색 < 배우기
 // 버튼 (취소) 온클릭 - 메인으로이동 <라우터
 //     (가입하기) 온클릭 - 로그인된 상태로 메인으로 이동
