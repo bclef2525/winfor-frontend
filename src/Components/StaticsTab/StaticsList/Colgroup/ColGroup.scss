@@ -1,0 +1,31 @@
+.colgroup {
+    display: table-column-group;
+
+    .rank {
+        width: 50px;
+    }
+
+    .champion {
+        width: 175px;
+    }
+
+    .win-rate {
+        width: 173px;
+    }
+
+    .play-count {
+        width: 133px;
+    }
+
+    .average-score {
+        width: 133px;
+    }
+
+    .cs-score {
+        width: 153px;
+    }
+
+    .gold-score {
+        width: 153px;
+    }
+}

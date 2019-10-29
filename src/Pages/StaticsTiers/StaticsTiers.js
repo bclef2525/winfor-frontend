@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import StaticsNav from '../../Components/StaticsTab/StaticsNav/StaticsNav'
-import './staticsTiers.scss';
+import './StaticsTiers.scss';
 
 export default class StaticsTiers extends Component {
     render() {

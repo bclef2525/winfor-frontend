@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import StaticsNav from '../../Components/StaticsTab/StaticsNav/StaticsNav'
-import StaticsListTitleBar from '../../Components/StaticsTab/StaticsListTitleBar/StaticsListTitleBar';
-import StaticsListContentBar from '../../Components/StaticsTab/StaticsListContentBar/StaticsListContentBar';
-import './staticsChampions.scss';
+import StaticsNav from '../../Components/StaticsTab/StaticsNav';
+import StaticsListTitleBar from '../../Components/StaticsTab/StaticsList/TitleBar';
+import StaticsListContentBar from '../../Components/StaticsTab/StaticsList/ContentBar';
+import StaticsListColGroup from '../../Components/StaticsTab/StaticsList/Colgroup';
+import './StaticsChampions.scss';
 
 export default class staticsChampions extends Component {
     render() {
@@ -27,10 +28,13 @@ export default class staticsChampions extends Component {
                         <div className="statics-champions-desc-text">
                             챔피언별 통계를 볼 수 있습니다.
                         </div>
-                        <div className="statics-champions-content">
+                        <table className="statics-champions-content">
+                            <StaticsListColGroup />
                             <StaticsListTitleBar />
-                            {this.printLists()}
-                        </div>
+                            <tbody>
+                                {this.printLists()}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </>

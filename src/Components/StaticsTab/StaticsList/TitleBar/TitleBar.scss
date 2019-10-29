@@ -1,0 +1,58 @@
+.statics-listTitleBar-background {
+
+    .statics-listTitleBar {
+        display: table-row;
+        padding: 5px;
+        border-bottom: 1px solid #b8bfbf;
+        color: #555e5e;
+
+        .rank {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+        }
+    
+        .champion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 7px;
+        }
+    
+        .win-rate {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 7px;
+        }
+    
+        .play-count {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 7px;
+        }
+        
+        .average-score {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 7px;
+        }
+    
+        .cs-score {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 7px;
+        }
+    
+        .gold-score {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 7px;
+        }
+    }
+}

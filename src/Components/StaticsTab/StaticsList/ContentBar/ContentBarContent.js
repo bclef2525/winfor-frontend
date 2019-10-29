@@ -6,11 +6,11 @@ import PlayCount from './Content/PlayCount';
 import AverageScore from './Content/AverageScore';
 import CsScore from './Content/CsScore';
 import GoldScore from './Content/GoldScore';
-import './StaticsListContentBar.scss';
+import './ContentBarContent.scss';
 
 export default function StaticsListContentBar(props) {
     return (
-        <div className="statics-listContentBar-background">
+        <tr className="statics-listContentBar-background">
             <Rank
                 className="rank"
                 rank={props.rank}
@@ -33,6 +33,6 @@ export default function StaticsListContentBar(props) {
             <GoldScore
                 className="gold-score"
             />
-        </div>
+        </tr>
     )
 }
