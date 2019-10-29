@@ -1,12 +1,14 @@
 .login-body {
   position: relative;
-  padding: 170px 0 200px;
+  padding: 130px 0 200px;
+  background-color: #f3f5f7;
 
   .login-page {
     box-shadow: 2px 1px 1px 1px rgb(182, 181, 181);
     width: 450px;
     min-height: 682px;
     margin: 0 auto;
+    background-color: white;
     border: solid 0.1px rgb(182, 181, 181);
     .login-inner {
       margin: 0 40px;
@@ -39,12 +41,13 @@
             display: flex;
             justify-content: space-around;
             .login-or {
-              color: gray;
+              color: lightgray;
               margin-top: 10px;
+              font-size: 13px;
             }
             .login-line {
               width: 40%;
-              border-bottom: solid 1px gray;
+              border-bottom: solid 1px lightgray;
             }
           }
           .login-email-title {
@@ -61,7 +64,7 @@
               font-size: 16px;
               width: 100%;
               border-style: none;
-              border-bottom: solid 1px gray;
+              border-bottom: solid 1px lightgray;
               display: block;
               height: 26px;
             }
@@ -87,7 +90,7 @@
               font-size: 16px;
               width: 100%;
               border-style: none;
-              border-bottom: solid 1px gray;
+              border-bottom: solid 1px lightgray;
               display: block;
               height: 26px;
             }
@@ -126,6 +129,8 @@
               }
             }
             .login-forgot-container {
+              font-size: 14px;
+              font-weight: 500;
               margin-top: 15px;
             }
             .login-forgot-container:visited {
@@ -165,6 +170,8 @@
             .login-signup-text {
             }
             .login-sign-up {
+              font-size: 14px;
+              font-weight: 500;
               color: #1ea1f7;
             }
           }
