@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import StaticsNav from '../../Components/StaticsTab/StaticsNav/StaticsNav'
+import StaticsNav from '../../Components/StaticsTab/StaticsNav/';
 import './StaticsTiers.scss';
 
 export default class StaticsTiers extends Component {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import StaticsNav from '../../Components/StaticsTab/StaticsNav';
-import StaticsListTitleBar from '../../Components/StaticsTab/StaticsList/TitleBar';
-import StaticsListContentBar from '../../Components/StaticsTab/StaticsList/ContentBar';
-import StaticsListColGroup from '../../Components/StaticsTab/StaticsList/Colgroup';
+import StaticsListTitleBar from '../../Components/StaticsTab/StaticsChampionsList/TitleBar';
+import StaticsListContentBar from '../../Components/StaticsTab/StaticsChampionsList/ContentBar';
+import StaticsListColGroup from '../../Components/StaticsTab/StaticsChampionsList/ColGroup';
 import './StaticsChampions.scss';
 
 export default class staticsChampions extends Component {
