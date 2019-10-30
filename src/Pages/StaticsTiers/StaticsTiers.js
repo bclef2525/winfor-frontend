@@ -7,7 +7,7 @@ export default class StaticsTiers extends Component {
         return (
             <>
                 {/* nav */}
-                <StaticsNav />
+                <StaticsNav setStyle={"tiersSelected"}/>
                 <div className="statics-tiers-background">
                     <div className="statics-tiers-body">
                         <div className="statics-tiers-desc-text">

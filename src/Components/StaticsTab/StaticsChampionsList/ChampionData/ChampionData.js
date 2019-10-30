@@ -1,3 +1,4 @@
+import AsheImg from '../../../../Img/Ashe.png'
 const championData = [];
 
 let getRandomNum = function getRandomNum(min,max) {
@@ -10,7 +11,7 @@ let loopChampData = () => {
             {
                 id: i.toString(),
                 rank: i,
-                championImgSrc: "",
+                championImgSrc: AsheImg,
                 championName: "애쉬",
                 winRate: getRandomNum(42,53).toString(),
                 playCount: getRandomNum(22646,1057380).toString(),

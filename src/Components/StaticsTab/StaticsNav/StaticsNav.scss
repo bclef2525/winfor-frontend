@@ -1,4 +1,36 @@
-.statics-nav-background {
+// .statics-nav-background {
+//     display: flex;
+//     justify-content: center;
+//     padding: 10px 0;
+
+//     .statics-nav-body {
+//         display: flex;
+//         justify-content: flex-start;
+//         width: 70%;
+//         border-bottom: 1px solid #b8bfbf;
+
+//         .statics-nav-tiers-title {
+//             margin-left: 20px;
+//         }
+
+//         .statics-nav-champions-title, .statics-nav-tiers-title {
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             padding: 10px;
+//             font-size: 28px;
+//             font-weight: 600;
+//             //border-bottom: 3px solid #555e5e;
+
+//             a {
+//                 color: #b8bfbf; //color: #555e5e;
+//                 text-decoration: none;
+//             }
+//         }
+//     }
+// }
+
+.championSelected {
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -9,17 +41,71 @@
         width: 70%;
         border-bottom: 1px solid #b8bfbf;
 
+        .statics-nav-champions-title {
+            border-bottom: 5px solid #555e5e;
+
+            a {
+                font-weight: 900;
+                color: #555e5e;
+                text-decoration: none;
+            }
+        }
+        .statics-nav-tiers-title {
+            margin-left: 20px;
+
+            a {
+                color: #b8bfbf;
+                text-decoration: none;
+            }
+        }
+
         .statics-nav-champions-title, .statics-nav-tiers-title {
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 10px;
             font-size: 28px;
-            font-weight: bold;
+            font-weight: 600;
+        }
+    }
+}
 
-            Link {
-                color: #555e5e;
+.tiersSelected {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+
+    .statics-nav-body {
+        display: flex;
+        justify-content: flex-start;
+        width: 70%;
+        border-bottom: 1px solid #b8bfbf;
+
+        .statics-nav-champions-title {
+
+            a {
+                color: #b8bfbf;
+                text-decoration: none;
             }
+        }
+        .statics-nav-tiers-title {
+            margin-left: 20px;
+            border-bottom: 5px solid #555e5e;
+
+            a {
+                font-weight: 900;
+                color: #555e5e;
+                text-decoration: none;
+            }
+        }
+
+        .statics-nav-champions-title, .statics-nav-tiers-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            font-size: 28px;
+            font-weight: 600;
         }
     }
 }

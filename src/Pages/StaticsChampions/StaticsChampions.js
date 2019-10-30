@@ -88,11 +88,10 @@ export default class staticsChampions extends Component {
             goldScore,
         } = this.state;
 
-        console.log(winRate)
         return (
             <>
                 {/* nav */}
-                <StaticsNav />
+                <StaticsNav setStyle={"championSelected"}/>
                 <div className="statics-champions-background">
                     <div className="statics-champions-body">
                         <div className="statics-champions-desc-text">

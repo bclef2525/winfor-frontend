@@ -10,7 +10,7 @@ import './ContentBarContent.scss';
 
 export default function StaticsListContentBar(props) {
     return (
-        <tr className="statics-listContentBar-background">
+        <tr className="statics-listContentBar-background" id={"top"+props.rank}>
             <Rank
                 className="rank"
                 rank={props.rank}
