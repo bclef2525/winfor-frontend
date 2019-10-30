@@ -16,7 +16,7 @@ export default class staticsChampions extends Component {
             championsData: ChampionsData,
             sortArrow: true,
             rank: ArrowDefault,
-            chmpionName: ArrowDefault,
+            championName: ArrowDefault,
             winRate: ArrowDefault,
             playCount: ArrowDefault,
             averageScore: ArrowDefault,
@@ -71,7 +71,7 @@ export default class staticsChampions extends Component {
         return this.setState({
             championsData: sortedData,
             sortArrow: true,
-            [sortTitle]: ArrowUp
+            [sortTitle]: ArrowUp,
         })
     }
 
@@ -80,7 +80,7 @@ export default class staticsChampions extends Component {
             championsData,
             sortArrow,
             rank,
-            chmpionName,
+            championName,
             winRate,
             playCount,
             averageScore,
@@ -104,7 +104,7 @@ export default class staticsChampions extends Component {
                                 <StaticsListTitleBar
                                 onClick={this.handlerSortHigh}
                                 rank={rank}
-                                chmpionName={chmpionName}
+                                championName={championName}
                                 winRate={winRate}
                                 playCount={playCount}
                                 averageScore={averageScore}
@@ -115,7 +115,7 @@ export default class staticsChampions extends Component {
                                 <StaticsListTitleBar
                                 onClick={this.handlerSortLow}
                                 rank={rank}
-                                chmpionName={chmpionName}
+                                championName={championName}
                                 winRate={winRate}
                                 playCount={playCount}
                                 averageScore={averageScore}
