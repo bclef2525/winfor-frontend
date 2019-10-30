@@ -3,6 +3,7 @@ import '../StaticsTiersRight.scss'
 
 export default class StaticsTiersRightData extends Component{
   render() {
+    
     return (
       <tr className="STR-tr">
         <td className="STR-databar">

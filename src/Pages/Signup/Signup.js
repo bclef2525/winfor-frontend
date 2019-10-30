@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import "./Signup.scss";
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+
 
 
 export default class Signup extends Component {
@@ -15,34 +17,98 @@ export default class Signup extends Component {
             idNotionClass:"signup-idNotion",
             pwNotionClass:"signup-pwNotion",
             IdLabelClass:"signup-idInput-label",
-            PwLabelClass:"signup-pwInput-label"
+            PwLabelClass:"signup-pwInput-label",
+            buttonDisabled:'disabled'
 
         }
     }    
     handleId=(e)=>{
-        this.setState({
-            idValue:e.target.value
-        }, ()=> this.setState({buttonClass:this.state.idValue.length > 5 && this.state.pwValue.length > 6 ? "signup-btn btn-signup-good" : "signup-btn btn-signup"},
-                              ()=> this.setState({idNotionClass:this.state.idValue.length < 5 ? "signup-idNotion-active" : "signup-idNotion"},
-                                                ()=> this.setState({IdLabelClass: this.state.idValue.length > 0 ? "signup-idInput-label-none" : "signup-idInput-label"}
-                                                )
-                               )
+        this.setState(
+          {
+            idValue: e.target.value
+          },
+          () =>
+            this.setState(
+              {
+                buttonClass:
+                  this.state.idValue.length > 5 && this.state.pwValue.length > 6
+                    ? "signup-btn btn-signup-good"
+                    : "signup-btn btn-signup"
+              },
+              () =>
+                this.setState(
+                  {
+                    idNotionClass:
+                      //여기에다가 이메일 정규식 적용
+                      this.state.idValue.length < 5
+                        ? "signup-idNotion-active"
+                        : "signup-idNotion"
+                  },
+                  () =>
+                    this.setState(
+                      {
+                        IdLabelClass:
+                          this.state.idValue.length > 0
+                            ? "signup-idInput-label-none"
+                            : "signup-idInput-label"
+                      },
+                      () =>
+                        this.setState({
+                          buttonDisabled:
+                            this.state.idValue.length > 5 &&
+                            this.state.pwValue.length > 6
+                              ? ""
+                              : "disabled"
+                        })
+                    )
+                )
             )
-        )
+        );
         
 
         
     }
     handlePw=(e)=>{
-        this.setState({
-            pwValue : e.target.value
-        }, ()=> this.setState({buttonClass:this.state.idValue.length > 5 && this.state.pwValue.length > 6 ? "signup-btn btn-signup-good" : "signup-btn btn-signup"},
-                              ()=> this.setState({pwNotionClass:this.state.pwValue.length < 6 ? "signup-pwNotion-active" : "signup-pwNotion"},
-                                                ()=> this.setState({PwLabelClass: this.state.pwValue.length > 0 ? "signup-pwInput-label-none" : "signup-pwInput-label"}
-                                                )
-                                                )
-                              )
-        )
+        this.setState(
+          {
+            pwValue: e.target.value
+          },
+          () =>
+            this.setState(
+              {
+                buttonClass:
+                  this.state.idValue.length > 5 && this.state.pwValue.length > 6
+                    ? "signup-btn btn-signup-good"
+                    : "signup-btn btn-signup"
+              },
+              () =>
+                this.setState(
+                  {
+                    pwNotionClass:
+                      this.state.pwValue.length < 6
+                        ? "signup-pwNotion-active"
+                        : "signup-pwNotion"
+                  },
+                  () =>
+                    this.setState(
+                      {
+                        PwLabelClass:
+                          this.state.pwValue.length > 0
+                            ? "signup-pwInput-label-none"
+                            : "signup-pwInput-label"
+                      },
+                      () =>
+                        this.setState({
+                          buttonDisabled:
+                            this.state.idValue.length > 5 &&
+                            this.state.pwValue.length > 6
+                              ? ""
+                              : "disabled"
+                        })
+                    )
+                )
+            )
+        );
     }
 
     handleIdInput=(e)=>{
@@ -59,6 +125,10 @@ export default class Signup extends Component {
 
     handlePwInput2=(e)=>{
         this.setState({pwInputClass:"signup-input-state-pw"})
+    }
+
+    goToMain() {
+      this.props.history.push('/');
     }
 
     render() {
@@ -116,10 +186,11 @@ export default class Signup extends Component {
                     책임지지 않습니다.
                   </div>
                   <div className="signup-btns">
-                    <button type="submit" className="signup-btn btn-cancle">
+                    <button onClick={this.goToMain.bind(this)}type="submit" className="signup-btn btn-cancle">
                       취소
                     </button>
-                    <button type="submit" className={this.state.buttonClass}>
+                    <button onClick={this.goToMain.bind(this)}type="submit" className={this.state.buttonClass}
+                    disabled={this.state.buttonDisabled}>
                       가입하기
                     </button>
                   </div>
@@ -137,6 +208,7 @@ export default class Signup extends Component {
     }
 }
 
+// 이메일 정규식 조건 기능
 // 라우터
 // (취소) - 메인으로이동 
 // (가입하기) - 로그인된 상태로 메인으로 이동
