@@ -6,7 +6,7 @@ export default class StaticsListTitleBar extends Component {
     render(){
         const {
             rank,
-            chmpionName,
+            championName,
             winRate,
             playCount,
             averageScore,
@@ -26,7 +26,7 @@ export default class StaticsListTitleBar extends Component {
                     <StaticsListTitleBarContent
                         className="championName"
                         title="챔피언"
-                        arrowImg={chmpionName}
+                        arrowImg={championName}
                         onClick={this.props.onClick}
                     />
                     <StaticsListTitleBarContent
