@@ -5,23 +5,24 @@ export default class Login extends Component {
   constructor() {
     super();
     this.state = {
-      passwordLabelMode: "off",
-      emailLabelMode: "off",
       emailValue: "",
       passwordValue: "",
-      buttonClass: "login-button",
-      emailLabelClass: "login-email-label",
-      passwordLabelClass: "login-password-label",
-      denied: "denied-off"
+      failedMode: false,
+      denied: true
     };
   }
+
   submitLogin = e => {
     e.preventDefault();
-    if (this.state.emailValue !== this.state.passwordValue) {
+    if (
+      this.state.emailValue.length > 3 &&
+      this.state.passwordValue.length > 3 &&
+      this.state.emailValue !== this.state.passwordValue
+    ) {
       this.setState({
-        emailLabelClass: "login-failed",
-        passwordLabelClass: "login-failed",
-        denied: "denied-on"
+        failedMode: true,
+
+        denied: false
       });
     }
   };
@@ -43,81 +44,70 @@ export default class Login extends Component {
   //     }
   //   })
   // }
-  handleLabel = e => {
-    if (this.state.emailLabelMode === "on" && this.state.emailValue === "") {
-      this.setState({
-        emailLabelMode: "off",
-        emailLabelClass: "login-email-label"
-      });
-    } else if (
-      this.state.passwordLabelMode === "on" &&
-      this.state.passwordValue === ""
-    ) {
-      this.setState({
-        passwordLabelMode: "off",
-        passwordLabelClass: "login-password-label"
-      });
-    }
-  };
 
-  handleEmailText = e => {
-    if (this.state.emailLabelMode === "off") {
-      this.setState({
-        emailLabelMode: "on",
-        emailLabelClass: "login-email-label-trans"
-      });
-    }
-  };
-  handlePassword = e => {
-    if (this.state.passwordLabelMode === "off") {
-      this.setState({
-        passwordLabelMode: "on",
-        passwordLabelClass: "login-password-label-trans"
-      });
-    }
-  };
   handleEmailValue = e => {
-    if (e.target.value.length === 0) {
-      this.setState({ denied: "denied-off" });
-    }
-    if (e.target.value.length >= 0) {
-      this.setState({
-        emailLabelClass: "login-email-label-trans"
-      });
-    }
-    this.setState({ emailValue: e.target.value }, () => {
-      this.setState({
-        buttonClass:
-          this.state.emailValue.length > 3 &&
-          this.state.passwordValue.length > 3
-            ? "login-button-on"
-            : "login-button"
-      });
-    });
+    this.setState({ emailValue: e.target.value }, () => {});
   };
   handlePasswordValue = e => {
-    if (e.target.value.length === 0) {
-      this.setState({ denied: "denied-off" });
-    }
-    if (e.target.value.length >= 0) {
-      this.setState({
-        passwordLabelClass: "login-password-label-trans"
-      });
-    }
-    this.setState({ passwordValue: e.target.value }, () => {
-      this.setState({
-        buttonClass:
-          this.state.emailValue.length > 3 &&
-          this.state.passwordValue.length > 3
-            ? "login-button-on"
-            : "login-button"
-      });
-    });
+    this.setState({ passwordValue: e.target.value }, () => {});
   };
 
   render() {
+    const {
+      emailValue,
+      passwordValue,
+
+      failedMode,
+      denied
+    } = this.state;
+    function getLoginButtonClass() {
+      if (emailValue.length > 3 && passwordValue.length > 3) {
+        return "login-button-on";
+      } else {
+        return "login-button";
+      }
+    }
+    function getPasswordLabelClass() {
+      if (passwordValue === "") {
+        return "login-password-label";
+      }
+      if (failedMode === true) {
+        return "login-failed";
+      }
+      if (passwordValue === "") {
+        return "login-password-label";
+      } else if (passwordValue.length > 0) {
+        return "login-password-label-trans";
+      }
+    }
+    function getEmailLabelClass() {
+      if (emailValue === "") {
+        return "login-email-label";
+      }
+      if (failedMode === true) {
+        return "login-failed";
+      }
+
+      if (emailValue === "") {
+        return "login-email-label";
+      } else if (emailValue.length > 0) {
+        return "login-email-label-trans";
+      }
+    }
+
+    function getDeniedClass() {
+      if (emailValue === "" && passwordValue === "") {
+        return "denied-off";
+      }
+      if (denied === true) {
+        return "denied-off";
+      } else if (denied === false) {
+        return "denied-on";
+      }
+    }
+
     return (
-      <div onClick={this.handleLabel} className="login-body">
+      <div className="login-body">
         <div className="login-page">
           <div className="login-inner">
             <div className="login-logo">Winfor.GG</div>
@@ -134,33 +124,31 @@ export default class Login extends Component {
                 <div className="login-email-container">
                   <input
                     onChange={this.handleEmailValue}
-                    onClick={this.handleEmailText}
                     className="login-email-text"
                     type="text"
-                    value={this.state.emailValue}
+                    value={emailValue}
                   />
                   <label
                     for="login-email-text"
-                    className={this.state.emailLabelClass}
+                    className={getEmailLabelClass()}
                   >
                     Email Address
                   </label>
                   <div className="login-password-container">
                     <input
                       onChange={this.handlePasswordValue}
-                      onClick={this.handlePassword}
                       className="login-password-text"
                       type="password"
-                      value={this.state.passwordValue}
+                      value={passwordValue}
                     />
                     <label
                       for="login-password-text"
-                      className={this.state.passwordLabelClass}
+                      className={getPasswordLabelClass()}
                     >
                       Password
                     </label>
                   </div>
-                  <div className={this.state.denied}>
+                  <div className={getDeniedClass()}>
                     Account ID and Password do not match. Please try again.
                   </div>
                   <div className="remember-forgot-container">
@@ -180,7 +168,7 @@ export default class Login extends Component {
                   <div>
                     <button
                       onClick={this.submitLogin}
-                      className={this.state.buttonClass}
+                      className={getLoginButtonClass()}
                       type="submit"
                     >
                       LOGIN

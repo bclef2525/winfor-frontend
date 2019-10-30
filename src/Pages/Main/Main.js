@@ -40,8 +40,11 @@ export default class Main extends Component {
           </video>
         </div>
         <footer className="main-footer">
-          About OP.GG 로고 히스토리 개인정보처리방침 도움말 제휴 문의/피드백
-          채용 © 2012-2019 OP.GG. Data based on League of Legends Korea.
+          <div>About</div> <div>WINFOR.GG</div> <div>로고</div>{" "}
+          <div>히스토리</div> <div>개인정보처리방침</div> <div>도움말</div>{" "}
+          <div>제휴</div>
+          <div>문의/피드백</div>
+          <div>팀원</div> <div>인호 | 태순 | 경연 | 성욱 | 세환</div>
         </footer>
       </div>
     );
