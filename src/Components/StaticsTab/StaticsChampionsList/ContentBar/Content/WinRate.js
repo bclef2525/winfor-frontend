@@ -6,10 +6,10 @@ export default function WinRate(props) {
             <div className={props.className}>
                 <div
                     className="winRate-graph"
-                    style={{width: "53.62%"}}>
+                    style={{width: props.winRate+"%"}}>
                 </div>
                 <div className="winRate-number">
-                    {53.62 + "%"}
+                    {props.winRate+ "%"}
                 </div>
             </div>
         </td>

@@ -4,7 +4,7 @@ export default function AverageScore(props) {
     return (
         <td>
             <div className={props.className}>
-                {2.5 + ":1"}
+                {props.averageScore + ":1"}
             </div>
         </td>
     )

@@ -5,6 +5,11 @@
         padding: 5px;
         border-bottom: 1px solid #b8bfbf;
         color: #555e5e;
+    
+        img {
+            width: 15px;
+            height: 20px;
+        }
 
         .rank {
             display: flex;
@@ -13,42 +18,42 @@
             padding: 5px 10px;
         }
     
-        .champion {
+        .championName {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 5px 7px;
         }
     
-        .win-rate {
+        .winRate {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 5px 7px;
         }
     
-        .play-count {
+        .playCount {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 5px 7px;
         }
         
-        .average-score {
+        .averageScore {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 5px 7px;
         }
     
-        .cs-score {
+        .csScore {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 5px 7px;
         }
     
-        .gold-score {
+        .goldScore {
             display: flex;
             justify-content: space-between;
             align-items: center;

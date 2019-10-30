@@ -6,10 +6,10 @@ export default function GoldScore(props) {
             <div className={props.className}>
                 <div
                     className="gold-score-graph"
-                    style={{width: 11365/20000*100 + "%"}}>
+                    style={{width: props.goldScore/20000*100 + "%"}}>
                 </div>
                 <div className="gold-score-number">
-                    {11365}
+                    {props.goldScore}
                 </div>
             </div>
         </td>

@@ -17,21 +17,28 @@ export default function StaticsListContentBar(props) {
             />
             <Champions
                 className="champion"
+                championImgSrc={props.championImgSrc}
+                championName={props.championName}
             />
             <WinRate
                 className="win-rate"
+                winRate={props.winRate}
             />
             <PlayCount
                 className="play-count"
+                playCount={props.playCount}
             />
             <AverageScore
                 className="average-score"
+                averageScore={props.averageScore}
             />
             <CsScore
                 className="cs-score"
+                csScore={props.csScore}
             />
             <GoldScore
                 className="gold-score"
+                goldScore={props.goldScore}
             />
         </tr>
     )

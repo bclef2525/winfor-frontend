@@ -6,10 +6,10 @@ export default function CsScore(props) {
             <div className={props.className}>
                 <div
                     className="cs-score-graph"
-                    style={{width: 170.39/300*100+"%"}}>
+                    style={{width: props.csScore/300*100+"%"}}>
                 </div>
                 <div className="cs-score-number">
-                    {170.39}
+                    {props.csScore}
                 </div>
             </div>
         </td>

@@ -4,9 +4,9 @@ export default function Champions(props) {
     return (
         <td>
             <div className={props.className}>
-                <img src={""} alt={""}/>
+                <img src={props.championImgSrc} alt={""}/>
                 <div className="champion-name">
-                    애쉬
+                    {props.championName}
                 </div>
             </div>
         </td>
