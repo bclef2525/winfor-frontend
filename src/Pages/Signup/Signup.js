@@ -19,6 +19,7 @@ export default class Signup extends Component {
             IdLabelClass:"signup-idInput-label",
             PwLabelClass:"signup-pwInput-label",
             buttonDisabled:'disabled'
+            //default 클래스로 해놓기
 
         }
     }    
@@ -28,110 +29,40 @@ export default class Signup extends Component {
             idValue: e.target.value
           },
           () =>
-            this.setState(
-              {
-                buttonClass:
-                  this.state.idValue.length > 5 && this.state.pwValue.length > 6
-                    ? "signup-btn btn-signup-good"
-                    : "signup-btn btn-signup"
-              },
-              () =>
-                this.setState(
-                  {
-                    idNotionClass:
-                      //여기에다가 이메일 정규식 적용
-                      this.state.idValue.length < 5
-                        ? "signup-idNotion-active"
-                        : "signup-idNotion"
-                  },
-                  () =>
-                    this.setState(
-                      {
-                        IdLabelClass:
-                          this.state.idValue.length > 0
-                            ? "signup-idInput-label-none"
-                            : "signup-idInput-label"
-                      },
-                      () =>
-                        this.setState({
-                          buttonDisabled:
-                            this.state.idValue.length > 5 &&
-                            this.state.pwValue.length > 6
-                              ? ""
-                              : "disabled"
-                        })
-                    )
-                )
-            )
+            this.setState({
+              idNotionClass:
+                this.state.idValue.length < 5
+                  ? "signup-idNotion-active"
+                  : "signup-idNotion"
+            })
         );
-        
-
-        
-    }
+      }
     handlePw=(e)=>{
         this.setState(
           {
             pwValue: e.target.value
           },
           () =>
-            this.setState(
-              {
-                buttonClass:
-                  this.state.idValue.length > 5 && this.state.pwValue.length > 6
-                    ? "signup-btn btn-signup-good"
-                    : "signup-btn btn-signup"
-              },
-              () =>
-                this.setState(
-                  {
-                    pwNotionClass:
-                      this.state.pwValue.length < 6
-                        ? "signup-pwNotion-active"
-                        : "signup-pwNotion"
-                  },
-                  () =>
-                    this.setState(
-                      {
-                        PwLabelClass:
-                          this.state.pwValue.length > 0
-                            ? "signup-pwInput-label-none"
-                            : "signup-pwInput-label"
-                      },
-                      () =>
-                        this.setState({
-                          buttonDisabled:
-                            this.state.idValue.length > 5 &&
-                            this.state.pwValue.length > 6
-                              ? ""
-                              : "disabled"
-                        })
-                    )
-                )
-            )
+            this.setState({
+              pwNotionClass:
+                this.state.pwValue.length > 6
+                  ? "signup-pwNotion"
+                  : "signup-pwNotion-active"
+            })
         );
     }
 
-    handleIdInput=(e)=>{
-        this.setState({idInputClass:"signup-input-state-id-active"})
-    }
-
-    handleIdInput2=(e)=>{
-        this.setState({idInputClass:"signup-input-state-id"})
-    }
-
-    handlePwInput=(e)=>{
-        this.setState({pwInputClass:"signup-input-state-pw-active"})
-    }
-
-    handlePwInput2=(e)=>{
-        this.setState({pwInputClass:"signup-input-state-pw"})
-    }
+    
 
     goToMain() {
       this.props.history.push('/');
     }
 
     render() {
+      
+      const { pwValue } = this.state;
+      const { idValue } = this.state;
+
         return (
           <div className="signup-body">
             <div className="signup-feed">
@@ -146,51 +77,106 @@ export default class Signup extends Component {
                 <div className="signup-inputSection">
                   <div className={this.state.idInputClass}>
                     <input
-                    onChange={this.handleId} onFocus={this.handleIdInput} onBlur={this.handleIdInput2}
+                      onChange={this.handleId}
+                      onFocus={() => {
+                        this.setState({
+                          idInputClass: "signup-input-state-id-active"
+                        });
+                      }}
+                      onBlur={() => {
+                        this.setState({
+                          idInputClass: "signup-input-state-id"
+                        });
+                      }}
                       id="signup-email"
                       className="signup-input-box"
                       type="text"
                       autoComplete="off"
                     />
-                    <label for="signup-email" className={this.state.IdLabelClass}>
+                    <label
+                      for="signup-email"
+                      className={
+                        idValue.length > 0
+                          ? "signup-idInput-label-none"
+                          : "signup-idInput-label"
+                      }
+                    >
                       {" "}
                       이메일 주소
                     </label>
                   </div>
-                  <div className={this.state.idNotionClass}> 이메일 양식에 맞춰 작성해주세요! </div>
-                  
+                  <div className={this.state.idNotionClass}>
+                    {" "}
+                    이메일 양식에 맞춰 작성해주세요!{" "}
+                  </div>
+
                   <div className={this.state.pwInputClass}>
                     <input
-                    onChange={this.handlePw} onFocus={this.handlePwInput} onBlur={this.handlePwInput2}
+                      onChange={this.handlePw}
+                      onFocus={() => {
+                        this.setState({
+                          pwInputClass: "signup-input-state-pw-active"
+                        });
+                      }}
+                      onBlur={() => {
+                        this.setState({
+                          pwInputClass: "signup-input-state-pw"
+                        });
+                      }}
                       id="signup-pw"
                       className="signup-input-box"
                       type="password"
                       autoComplete="off"
                     />
-                    <label for="signup-pw" className={this.state.PwLabelClass}>
+                    <label
+                      for="signup-pw"
+                      className={
+                        pwValue.length > 0
+                          ? "signup-pwInput-label-none"
+                          : "signup-pwInput-label"
+                      }
+                    >
                       {" "}
                       비밀번호
                     </label>
                   </div>
                   <div className={this.state.pwNotionClass}>
-                      비밀번호 요구사항<br/>
-                      <div className="signup-pwNotion-spec">
-                          이메일 주소 혹은 닉네임을 포함하지 않음<br/>
-                          특수문자 사용 불가<br/>
-                          비밀번호 길이는 최소 6자 이상
-                      </div>
-
+                    비밀번호 요구사항
+                    <br />
+                    <div className="signup-pwNotion-spec">
+                      이메일 주소 혹은 닉네임을 포함하지 않음
+                      <br />
+                      특수문자 사용 불가
+                      <br />
+                      비밀번호 길이는 최소 6자 이상
+                    </div>
                   </div>
                   <div className="signup-warn">
                     개인정보를 기입하여 발생될 수 있는 피해는 Winfor가 일절
                     책임지지 않습니다.
                   </div>
                   <div className="signup-btns">
-                    <button onClick={this.goToMain.bind(this)}type="submit" className="signup-btn btn-cancle">
+                    <button
+                      onClick={this.goToMain.bind(this)}
+                      type="submit"
+                      className="signup-btn btn-cancle"
+                    >
                       취소
                     </button>
-                    <button onClick={this.goToMain.bind(this)}type="submit" className={this.state.buttonClass}
-                    disabled={this.state.buttonDisabled}>
+                    <button
+                      onClick={this.goToMain.bind(this)}
+                      type="submit"
+                      className={
+                        idValue.length > 5 && pwValue.length > 6
+                          ? "signup-btn btn-signup-good"
+                          : "signup-btn btn-signup"
+                      }
+                      disabled={
+                        idValue.length > 5 && pwValue.length > 6
+                          ? ""
+                          : "disabled"
+                      }
+                    >
                       가입하기
                     </button>
                   </div>
