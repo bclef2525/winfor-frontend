@@ -1,0 +1,25 @@
+.statics-nav-background {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+
+    .statics-nav-body {
+        display: flex;
+        justify-content: flex-start;
+        width: 70%;
+        border-bottom: 1px solid #b8bfbf;
+
+        .statics-nav-champions-title, .statics-nav-tiers-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            font-size: 28px;
+            font-weight: bold;
+
+            Link {
+                color: #555e5e;
+            }
+        }
+    }
+}
