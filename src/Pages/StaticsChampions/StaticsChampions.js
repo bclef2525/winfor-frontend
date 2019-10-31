@@ -91,7 +91,7 @@ export default class staticsChampions extends Component {
         return (
             <>
                 {/* nav */}
-                <StaticsNav setStyle={"championSelected"}/>
+                <StaticsNav/>
                 <div className="statics-champions-background">
                     <div className="statics-champions-body">
                         <div className="statics-champions-desc-text">
