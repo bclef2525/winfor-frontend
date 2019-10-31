@@ -9,18 +9,13 @@ export default class Signup extends Component {
     constructor(props){
         super(props);
         this.state = {
-            idValue:'',
-            pwValue:'',
-            buttonClass:"signup-btn btn-signup",
-            idInputClass:"signup-input-state-id",
-            pwInputClass:"signup-input-state-pw",
-            idNotionClass:"signup-idNotion",
-            pwNotionClass:"signup-pwNotion",
-            IdLabelClass:"signup-idInput-label",
-            PwLabelClass:"signup-pwInput-label",
-            buttonDisabled:'disabled'
-
-        }
+          idValue: "",
+          pwValue: "",
+          idInputClass: "signup-input-state-id",
+          pwInputClass: "signup-input-state-pw",
+          idNotionClass: "signup-idNotion",
+          pwNotionClass: "signup-pwNotion"
+        };
     }    
     handleId=(e)=>{
         this.setState(
