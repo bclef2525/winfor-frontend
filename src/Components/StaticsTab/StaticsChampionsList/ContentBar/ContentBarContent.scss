@@ -1,0 +1,106 @@
+.statics-listContentBar-background {
+    border-bottom: 1px solid #b8bfbf;
+    padding: 2px;
+
+    .rank {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 10px;
+        color: #555e5e;
+    }
+
+    .champion {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 5px 7px;
+
+        img {
+            border: 1px solid #b8bfbf;
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            margin-right: 5px;
+        }
+
+        .champion-name {
+            font-weight: bold;
+            color: #555e5e;
+        }
+    }
+
+    .win-rate {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 5px 7px;
+
+        .winRate-graph {
+            background: #1f8ecd;
+            border: 1px solid #1f8ecd;
+            height: 15px;
+            margin-right: 5px;
+        }
+
+        .winRate-number {
+            color: #555e5e;
+            font-weight: bold;
+        }
+    }
+
+    .play-count {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 5px 7px;
+        color: #555e5e;
+    }
+    
+    .average-score {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 5px 7px;
+        font-weight: bold;
+        color: #555e5e;
+    }
+
+    .cs-score {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 5px 7px;
+
+        .cs-score-graph {
+            background: #2daf7f;
+            border: 1px solid #2daf7f;
+            height: 15px;
+            margin-right: 5px;
+        }
+
+        .cs-score-number {
+            color: #2daf7f;
+            font-weight: bold;
+        }
+    }
+
+    .gold-score {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 5px 7px;
+
+        .gold-score-graph {
+            background: #f6af2e;
+            border: 1px solid #f6af2e;
+            height: 15px;
+            margin-right: 5px;
+        }
+
+        .gold-score-number {
+            color: #f6af2e;
+            font-weight: bold;
+        }
+    }
+}
