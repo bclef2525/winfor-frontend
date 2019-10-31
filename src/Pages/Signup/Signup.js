@@ -19,7 +19,6 @@ export default class Signup extends Component {
             IdLabelClass:"signup-idInput-label",
             PwLabelClass:"signup-pwInput-label",
             buttonDisabled:'disabled'
-            //default 클래스로 해놓기
 
         }
     }    

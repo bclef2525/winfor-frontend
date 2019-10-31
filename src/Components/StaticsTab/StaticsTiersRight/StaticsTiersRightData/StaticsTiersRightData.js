@@ -3,19 +3,30 @@ import '../StaticsTiersRight.scss'
 
 export default class StaticsTiersRightData extends Component{
   render() {
-    
-    return (
-      <tr className="STR-tr">
-        <td className="STR-databar">
-          <div className="STR-datas">
-            <div className="STR-bar"></div>
-            <div className="STR-tier">Challenger I</div>
-            <div className="STR-user">300 (0.0079%)</div>
-            <div className="STR-nu">300 (0.0079%)</div>
-          </div>
+    console.log(this.props)
+    let colorindex = "";
+    let { index } = this.props;
+    let { info } = this.props ;
+    if(index < 3){
+      colorindex = "STR-tr-red"
+    }else if(index > 3 && index < 7 ){
+      colorindex = "STR-tr-blue"
+    }else if(index > 7 && index < 11){
+      colorindex = "STR-tr-green"
+    }else{colorindex = "STR-tr-gray"}
+    return ( 
+      <tr className={`${colorindex} STR-tr`}>
+        <td className="STR-bar"></td>
+        <td>
+          <div className="STR-tier">{info.tier} {info.tier_roman}</div>
+        </td>
+        <td>
+          <div className="STR-user">{info.summoner} ({info.summoner_percent}%)</div>
+        </td>
+        <td>
+          <div className="STR-nu">{info.aggregate} ({info.aggregate_percent}%)</div>
         </td>
       </tr>
     );
   }
 };
-  
