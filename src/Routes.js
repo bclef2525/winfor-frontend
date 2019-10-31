@@ -1,14 +1,10 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom';
-import Main from './Pages/Main/';
-import Signup from './Pages/Signup/';
-import Signin from './Pages/Login/';
-import StaticsChampions from './Pages/StaticsChampions';
-import StaticsTiers from './Pages/StaticsTiers';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Main from "./Pages/Main/";
+import Signup from "./Pages/Signup/";
+import Signin from "./Pages/Login/";
+import StaticsChampions from "./Pages/StaticsChampions";
+import StaticsTiers from "./Pages/StaticsTiers";
 
 class Routes extends React.Component {
   render() {
@@ -22,7 +18,7 @@ class Routes extends React.Component {
           <Route exact path="/Statics/Tiers" component={StaticsTiers} />
         </Switch>
       </Router>
-    )
+    );
   }
 }
 
