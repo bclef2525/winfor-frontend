@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import "../Main/Main.scss";
 import MainVideo from "../Main/main.mp4";
 import MainHeader from "./MainHeader/MainHeader";

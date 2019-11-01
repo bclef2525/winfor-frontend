@@ -1,11 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class Signup extends Component {
-    render() {
-        return (
-            <div>
-                signup
-            </div>
-        )
-    }
+  render() {
+    return <div>signup</div>;
+  }
 }
