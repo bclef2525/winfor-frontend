@@ -1,1 +1,1 @@
-export { default } from './StaticsNav';
+export { default } from "./StaticsNav";
