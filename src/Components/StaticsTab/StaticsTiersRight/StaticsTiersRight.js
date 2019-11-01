@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-import './StaticsTiersRight.scss';
+import React, { Component } from "react";
+import "./StaticsTiersRight.scss";
 import StaticsTiersRightData from "./StaticsTiersRightData";
-import STRData from "./StaticsTiersRightM"
+import STRData from "./StaticsTiersRightM";
 
-
-export default class StaticsTiersRight extends Component{
-  
+export default class StaticsTiersRight extends Component {
   // constructor(props){
   //   super(props);
   //   this.state = {
@@ -17,22 +15,14 @@ export default class StaticsTiersRight extends Component{
 
   handlerLoop = () => {
     let list = [];
-    for(let i = 0; i < 27; i++){
-      list.push(
-        <StaticsTiersRightData />
-      )
+    for (let i = 0; i < 27; i++) {
+      list.push(<StaticsTiersRightData />);
     }
-    console.log(list)
-    return list
+    console.log(list);
+    return list;
   };
 
-
- 
-  
-
-
   render() {
-    
     return (
       <div>
         <div className="STRBox">
@@ -54,10 +44,10 @@ export default class StaticsTiersRight extends Component{
             </thead>
             <tbody className="STRBody">
               {/* <StaticsTiersRightData /> */}
-              { STRData.map((el,idx)=>{
-                console.log(el)
+              {STRData.map((el, idx) => {
+                console.log(el);
                 return <StaticsTiersRightData info={el} index={idx} />;
-              }) }
+              })}
             </tbody>
           </table>
           <div className="STRbottom">
@@ -72,8 +62,6 @@ export default class StaticsTiersRight extends Component{
       </div>
     );
   }
-
-};
+}
 
 //map 함수로 각각 id값 부여해 0~2빨간색, 3~6파란색, 7~10초록색, 11~14노란색, 15~18은색 19~26연갈색
-

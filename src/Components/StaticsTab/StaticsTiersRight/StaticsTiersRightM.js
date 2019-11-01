@@ -241,8 +241,7 @@ const STRData = [
     summoner_percent: "0.0079",
     aggregate: "300",
     aggregate_percent: "0.0079"
-  },
-
+  }
 ];
- 
+
 export default STRData;
