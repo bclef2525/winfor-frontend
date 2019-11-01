@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Signup.scss";
 import { Link } from "react-router-dom";
-import { withRouter } from "react-router-dom";
 
 export default class Signup extends Component {
   constructor(props) {
@@ -9,10 +8,10 @@ export default class Signup extends Component {
     this.state = {
       idValue: "",
       pwValue: "",
-      idInputClass: "signup-input-state-id",
-      pwInputClass: "signup-input-state-pw",
-      idNotionClass: "signup-idNotion",
-      pwNotionClass: "signup-pwNotion"
+      focus: false,
+      focus2: false,
+      idNotion: false,
+      pwNotion: false
     };
   }
   handleId = e => {
@@ -22,13 +21,11 @@ export default class Signup extends Component {
       },
       () =>
         this.setState({
-          idNotionClass:
-            this.state.idValue.length < 5
-              ? "signup-idNotion-active"
-              : "signup-idNotion"
+          idNotion: this.state.idValue.length < 5 ? true : false
         })
     );
   };
+
   handlePw = e => {
     this.setState(
       {
@@ -36,22 +33,54 @@ export default class Signup extends Component {
       },
       () =>
         this.setState({
-          pwNotionClass:
-            this.state.pwValue.length > 6
-              ? "signup-pwNotion"
-              : "signup-pwNotion-active"
+          pwNotion: this.state.pwValue.length < 7 ? true : false
         })
     );
   };
 
   goToMain() {
     this.props.history.push("/");
+    fetch("http://10.58.0.33:8000/account/signup", {
+      method: "post",
+      body: JSON.stringify({
+        email: this.state.idValue,
+        password: this.state.pwValue
+      })
+    })
+      .then(function(res) {
+        return res.json();
+      })
+      .then(res => console.log(res));
   }
 
-  render() {
-    const { pwValue } = this.state;
-    const { idValue } = this.state;
+  focusAcitve = () => {
+    this.setState({
+      focus: true
+    });
+  };
 
+  blurAcitve = () => {
+    this.setState({
+      focus: false
+    });
+  };
+
+  focus2Acitve = () => {
+    this.setState({
+      focus2: true
+    });
+  };
+
+  blur2Acitve = () => {
+    this.setState({
+      focus2: false
+    });
+  };
+
+  render() {
+    const { pwValue, idValue, focus, focus2, idNotion, pwNotion } = this.state;
+
+    console.log(idNotion);
     return (
       <div className="signup-body">
         <div className="signup-feed">
@@ -63,19 +92,11 @@ export default class Signup extends Component {
               <br /> 한번 정한 이메일과 비밀번호는 변경하기 어렵습니다.
             </div>
             <div className="signup-inputSection">
-              <div className={this.state.idInputClass}>
+              <div className={`signup-input-state-id${focus ? "-active" : ""}`}>
                 <input
                   onChange={this.handleId}
-                  onFocus={() => {
-                    this.setState({
-                      idInputClass: "signup-input-state-id-active"
-                    });
-                  }}
-                  onBlur={() => {
-                    this.setState({
-                      idInputClass: "signup-input-state-id"
-                    });
-                  }}
+                  onFocus={this.focusAcitve}
+                  onBlur={this.blurAcitve}
                   id="signup-email"
                   className="signup-input-box"
                   type="text"
@@ -93,24 +114,23 @@ export default class Signup extends Component {
                   이메일 주소
                 </label>
               </div>
-              <div className={this.state.idNotionClass}>
+
+              <div
+                className={
+                  idNotion ? "signup-idNotion-active" : "signup-idNotion"
+                }
+              >
                 {" "}
                 이메일 양식에 맞춰 작성해주세요!{" "}
               </div>
 
-              <div className={this.state.pwInputClass}>
+              <div
+                className={`signup-input-state-pw${focus2 ? "-active" : ""}`}
+              >
                 <input
                   onChange={this.handlePw}
-                  onFocus={() => {
-                    this.setState({
-                      pwInputClass: "signup-input-state-pw-active"
-                    });
-                  }}
-                  onBlur={() => {
-                    this.setState({
-                      pwInputClass: "signup-input-state-pw"
-                    });
-                  }}
+                  onFocus={this.focus2Acitve}
+                  onBlur={this.blur2Acitve}
                   id="signup-pw"
                   className="signup-input-box"
                   type="password"
@@ -118,6 +138,7 @@ export default class Signup extends Component {
                 />
                 <label
                   for="signup-pw"
+                  s
                   className={
                     pwValue.length > 0
                       ? "signup-pwInput-label-none"
@@ -128,7 +149,11 @@ export default class Signup extends Component {
                   비밀번호
                 </label>
               </div>
-              <div className={this.state.pwNotionClass}>
+              <div
+                className={
+                  pwNotion ? "signup-pwNotion-active" : "signup-pwNotion"
+                }
+              >
                 비밀번호 요구사항
                 <br />
                 <div className="signup-pwNotion-spec">
