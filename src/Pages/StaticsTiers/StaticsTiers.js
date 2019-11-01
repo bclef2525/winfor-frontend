@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import StaticsNav from "../../Components/StaticsTab/StaticsNav/";
+import MainHeader from "../Main/MainHeader";
 import "./StaticsTiers.scss";
 
 export default class StaticsTiers extends Component {
   render() {
     return (
       <>
-        {/* nav */}
+        <MainHeader />
         <StaticsNav />
         <div className="statics-tiers-background">
           <div className="statics-tiers-body">

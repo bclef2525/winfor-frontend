@@ -4,6 +4,7 @@ import StaticsListTitleBar from "../../Components/StaticsTab/StaticsChampionsLis
 import StaticsListContentBar from "../../Components/StaticsTab/StaticsChampionsList/ContentBar";
 import StaticsListColGroup from "../../Components/StaticsTab/StaticsChampionsList/ColGroup";
 import ChampionsData from "../../Components/StaticsTab/StaticsChampionsList/ChampionData/ChampionData";
+import MainHeader from "../Main/MainHeader";
 import ArrowDown from "../../Img/down.png";
 import ArrowUp from "../../Img/up.png";
 import ArrowDefault from "../../Img/default.png";
@@ -114,7 +115,7 @@ export default class staticsChampions extends Component {
 
     return (
       <>
-        {/* nav */}
+        <MainHeader />
         <StaticsNav />
         <div className="statics-champions-background">
           <div className="statics-champions-body">
