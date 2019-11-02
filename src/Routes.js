@@ -5,6 +5,7 @@ import Signup from "./Pages/Signup/";
 import Signin from "./Pages/Login/";
 import StaticsChampions from "./Pages/StaticsChampions";
 import StaticsTiers from "./Pages/StaticsTiers";
+import MyMatchList from "./Pages/Main/MyMatchList/MyMatchList";
 
 class Routes extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class Routes extends React.Component {
           <Route exact path="/Login" component={Signin} />
           <Route exact path="/Statics/Champions" component={StaticsChampions} />
           <Route exact path="/Statics/Tiers" component={StaticsTiers} />
+          <Route exact path="/MyMatchList" component={MyMatchList} />
         </Switch>
       </Router>
     );
