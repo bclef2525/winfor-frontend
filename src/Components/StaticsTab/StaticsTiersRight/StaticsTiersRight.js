@@ -13,14 +13,14 @@ export default class StaticsTiersRight extends Component {
   //   }
   // }
 
-  handlerLoop = () => {
-    let list = [];
-    for (let i = 0; i < 27; i++) {
-      list.push(<StaticsTiersRightData />);
-    }
-    console.log(list);
-    return list;
-  };
+  // handlerLoop = () => {
+  //   let list = [];
+  //   for (let i = 0; i < 27; i++) {
+  //     list.push(<StaticsTiersRightData />);
+  //   }
+  //   console.log(list);
+  //   return list;
+  // };
 
   render() {
     return (

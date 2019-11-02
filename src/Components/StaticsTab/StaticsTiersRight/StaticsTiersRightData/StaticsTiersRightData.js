@@ -3,7 +3,7 @@ import "../StaticsTiersRight.scss";
 
 export default class StaticsTiersRightData extends Component {
   render() {
-    console.log(this.props);
+    // console.log(this.props);
 
     let colorindex = "";
     let barcolor = "";
@@ -28,7 +28,7 @@ export default class StaticsTiersRightData extends Component {
       colorindex = "STR-tr-bronze";
       barcolor = "STR-bar-bronze";
     }
-    console.log(index);
+    // console.log(index);
     return (
       <tr className={`${colorindex} STR-tr`}>
         <td className={`${barcolor} STR-bar`}></td>

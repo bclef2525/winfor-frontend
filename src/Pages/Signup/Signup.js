@@ -8,8 +8,10 @@ export default class Signup extends Component {
     this.state = {
       idValue: "",
       pwValue: "",
+      nameValue: "",
       focus: false,
       focus2: false,
+      focus3: false,
       idNotion: false,
       pwNotion: false
     };
@@ -38,13 +40,20 @@ export default class Signup extends Component {
     );
   };
 
+  handleName = e => {
+    this.setState({
+      nameValue: e.target.value
+    });
+  };
+
   goToMain() {
     this.props.history.push("/");
     fetch("http://10.58.0.33:8000/account/signup", {
       method: "post",
       body: JSON.stringify({
         email: this.state.idValue,
-        password: this.state.pwValue
+        password: this.state.pwValue,
+        name: this.state.nameValue
       })
     })
       .then(function(res) {
@@ -77,14 +86,34 @@ export default class Signup extends Component {
     });
   };
 
-  render() {
-    const { pwValue, idValue, focus, focus2, idNotion, pwNotion } = this.state;
+  focus3Acitve = () => {
+    this.setState({
+      focus3: true
+    });
+  };
 
-    console.log(idNotion);
+  blur3Acitve = () => {
+    this.setState({
+      focus3: false
+    });
+  };
+
+  render() {
+    const {
+      pwValue,
+      idValue,
+      nameValue,
+      focus,
+      focus2,
+      focus3,
+      idNotion,
+      pwNotion
+    } = this.state;
+
     return (
       <div className="signup-body">
         <div className="signup-feed">
-          <div className="signup-logo">winfor</div>
+          <div className="signup-logo">Winfor.gg</div>
           <div className="signup-inputs">
             <div className="signup-title">기본정보입력</div>
             <div className="signup-sub">
@@ -138,7 +167,6 @@ export default class Signup extends Component {
                 />
                 <label
                   for="signup-pw"
-                  s
                   className={
                     pwValue.length > 0
                       ? "signup-pwInput-label-none"
@@ -168,6 +196,30 @@ export default class Signup extends Component {
                 개인정보를 기입하여 발생될 수 있는 피해는 Winfor가 일절 책임지지
                 않습니다.
               </div>
+              <div
+                className={`signup-input-state-name${focus3 ? "-active" : ""}`}
+              >
+                <input
+                  onChange={this.handleName}
+                  onFocus={this.focus3Acitve}
+                  onBlur={this.blur3Acitve}
+                  id="signup-name"
+                  className="signup-input-box"
+                  type="text"
+                  autoComplete="off"
+                />
+                <label
+                  for="signup-name"
+                  className={
+                    nameValue.length > 0
+                      ? "signup-nameInput-label-none"
+                      : "signup-nameInput-label"
+                  }
+                >
+                  {" "}
+                  Riot 소환사 이름
+                </label>
+              </div>
               <div className="signup-btns">
                 <button
                   onClick={this.goToMain.bind(this)}
@@ -180,12 +232,18 @@ export default class Signup extends Component {
                   onClick={this.goToMain.bind(this)}
                   type="submit"
                   className={
-                    idValue.length > 5 && pwValue.length > 6
+                    idValue.length > 5 &&
+                    pwValue.length > 6 &&
+                    nameValue.length > 1
                       ? "signup-btn btn-signup-good"
                       : "signup-btn btn-signup"
                   }
                   disabled={
-                    idValue.length > 5 && pwValue.length > 6 ? "" : "disabled"
+                    idValue.length > 5 &&
+                    pwValue.length > 6 &&
+                    nameValue.length > 1
+                      ? ""
+                      : "disabled"
                   }
                 >
                   가입하기
