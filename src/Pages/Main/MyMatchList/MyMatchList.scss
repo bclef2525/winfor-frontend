@@ -1,0 +1,108 @@
+.mml-page {
+  background-color: #121212;
+  width: 100%;
+  margin-top: 75px;
+  height: 192vh;
+  overflow: hidden;
+  .mml-view-page {
+    width: 60%;
+    margin: 0 auto;
+    height: 190vh;
+    background-color: #27282d;
+
+    .mml-header {
+      width: 100%;
+      height: 30vh;
+      margin-top: 20px;
+      border-bottom: solid 10px#121212;
+      background-color: #121212;
+      .mml-user-info {
+        width: 100%;
+        height: 35vh;
+
+        margin: 0 auto;
+
+        .mml-rank-tag-container {
+          width: 60%;
+          height: 20%;
+          display: flex;
+
+          .mml-rank-tag {
+            width: 31%;
+            height: 35%;
+            margin: auto 10px;
+            padding: auto auto;
+            border: solid 1px #07d1b2;
+            border-radius: 5px;
+            color: #07d1b2;
+            font-size: 18px;
+            text-align: center;
+            font-weight: 700;
+          }
+        }
+        .mml-user-container {
+          display: flex;
+          .mml-user-image {
+            width: 195px;
+            height: 195px;
+
+            background-image: url("http://img05.deviantart.net/5e32/i/2016/237/6/3/lol___riven_the_exile_by_knkl-daf97qx.jpg");
+            background-size: 100%;
+            border-radius: 5px;
+            margin: auto 10px;
+          }
+          .mml-user-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .mml-user-name {
+              margin: 5px 0 40px 20px;
+              width: 100px;
+              font-size: 30px;
+              display: flex;
+              color: white;
+            }
+            .mml-user-rank {
+              margin: auto 22px;
+              color: white;
+              font-size: 20px;
+            }
+            .mml-user-button {
+              display: flex;
+              .mml-user-rank-refresh {
+                width: 100px;
+                height: 30px;
+                margin: auto 22px;
+                color: white;
+                font-size: 20px;
+                border: solid 2px #07d1b2;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                padding-left: 30px;
+                background-color: #07d1b2;
+                font-weight: 600;
+                border-radius: 3px;
+              }
+              .mml-user-rank-graph {
+                width: 110px;
+                height: 30px;
+                margin: auto;
+                color: gray;
+                font-size: 19px;
+                border: solid 2px #ffffff;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                padding-left: 20px;
+                background-color: #ffffff;
+                font-weight: 700;
+                border-radius: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
