@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MainHeader from "../MainHeader/MainHeader";
 import "../MyMatchList/MyMatchList.scss";
+import UserHistory from "../../../Components/UserHistory/UserHistory";
 export class MyMatchList extends Component {
   render() {
     return (
@@ -30,6 +31,13 @@ export class MyMatchList extends Component {
               </div>
             </div>
           </div>
+          <UserHistory />
+          <UserHistory />
+          <UserHistory />
+          <UserHistory />
+          <UserHistory />
+          <UserHistory />
+          <UserHistory />
         </div>
       </div>
     );
