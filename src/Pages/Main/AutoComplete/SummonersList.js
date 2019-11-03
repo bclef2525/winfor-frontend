@@ -30,7 +30,7 @@ const SummonersList = [
   {
     id: "1",
     image: `url("https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Cassiopeia.png")`,
-    name: "김경연",
+    name: "박경연",
     level: "Grand Master",
     lp: "73"
   },
