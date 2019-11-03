@@ -13,7 +13,7 @@ class MainHeader extends Component {
               홈<div className="under-line" />
             </Link>
             <Link
-              to={"/Statics/Champions/Champions"}
+              to={"/StaticsChampions/Champions"}
               className="main-nav-static"
             >
               통계

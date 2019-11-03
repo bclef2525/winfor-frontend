@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "../Login/Login.scss";
-export default class Login extends Component {
+class Login extends Component {
   constructor() {
     super();
     this.state = {
@@ -14,36 +14,35 @@ export default class Login extends Component {
 
   submitLogin = e => {
     e.preventDefault();
-    if (
-      this.state.emailValue.length > 3 &&
-      this.state.passwordValue.length > 3 &&
-      this.state.emailValue !== this.state.passwordValue
-    ) {
-      this.setState({
-        failedMode: true,
-
-        denied: false
+    fetch("http://10.58.0.33:8000/account/login", {
+      method: "post",
+      body: JSON.stringify({
+        email: this.state.emailValue,
+        password: this.state.passwordValue
+      })
+    })
+      .then(function(res) {
+        return res.json();
+      })
+      .then(res => {
+        console.log("worked");
+        if (res) {
+          localStorage.setItem("winfor-token", res.JWT);
+          this.props.history.push("/");
+        }
       });
-    }
-  };
-  //   e.preventDefault();
-  //   fetch("http://10.58.3.71:8000/account/login",{
-  //     method:"post",
-  //     body:JSON.stringify({
-  //       email:this.state.emailValue,
-  //       password:this.state.passwordValue
-  //     })
-  //   })
-  //   .then(function(res){
-  //     return res.json();
-  //   })
-  //   .then(res =>{
-  //     if(res){
-  //       localStorage.setItem("winfor-token",res.user_access_token);
+    // if (
+    //   this.state.emailValue.length > 3 &&
+    //   this.state.passwordValue.length > 3 &&
+    //   this.state.emailValue !== this.state.passwordValue
+    // ) {
+    //   this.setState({
+    //     failedMode: true,
 
-  //     }
-  //   })
-  // }
+    //     denied: false
+    //   });
+    // }
+  };
 
   handleEmailValue = e => {
     this.setState({ emailValue: e.target.value }, () => {});
@@ -191,3 +190,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default withRouter(Login);

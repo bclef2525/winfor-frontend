@@ -1,22 +1,46 @@
 .statics-tiers-background {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    .statics-tiers-body {
+  .statics-tiers-body {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+
+    .statics-tiers-desc-text {
+      font-size: 15px;
+      padding: 15px 0;
+      color: #555e5e;
+    }
+
+    .statics-tiers-content {
+      display: flex;
+      justify-content: space-around;
+      border: 1px solid #b8bfbf;
+      width: 100%;
+      padding: 5px 0;
+
+      .statics-tiers-content-left {
+        width: 80%;
         display: flex;
         flex-direction: column;
-        width: 70%;
+        align-items: flex-start;
 
-        .statics-tiers-desc-text {
-            font-size: 15px;
-            padding: 15px 0;
-            color: #555e5e;
+        &.top,
+        .bottom {
+          width: 100%;
+          border: 1px solid black;
         }
 
-        .statics-tiers-content {
-            border: 1px solid #b8bfbf;
-            width: 100%;
-            padding: 5px 0;
+        .statics-tiers-content-left-bottom-Chart {
+          width: 100%;
         }
+      }
+
+      .statics-tiers-content-right {
+        width: 20%;
+        border: 1px solid black;
+      }
     }
+  }
 }

@@ -10,7 +10,7 @@ function StaticsNav(props) {
         <div className="statics-nav-champions-title nav-title">
           <Link
             className="statics-nav-champions-title-text"
-            to="/Statics/Champions/Champions"
+            to="/StaticsChampions/Champions"
           >
             챔피언별 게임 통계
           </Link>
@@ -19,7 +19,7 @@ function StaticsNav(props) {
         <div className="statics-nav-tiers-title nav-title">
           <Link
             className="statics-nav-tiers-title-text"
-            to="/Statics/Tiers/Tiers"
+            to="/StaticsTiers/Tiers"
           >
             티어별 게임 통계
           </Link>
