@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import MainHeader from "../MainHeader/MainHeader";
-import "../MyMatchList/MyMatchList.scss";
-import UserHistory from "../../../Components/UserHistory/UserHistory";
+import MainHeader from "../Main/MainHeader/MainHeader";
+import "./MyMatchList.scss";
+import UserHistory from "../../Components/UserHistory/UserHistory";
 export class MyMatchList extends Component {
   render() {
     return (
