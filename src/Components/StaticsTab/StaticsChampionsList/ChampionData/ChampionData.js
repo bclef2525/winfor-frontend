@@ -1,26 +1,19 @@
-//import AsheImg from '../../../../Img/Ashe.png'
-const championData = [];
-
-let getRandomNum = function getRandomNum(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
-let loopChampData = () => {
-  for (let i = 0; i < 20; i++) {
-    championData.push({
-      id: i.toString(),
-      rank: i,
-      championImgSrc:
-        "https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Cassiopeia.png",
-      championName: "애쉬",
-      winRate: getRandomNum(42, 53).toString(),
-      playCount: getRandomNum(22646, 1057380).toString(),
-      averageScore: getRandomNum(1.52, 3.78).toString(),
-      csScore: getRandomNum(9, 200).toString(),
-      goldScore: getRandomNum(7389, 12274).toString()
-    });
-  }
-};
-
-loopChampData();
-export default championData;
+// {
+//   "id": 1,
+//   "rank": 1,
+//   "winRate": "54.27",
+//   "playCount": 43270,
+//   "averageScore": "2.67:1",
+//   "csScore": "172.07",
+//   "goldScore": 11266,
+//   "championImgSrc": [
+//       {
+//           "champion_img_src": "https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Ashe.png"
+//       }
+//   ],
+//   "championName": [
+//       {
+//           "champion_name": "애쉬"
+//       }
+//   ]
+// },

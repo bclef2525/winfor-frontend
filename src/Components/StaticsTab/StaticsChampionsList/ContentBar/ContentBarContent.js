@@ -23,8 +23,16 @@ export default function StaticsListContentBar(props) {
         className="average-score"
         averageScore={props.averageScore}
       />
-      <CsScore className="cs-score" csScore={props.csScore} />
-      <GoldScore className="gold-score" goldScore={props.goldScore} />
+      <CsScore
+        className="cs-score"
+        csScore={props.csScore}
+        maxCsScore={props.maxCsScore}
+      />
+      <GoldScore
+        className="gold-score"
+        goldScore={props.goldScore}
+        maxGoldScore={props.maxGoldScore}
+      />
     </tr>
   );
 }
