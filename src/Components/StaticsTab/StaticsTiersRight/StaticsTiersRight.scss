@@ -3,7 +3,7 @@
   box-shadow: 0 1px #dcdfdf;
   background: #f2f2f2;
   border-radius: 2px;
-  width: 320px;
+  width: 100%;
 }
 .STRTitle {
   font-size: 15px;
@@ -25,23 +25,12 @@
 }
 .STRThead-tr {
   color: #555e5e;
+  font-size: 15px;
 }
 .STRThead-th {
   font-weight: bold;
   height: 32px;
   background-color: #ededed;
-  font-size: 14px;
-}
-
-.STRhead-tier {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 9px;
-}
-.STRhead-count {
-}
-.STRhead-nu {
-  padding-right: 70px;
 }
 .STRBody {
   // width: 100%;

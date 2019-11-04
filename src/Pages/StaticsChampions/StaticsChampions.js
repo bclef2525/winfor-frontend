@@ -3,7 +3,6 @@ import StaticsNav from "../../Components/StaticsTab/StaticsNav";
 import StaticsListTitleBar from "../../Components/StaticsTab/StaticsChampionsList/TitleBar";
 import StaticsListContentBar from "../../Components/StaticsTab/StaticsChampionsList/ContentBar";
 import StaticsListColGroup from "../../Components/StaticsTab/StaticsChampionsList/ColGroup";
-import ChampionsData from "../../Components/StaticsTab/StaticsChampionsList/ChampionData/ChampionData";
 import MainHeader from "../Main/MainHeader";
 import ArrowDown from "../../Img/down.png";
 import ArrowUp from "../../Img/up.png";
@@ -14,7 +13,9 @@ export default class staticsChampions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      championsData: ChampionsData,
+      championsData: [],
+      maxCsScore: 0,
+      maxGoldScore: 0,
       activeCategory: "none",
       sortBtn: "high",
       beforeCategory: "none",
@@ -27,6 +28,31 @@ export default class staticsChampions extends Component {
       goldScore: ArrowDefault
     };
   }
+
+  componentDidMount = () => {
+    fetch("http://10.58.7.189:8000/statistics/champion", {
+      method: "get"
+    })
+      .then(function(res) {
+        return res.json();
+      })
+      .then(res => {
+        let championData = res.stat_cham_data;
+        let maxCsScore = championData.reduce((acc, el) => {
+          return acc > Number(el.csScore) ? acc : Number(el.csScore);
+        });
+        let maxGoldScore = championData.reduce((acc, el) => {
+          return acc > el.goldScore ? acc : el.goldScore;
+        });
+        console.log(maxCsScore);
+        console.log(maxGoldScore);
+        this.setState({
+          championsData: championData,
+          maxCsScore: maxCsScore,
+          maxGoldScore: maxGoldScore
+        });
+      });
+  };
 
   checkCategory = e => {
     let selectedCategory = e.target.name;
@@ -104,6 +130,8 @@ export default class staticsChampions extends Component {
   render() {
     const {
       championsData,
+      maxCsScore,
+      maxGoldScore,
       rank,
       championName,
       winRate,
@@ -139,14 +167,16 @@ export default class staticsChampions extends Component {
                   let _lists = [];
                   _lists.push(
                     <StaticsListContentBar
-                      key={id}
-                      rank={id + 1}
-                      championImgSrc={el.championImgSrc}
-                      championName={el.championName}
+                      key={el.id}
+                      rank={el.rank}
+                      championImgSrc={el.championImgSrc[0].champion_img_src}
+                      championName={el.championName[0].champion_name}
                       winRate={el.winRate}
                       playCount={el.playCount}
                       averageScore={el.averageScore}
+                      maxCsScore={maxCsScore}
                       csScore={el.csScore}
+                      maxGoldScore={maxGoldScore}
                       goldScore={el.goldScore}
                     />
                   );

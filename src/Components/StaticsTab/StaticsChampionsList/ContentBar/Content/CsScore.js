@@ -6,7 +6,7 @@ export default function CsScore(props) {
       <div className={props.className}>
         <div
           className="cs-score-graph"
-          style={{ width: (props.csScore / 300) * 100 + "%" }}
+          style={{ width: (props.csScore / props.maxCsScore) * 100 + "%" }}
         ></div>
         <div className="cs-score-number">{props.csScore}</div>
       </div>

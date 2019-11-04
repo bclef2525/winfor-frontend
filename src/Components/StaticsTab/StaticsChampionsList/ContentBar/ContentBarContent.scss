@@ -1,112 +1,116 @@
 .statics-listContentBar-background {
-    border-bottom: 1px solid #b8bfbf;
-    padding: 2px;
+  border-bottom: 1px solid #b8bfbf;
+  padding: 2px;
 
-    .rank {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 5px 10px;
-        color: #555e5e;
+  .rank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    color: #555e5e;
+  }
+
+  .champion {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 7px;
+
+    img {
+      border: 1px solid #b8bfbf;
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      margin-right: 5px;
     }
 
-    .champion {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 5px 7px;
+    .champion-name {
+      font-weight: bold;
+      color: #555e5e;
+    }
+  }
 
-        img {
-            border: 1px solid #b8bfbf;
-            width: 32px;
-            height: 32px;
-            border-radius: 16px;
-            margin-right: 5px;
-        }
+  .win-rate {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 7px;
 
-        .champion-name {
-            font-weight: bold;
-            color: #555e5e;
-        }
+    .winRate-graph {
+      background: #1f8ecd;
+      border: 1px solid #1f8ecd;
+      height: 15px;
+      margin-right: 5px;
     }
 
-    .win-rate {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 5px 7px;
+    .winRate-number {
+      color: #555e5e;
+      font-weight: bold;
+    }
+  }
 
-        .winRate-graph {
-            background: #1f8ecd;
-            border: 1px solid #1f8ecd;
-            height: 15px;
-            margin-right: 5px;
-        }
+  .play-count {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 7px;
+    color: #555e5e;
+  }
 
-        .winRate-number {
-            color: #555e5e;
-            font-weight: bold;
-        }
+  .average-score {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 7px;
+    font-weight: bold;
+    color: #555e5e;
+  }
+
+  .cs-score {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 15px;
+
+    .cs-score-graph {
+      background: #2daf7f;
+      border: 1px solid #2daf7f;
+      height: 15px;
+      margin-right: 5px;
     }
 
-    .play-count {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 5px 7px;
-        color: #555e5e;
+    .cs-score-number {
+      color: #2daf7f;
+      font-weight: bold;
     }
-    
-    .average-score {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 5px 7px;
-        font-weight: bold;
-        color: #555e5e;
-    }
+  }
 
-    .cs-score {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 5px 7px;
+  .gold-score {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 15px;
 
-        .cs-score-graph {
-            background: #2daf7f;
-            border: 1px solid #2daf7f;
-            height: 15px;
-            margin-right: 5px;
-        }
-
-        .cs-score-number {
-            color: #2daf7f;
-            font-weight: bold;
-        }
+    .gold-score-graph {
+      background: #f6af2e;
+      border: 1px solid #f6af2e;
+      height: 15px;
+      margin-right: 5px;
     }
 
-    .gold-score {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 5px 7px;
-
-        .gold-score-graph {
-            background: #f6af2e;
-            border: 1px solid #f6af2e;
-            height: 15px;
-            margin-right: 5px;
-        }
-
-        .gold-score-number {
-            color: #f6af2e;
-            font-weight: bold;
-        }
+    .gold-score-number {
+      color: #f6af2e;
+      font-weight: bold;
     }
+  }
 }
 
 tbody {
-    #top1, #top2, #top3, #top4, #top5 {
-        background-color: #fdf2d2;
-    }
+  #top1,
+  #top2,
+  #top3,
+  #top4,
+  #top5 {
+    background-color: #fdf2d2;
+  }
 }
