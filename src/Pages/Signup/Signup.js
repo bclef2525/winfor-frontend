@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./Signup.scss";
 import { Link } from "react-router-dom";
+import "./Signup.scss";
 
 export default class Signup extends Component {
   constructor(props) {
@@ -262,8 +262,3 @@ export default class Signup extends Component {
     );
   }
 }
-
-// 이메일 정규식 조건 기능
-// 라우터
-// (취소) - 메인으로이동
-// (가입하기) - 로그인된 상태로 메인으로 이동
