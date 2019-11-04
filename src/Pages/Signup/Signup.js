@@ -52,14 +52,15 @@ export default class Signup extends Component {
       method: "post",
       body: JSON.stringify({
         email: this.state.idValue,
-        password: this.state.pwValue
-        // name: this.state.nameValue
+        password: this.state.pwValue,
+        name: this.state.nameValue
       })
     })
       .then(function(res) {
         return res.json();
       })
       .then(res => console.log(res));
+    alert("회원가입을 축하드립니다!");
   }
 
   focusAcitve = () => {
@@ -251,7 +252,7 @@ export default class Signup extends Component {
               </div>
               <div className="signup-already">
                 이미 회원이신가요?
-                <Link to="/Login" className="signup-login">
+                <Link to="/Login" id="signup-login">
                   로그인하기
                 </Link>
               </div>
