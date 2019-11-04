@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "../Main/Main.scss";
 import MainVideo from "../Main/main.mp4";
 import MainHeader from "./MainHeader/MainHeader";
-import "./AutoComplete/SummonersList";
-import AutoComplete from "../Main/AutoComplete/AutoComplete";
-import SummonersList from "./AutoComplete/SummonersList";
+import "../../Components/AutoComplete/SummonersList";
+import AutoComplete from "../../Components/AutoComplete/AutoComplete";
+import SummonersList from "../../Components/AutoComplete/SummonersList";
 
 export default class Main extends Component {
   constructor() {
@@ -12,9 +12,25 @@ export default class Main extends Component {
     this.state = {
       searchBoxMode: "",
       searchBoxClass: "search-box",
-      searchBoxValue: ""
+      searchBoxValue: "",
+      summonerList: SummonersList,
+      filteredName: [],
+      finalList: []
     };
   }
+
+  // handleList = () => {
+  //   this.sortNameArrFunc(this.handleName());
+  //   let list = [];
+  //   this.state.summonerList.forEach(el => {
+  //     if (this.state.filteredName.includes(el.name)) {
+  //       list.push(el);
+  //     }
+  //   });
+  //   console.log("list: ", list);
+  //   this.setState({ finalList: list });
+  // };
+
   handleSearchBoxValue = e => {
     this.setState({
       searchBoxValue: e.target.value
@@ -34,20 +50,52 @@ export default class Main extends Component {
       });
     }
   };
-
+  // sortNameArrFunc = name => {
+  //   let sortNameArr = [];
+  //   console.log("this.state.searchBoxValue", this.state.searchBoxValue);
+  //   name.forEach(el => {
+  //     if (el.startsWith(this.state.searchBoxValue)) {
+  //       sortNameArr.push(el);
+  //     }
+  //   });
+  //   console.log("sort : ", sortNameArr);
+  //   this.setState({ filteredName: sortNameArr });
+  // };
+  // handleName = () => {
+  //   let nameArr = [];
+  //   this.state.summonerList.forEach(el => {
+  //     nameArr.push(el.name);
+  //   });
+  //   console.log(nameArr);
+  //   return nameArr;
+  // };
   render() {
-    const { searchBoxClass, searchBoxValue } = this.state;
-    const autoComplete = SummonersList.map((el, index) => (
-      <AutoComplete
-        id={index}
-        name={el.name}
-        level={el.level}
-        lp={el.lp}
-        image={el.image}
-        nameValue={searchBoxValue}
-      />
-    ));
+    const {
+      searchBoxClass,
+      searchBoxValue,
+      finalList,
+      summonerList
+    } = this.state;
 
+    console.log("필터: ", this.state.filteredName);
+    console.log(this.state.finalList);
+
+    const autoComplete = searchBoxValue
+      ? summonerList
+          .filter(el => el.name.startsWith(searchBoxValue))
+          .map((el, index) => (
+            <AutoComplete
+              id={index}
+              name={el.name}
+              level={el.level}
+              lp={el.lp}
+              image={el.image}
+              nameValue={searchBoxValue}
+            />
+          ))
+      : null;
+    //콜백을 통과한 것만 먑으로 돌린다.
+    //true면 랜더링 false면 null
     return (
       <div className="main-page">
         <MainHeader />
