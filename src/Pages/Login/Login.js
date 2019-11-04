@@ -45,10 +45,24 @@ class Login extends Component {
   };
 
   handleEmailValue = e => {
-    this.setState({ emailValue: e.target.value }, () => {});
+    this.setState({ emailValue: e.target.value }, () => {
+      if (this.state.emailValue === "") {
+        this.setState({
+          denied: true,
+          failedMode: false
+        });
+      }
+    });
   };
   handlePasswordValue = e => {
-    this.setState({ passwordValue: e.target.value }, () => {});
+    this.setState({ passwordValue: e.target.value }, () => {
+      if (this.state.passwordlValue === "") {
+        this.setState({
+          denied: true,
+          failedMode: false
+        });
+      }
+    });
   };
 
   render() {

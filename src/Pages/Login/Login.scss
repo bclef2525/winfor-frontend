@@ -18,7 +18,7 @@
         margin: 40px auto;
         font-weight: 800;
         font-size: 45px;
-        color: #c9aa70;
+        color: #3faefc;
       }
       .login-title {
         font-weight: 400;
@@ -149,6 +149,7 @@
             height: 56px;
             width: 100%;
             background-color: rgb(182, 181, 181);
+            outline: none;
           }
           .login-button-on {
             margin-top: 40px;
@@ -212,5 +213,8 @@
   outline: none;
 }
 .login-email-text:focus {
+  outline: none;
+}
+.login-facebook:focus {
   outline: none;
 }
