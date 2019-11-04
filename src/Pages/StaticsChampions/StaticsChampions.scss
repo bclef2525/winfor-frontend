@@ -1,8 +1,10 @@
 .statics-champions-background {
   display: flex;
+  background-color: #181818;
   justify-content: center;
 
   .statics-champions-body {
+    margin-top: 170px;
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -10,14 +12,14 @@
     .statics-champions-desc-text {
       font-size: 15px;
       padding: 15px 0;
-      color: #555e5e;
+      color: #fff;
     }
 
     .statics-champions-content {
+      background-color: #fff;
       border-collapse: collapse;
       border-spacing: 0;
       margin-top: 20px;
-      border: 1px solid #b8bfbf;
       width: 101%;
 
       tbody {

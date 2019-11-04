@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import StaticsNav from "../../Components/StaticsTab/StaticsNav/";
 import MainHeader from "../Main/MainHeader";
+import StaticsTiersLeftTop from "../../Components/StaticsTab/StaticsTiersLeftTop";
 import StaticsTiersLeftBottom from "../../Components/StaticsTab/StaticsTiersLeftBottom";
 import "./StaticsTiers.scss";
 
@@ -17,7 +18,9 @@ export default class StaticsTiers extends Component {
             </div>
             <div className="statics-tiers-content">
               <div className="statics-tiers-content-left">
-                <div className="statics-tiers-content-left top">인호님차트</div>
+                <div className="statics-tiers-content-left top">
+                  <StaticsTiersLeftTop />
+                </div>
                 <div className="statics-tiers-content-left bottom">
                   <StaticsTiersLeftBottom />
                 </div>

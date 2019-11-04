@@ -1,14 +1,17 @@
 .tab-container {
-  margin-top: 105px;
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  //margin-top: 60px;
   display: flex;
   justify-content: center;
   padding: 10px 0;
+  background-color: #27282d;
 
   .statics-nav-body {
     display: flex;
     justify-content: flex-start;
     width: 70%;
-    border-bottom: 1px solid #b8bfbf;
 
     .nav-title {
       display: flex;
@@ -31,22 +34,22 @@
 
   &.champions-selected {
     .statics-nav-champions-title {
-      border-bottom: 5px solid #555e5e;
+      border-bottom: 5px solid #fff;
 
       a {
         font-weight: 900;
-        color: #555e5e;
+        color: #fff;
       }
     }
   }
 
   &.tiers-selected {
     .statics-nav-tiers-title {
-      border-bottom: 5px solid #555e5e;
+      border-bottom: 5px solid #fff;
 
       a {
         font-weight: 900;
-        color: #555e5e;
+        color: #fff;
       }
     }
   }
