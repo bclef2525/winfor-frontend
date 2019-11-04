@@ -52,8 +52,8 @@ export default class Signup extends Component {
       method: "post",
       body: JSON.stringify({
         email: this.state.idValue,
-        password: this.state.pwValue,
-        name: this.state.nameValue
+        password: this.state.pwValue
+        // name: this.state.nameValue
       })
     })
       .then(function(res) {

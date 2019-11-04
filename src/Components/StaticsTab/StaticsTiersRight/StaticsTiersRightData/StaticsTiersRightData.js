@@ -34,17 +34,17 @@ export default class StaticsTiersRightData extends Component {
         <td className={`${barcolor} STR-bar`}></td>
         <td>
           <div className="STR-tier">
-            {info.tier} {info.tier_roman}
+            {info.tier} {info.tier_numbers}
           </div>
         </td>
         <td>
           <div className="STR-user">
-            {info.summoner} ({info.summoner_percent}%)
+            {info.summoner} ({parseFloat(info.summoner_percent)}%)
           </div>
         </td>
         <td>
           <div className="STR-nu">
-            {info.aggregate} ({info.aggregate_percent}%)
+            {info.aggregate} ({parseFloat(info.aggregate_percent)}%)
           </div>
         </td>
       </tr>

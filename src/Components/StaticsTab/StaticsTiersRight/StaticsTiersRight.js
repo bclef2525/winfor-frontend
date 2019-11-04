@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./StaticsTiersRight.scss";
 import StaticsTiersRightData from "./StaticsTiersRightData";
-import STRData from "./StaticsTiersRightM";
+//import tierstat_data from "./StaticsTiersRightM";
 
 export default class StaticsTiersRight extends Component {
   // constructor(props){
@@ -21,8 +21,28 @@ export default class StaticsTiersRight extends Component {
   //   console.log(list);
   //   return list;
   // };
+  constructor(props) {
+    super(props);
+    this.state = {
+      strdata: []
+    };
+  }
+  componentDidMount = () => {
+    fetch("http://10.58.0.33:8000/tierstats", {
+      method: "get"
+    })
+      .then(function(res) {
+        return res.json();
+      })
+      .then(res => {
+        //console.log(res.tierstat_data);
+        let tierData = res.tierstat_data;
+        this.setState({ strdata: tierData });
+      });
+  };
 
   render() {
+    console.log(this.state.strdata);
     return (
       <div>
         <div className="STRBox">
@@ -44,7 +64,7 @@ export default class StaticsTiersRight extends Component {
             </thead>
             <tbody className="STRBody">
               {/* <StaticsTiersRightData /> */}
-              {STRData.map((el, idx) => {
+              {this.state.strdata.map((el, idx) => {
                 console.log(el);
                 return <StaticsTiersRightData info={el} index={idx} />;
               })}
