@@ -1,0 +1,35 @@
+.statics-tiers-content-left-bottom-Chart {
+  min-width: 590px;
+
+  .highcharts-color-0 {
+    fill: rgb(0, 160, 210);
+    //   width: 2%;
+    .highcharts-point {
+      fill: rgb(0, 160, 210);
+    }
+  }
+
+  .highcharts-color-1 {
+    fill: rgb(0, 207, 188);
+    //   width: 2%;
+    .highcharts-point {
+      fill: rgb(0, 207, 188);
+    }
+  }
+
+  .highcharts-color-2 {
+    fill: rgb(255, 198, 89);
+    //   width: 2%;
+    .highcharts-point {
+      fill: rgb(255, 198, 89);
+    }
+  }
+
+  .highcharts-color-3 {
+    fill: rgb(255, 108, 129);
+    //   width: 2%;
+    .highcharts-point {
+      fill: rgb(255, 108, 129);
+    }
+  }
+}

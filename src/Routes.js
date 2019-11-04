@@ -15,9 +15,13 @@ class Routes extends React.Component {
           <Route exact path="/" component={Main} />
           <Route exact path="/Signup" component={Signup} />
           <Route exact path="/Login" component={Signin} />
-          <Route exact path="/Statics/Champions" component={StaticsChampions} />
-          <Route exact path="/Statics/Tiers" component={StaticsTiers} />
           <Route exact path="/MyMatchList" component={MyMatchList} />
+          <Route
+            exact
+            path="/StaticsChampions/:name"
+            component={StaticsChampions}
+          />
+          <Route exact path="/StaticsTiers/:name" component={StaticsTiers} />
         </Switch>
       </Router>
     );

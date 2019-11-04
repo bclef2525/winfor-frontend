@@ -2,10 +2,19 @@
 
     .statics-listTitleBar {
         display: table-row;
+        height: 55px;
         padding: 5px;
         border-bottom: 1px solid #b8bfbf;
         color: #555e5e;
-    
+        
+        .up {
+            transform: rotate(180deg) scaleX(-1);
+        }
+
+        .down {
+            transform: rotate(0deg) scaleX(-1);
+        }
+
         img {
             width: 15px;
             height: 20px;

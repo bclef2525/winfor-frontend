@@ -1,1 +1,1 @@
-export { default } from './TitleBarContent';
+export { default } from "./TitleBarContent";

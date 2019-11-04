@@ -12,7 +12,10 @@ class MainHeader extends Component {
             <Link to={"/"} className="main-nav-home">
               홈<div className="under-line" />
             </Link>
-            <Link to={"/Statics"} className="main-nav-static">
+            <Link
+              to={"/StaticsChampions/Champions"}
+              className="main-nav-static"
+            >
               통계
               <div className="under-line" />
             </Link>

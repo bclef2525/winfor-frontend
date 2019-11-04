@@ -1,0 +1,115 @@
+.STRBox {
+  border: 1px solid #cdd2d2;
+  box-shadow: 0 1px #dcdfdf;
+  background: #f2f2f2;
+  border-radius: 2px;
+  width: 100%;
+}
+.STRTitle {
+  font-size: 15px;
+  padding: 11px 0 11px 18px;
+  border-bottom: 1px solid #cdd2d2;
+  color: #555e5e;
+  font-weight: 800;
+  background: white;
+}
+.STRContent {
+  background: #ededed;
+}
+.STRTable {
+  color: #555e5e;
+  width: 100%;
+  border-spacing: 0;
+}
+.STRThead {
+}
+.STRThead-tr {
+  color: #555e5e;
+  font-size: 15px;
+}
+.STRThead-th {
+  font-weight: bold;
+  height: 32px;
+  background-color: #ededed;
+}
+.STRBody {
+  // width: 100%;
+  vertical-align: middle;
+  background-color: white;
+  color: #555e5e;
+}
+
+.STR-tr {
+  font-size: 6px;
+  font-weight: 520;
+
+  td {
+    border-bottom: 1px solid white;
+  }
+}
+.STR-tr-red {
+  background-color: #f3d6d8;
+}
+
+.STR-tr-dia {
+  background-color: #d5eff8;
+}
+.STR-tr-pla {
+  background-color: #d4f5f1;
+}
+.STR-tr-gold {
+  background-color: rgb(253, 249, 222);
+}
+.STR-tr-silver {
+  background-color: #f1f1f1;
+}
+.STR-tr-bronze {
+  background-color: #f0eee7;
+}
+
+.STR-bar {
+  background-color: rgb(255, 83, 83);
+  width: 3px;
+  height: 22px;
+}
+.STR-bar-dia {
+  background-color: #38abd1;
+}
+.STR-bar-pla {
+  background-color: #16bda9;
+}
+.STR-bar-gold {
+  background-color: rgb(219, 191, 8);
+}
+.STR-bar-silver {
+  background-color: #9b9b9b;
+}
+.STR-bar-bronze {
+  background-color: #746b4a;
+}
+.STR-tier {
+  padding-left: 10px;
+}
+.STR-user {
+  padding-left: 12px;
+}
+.STR-nu {
+  padding-left: 5px;
+}
+.STRbottom {
+  background-color: white;
+}
+.STRbottom-info {
+  text-align: center;
+  font-size: 6px;
+  padding-top: 20px;
+  opacity: 0.5;
+}
+.STRbottom-update {
+  opacity: 0.8;
+  text-align: right;
+  font-size: 12px;
+  margin-top: 16px;
+  padding-bottom: 14px;
+  margin-right: 18px;
+}

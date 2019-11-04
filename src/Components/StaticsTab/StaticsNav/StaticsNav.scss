@@ -1,25 +1,56 @@
-.statics-nav-background {
+.tab-container {
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  //margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: #27282d;
+
+  .statics-nav-body {
     display: flex;
-    justify-content: center;
-    padding: 10px 0;
+    justify-content: flex-start;
+    width: 70%;
 
-    .statics-nav-body {
-        display: flex;
-        justify-content: flex-start;
-        width: 70%;
-        border-bottom: 1px solid #b8bfbf;
+    .nav-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      font-size: 28px;
+      font-weight: 600;
 
-        .statics-nav-champions-title, .statics-nav-tiers-title {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            font-size: 28px;
-            font-weight: bold;
-
-            Link {
-                color: #555e5e;
-            }
-        }
+      a {
+        color: #b8bfbf;
+        text-decoration: none;
+      }
     }
+
+    .statics-nav-tiers-title {
+      margin-left: 20px;
+    }
+  }
+
+  &.champions-selected {
+    .statics-nav-champions-title {
+      border-bottom: 5px solid #fff;
+
+      a {
+        font-weight: 900;
+        color: #fff;
+      }
+    }
+  }
+
+  &.tiers-selected {
+    .statics-nav-tiers-title {
+      border-bottom: 5px solid #fff;
+
+      a {
+        font-weight: 900;
+        color: #fff;
+      }
+    }
+  }
 }
