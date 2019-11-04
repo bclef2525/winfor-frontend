@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import StaticsNav from "../../Components/StaticsTab/StaticsNav/";
 import MainHeader from "../Main/MainHeader";
+import StaticsTiersRight from "../../Components/StaticsTab/StaticsTiersRight";
 import "./StaticsTiers.scss";
 
 export default class StaticsTiers extends Component {
@@ -16,7 +17,7 @@ export default class StaticsTiers extends Component {
             </div>
             <div className="statics-tiers-content">
               표 타이틀
-              {/*티어별 통계 컴포넌트*/}
+              <StaticsTiersRight />
             </div>
           </div>
         </div>
