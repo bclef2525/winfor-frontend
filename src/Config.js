@@ -1,3 +1,3 @@
-const token = '';
+const token = "";
 
 export { token };

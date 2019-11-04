@@ -1,1 +1,1 @@
-export { default } from './ContentBarContent';
+export { default } from "./ContentBarContent";

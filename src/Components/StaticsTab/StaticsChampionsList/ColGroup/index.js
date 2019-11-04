@@ -1,1 +1,1 @@
-export { default } from './ColGroup';
+export { default } from "./ColGroup";

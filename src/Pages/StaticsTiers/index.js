@@ -1,1 +1,1 @@
-export { default } from './StaticsTiers';
+export { default } from "./StaticsTiers";
