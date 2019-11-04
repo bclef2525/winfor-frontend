@@ -3,6 +3,7 @@ import StaticsNav from "../../Components/StaticsTab/StaticsNav/";
 import MainHeader from "../Main/MainHeader";
 import StaticsTiersLeftTop from "../../Components/StaticsTab/StaticsTiersLeftTop";
 import StaticsTiersLeftBottom from "../../Components/StaticsTab/StaticsTiersLeftBottom";
+import StaticsTiersRight from "../../Components/StaticsTab/StaticsTiersRight";
 import "./StaticsTiers.scss";
 
 export default class StaticsTiers extends Component {
@@ -25,7 +26,9 @@ export default class StaticsTiers extends Component {
                   <StaticsTiersLeftBottom />
                 </div>
               </div>
-              <div className="statics-tiers-content-right">세환님차트</div>
+              <div className="statics-tiers-content-right">
+                <StaticsTiersRight />
+              </div>
             </div>
           </div>
         </div>
