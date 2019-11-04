@@ -1,0 +1,16 @@
+.players-container {
+  display: flex;
+  width: 100%;
+  .player-image {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    background-image: url("https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Cassiopeia.png");
+    background-size: 100%;
+  }
+  .player-name {
+    display: flex;
+    align-items: center;
+    margin-left: 3px;
+  }
+}
