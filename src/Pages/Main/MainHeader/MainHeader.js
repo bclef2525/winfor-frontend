@@ -22,7 +22,7 @@ class MainHeader extends Component {
               <div className="under-line" />
             </Link>
             <Link to={"/ChampionsList"} className="main-nav-rank">
-              챔피언 추천
+              챔피언
               <div className="under-line" />
             </Link>
             <Link className="main-nav-comunity">

@@ -1,0 +1,76 @@
+.championList-background {
+  display: flex;
+  justify-content: center;
+  margin-top: 85px;
+  color: #fff;
+
+  .championList-body {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    width: 1245px;
+
+    .championList-left {
+      margin-top: 50px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      min-width: 745px;
+
+      a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+      a:hover {
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #07d1b2;
+      }
+
+      .championImgBox {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 12px;
+
+        img {
+          width: 100px;
+          height: 100px;
+          margin: 8px;
+        }
+
+        &.on img:not([class="select"]) {
+          animation: handleImg 0.7s;
+          animation-fill-mode: both;
+        }
+
+        @keyframes handleImg {
+          from {
+            width: 100px;
+            height: 100px;
+            margin: 8px;
+          }
+          to {
+            width: 70px;
+            height: 70px;
+            margin: 20px;
+          }
+        }
+      }
+    }
+
+    .championList-right {
+      margin-top: 80px;
+      display: flex;
+      justify-content: center;
+      min-width: 498px;
+
+      .championCardBox {
+        width: 495px;
+        position: fixed;
+      }
+    }
+  }
+}
