@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./Pages/Main/";
 import Signup from "./Pages/Signup/";
 import Signin from "./Pages/Login/";
-import StaticsChampions from "./Pages/StaticsChampions";
+import StaticsChampions from "./Pages/StaticsChampions/StaticsChampions";
 import StaticsTiers from "./Pages/StaticsTiers";
 
 class Routes extends React.Component {
