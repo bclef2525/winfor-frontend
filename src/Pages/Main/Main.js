@@ -70,12 +70,7 @@ export default class Main extends Component {
   //   return nameArr;
   // };
   render() {
-    const {
-      searchBoxClass,
-      searchBoxValue,
-      finalList,
-      summonerList
-    } = this.state;
+    const { searchBoxClass, searchBoxValue, summonerList } = this.state;
 
     const autoComplete = searchBoxValue
       ? summonerList

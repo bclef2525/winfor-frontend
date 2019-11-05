@@ -42,11 +42,11 @@
         }
 
         &.on img:not([class="select"]) {
-          animation: handleImg 0.7s;
+          animation: handleChampionImg 0.7s;
           animation-fill-mode: both;
         }
 
-        @keyframes handleImg {
+        @keyframes handleChampionImg {
           from {
             width: 100px;
             height: 100px;
@@ -70,6 +70,20 @@
       .championCardBox {
         width: 495px;
         position: fixed;
+
+        &.on {
+          animation: handleChampionCardImg 0.7s;
+          animation-fill-mode: both;
+        }
+      }
+
+      @keyframes handleChampionCardImg {
+        from {
+          width: 495px;
+        }
+        to {
+          width: 530px;
+        }
       }
     }
   }

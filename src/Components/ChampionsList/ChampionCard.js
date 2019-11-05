@@ -1,20 +1,20 @@
 import React from "react";
 import "./ChampionCard.scss";
 
-export default function ChampionCard() {
+export default function ChampionCard(props) {
   return (
-    <div className="championCardBox">
+    <div className={`championCardBox ${props.focusStatus}`}>
       <div className="championCardContent">
-        <div className="championCardImg">
-          <img
-            src={
-              "https://static1.i4u.com/sites/default/files/imagecache/main_image_google_topstories1x1/images/2019/09/leagueoflegends-louis-vuitton.jpg"
-            }
-            alt="hi"
-          />
+        <div
+          className="championCardImg"
+          style={{ backgroundImage: `url(${props.championCardImgSrc}` }}
+        >
+          <div className="championCardTextBox">
+            <div className="championCardTitle">{props.championTitle}</div>
+            <div className="championCardSubTitle">{props.championSubTitle}</div>
+            <div className="championCardDescription">{props.championDesc}</div>
+          </div>
         </div>
-        <div className="championCardTitle">Champion Name</div>
-        <div className="championCardDescription">Champion Description</div>
       </div>
     </div>
   );

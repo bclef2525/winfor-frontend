@@ -10,10 +10,12 @@ class ChampionImg extends React.Component {
       >
         <img
           className="default"
+          name={this.props.championID}
           src={this.props.championImgSrc}
           alt={this.props.championID}
-          onMouseOver={this.props.ChampionImgFocusOn}
-          onMouseOut={this.props.ChampionImgFocusOff}
+          onMouseOver={this.props.championImgFocusOn}
+          onMouseOut={this.props.championImgFocusOff}
+          //onClick={this.props.selectChampionCard}
         />
         <div>{this.props.championName}</div>
       </Link>
