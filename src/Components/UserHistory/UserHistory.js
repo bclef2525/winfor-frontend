@@ -185,7 +185,7 @@ export class UserHistory extends Component {
                 </div>
               </div>
             </div>
-            <div className="history-boast">자랑하기</div>
+            <button className="history-boast">자랑하기</button>
           </div>
         </div>
       </>

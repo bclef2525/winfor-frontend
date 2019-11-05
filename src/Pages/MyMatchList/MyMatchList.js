@@ -11,6 +11,13 @@ export class MyMatchList extends Component {
       mmldata: mmlMock
     };
   }
+  goToMain = () => {
+    this.props.history.push("/StaticsTiers/Tiers");
+  };
+  comeHere = () => {
+    window.location.reload();
+  };
+
   render() {
     console.log(this.state.mmldata);
     return (
@@ -35,8 +42,16 @@ export class MyMatchList extends Component {
                     {this.state.mmldata[0].tier}
                   </div>
                   <div className="mml-user-button">
-                    <button className="mml-user-rank-refresh">전적갱신</button>
-                    <button className="mml-user-rank-graph">
+                    <button
+                      onClick={this.comeHere}
+                      className="mml-user-rank-refresh"
+                    >
+                      전적갱신
+                    </button>
+                    <button
+                      onClick={this.goToMain.bind(this)}
+                      className="mml-user-rank-graph"
+                    >
                       전체티어통계
                     </button>
                   </div>
