@@ -1,0 +1,177 @@
+.mml-user-history-container {
+  width: 100%;
+  color: rgb(140, 147, 167);
+  position: relative;
+  .mml-user-history {
+    border-bottom: solid 15px #121212;
+    height: 200px;
+    display: flex;
+
+    .mml-user-game-stats {
+      text-align: center;
+      width: 15%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .stats-game-type {
+        margin: 20px;
+        font-weight: 600;
+      }
+      .stats-game-day {
+        font-size: 13px;
+      }
+      .border {
+        margin-top: 20px;
+        width: 60%;
+        border-top: solid 1px rgb(140, 147, 167);
+      }
+      .stats-game-result {
+        margin: 24px;
+        color: #07d1b2;
+      }
+      .stats-game-time {
+      }
+    }
+    .mml-user-setting {
+      width: 13%;
+      height: 100%;
+
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .setting-champ-image {
+        margin-top: 10px;
+        width: 55px;
+        height: 55px;
+        background-image: url("https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Cassiopeia.png");
+        background-size: 100%;
+        border-radius: 100%;
+      }
+      .setting-champ-skill-container {
+        width: 100%;
+
+        height: 90px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .setting-champ-skills {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        margin: 5px 11px;
+        background-image: url("https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=w_22&v=15354684000");
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+      .setting-champ-name {
+        margin-top: 13px;
+      }
+    }
+    .mml-user-KDA {
+      width: 13%;
+      height: 100%;
+
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .KDA-container {
+        margin-top: 25px;
+        display: flex;
+
+        font-weight: 700;
+        .KDA-kill {
+          margin: 0 3px;
+        }
+        .KDA-death {
+          margin: 0 3px;
+          color: rgb(231, 39, 39);
+        }
+        .KDA-assist {
+          margin: 0 3px;
+        }
+      }
+      .KDA-ratio {
+        margin: 30px 0;
+        display: flex;
+        font-weight: 600;
+        .KDA-ratio-point {
+        }
+      }
+      .kill-perfomence {
+        margin-top: 10px;
+        width: 60px;
+        border: solid 1px rgb(231, 39, 39);
+        border-radius: 5px;
+        background-color: rgb(231, 39, 39);
+        color: white;
+      }
+    }
+    .mml-user-stats {
+      width: 15%;
+      height: 100%;
+
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .user-stats-level {
+        margin-top: 30px;
+      }
+      .user-stats-CS {
+        margin-top: 30px;
+      }
+      .user-stats-engage {
+        margin-top: 30px;
+        color: red;
+      }
+    }
+    .mml-user-players {
+      width: 42%;
+      height: 100%;
+
+      display: flex;
+      .players-my-team {
+        width: 50%;
+        height: 100%;
+      }
+      .players-enemy-team {
+        width: 50%;
+        height: 100%;
+      }
+    }
+    .history-boast {
+      text-align: center;
+      width: 3%;
+      border: solid 1px #07d1b2;
+      background-color: #07d1b2;
+      color: white;
+      display: flex;
+      align-items: center;
+      line-height: 30px;
+      font-size: 18px;
+      font-weight: 700;
+      opacity: 0.6;
+    }
+    .history-boast:hover {
+      text-align: center;
+      width: 3%;
+      border: solid 1px #07d1b2;
+      background-color: #07d1b2;
+      color: white;
+      display: flex;
+      align-items: center;
+      line-height: 30px;
+      font-size: 18px;
+      font-weight: 700;
+      opacity: 1;
+    }
+  }
+}
