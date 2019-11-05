@@ -44,8 +44,6 @@ export default class staticsChampions extends Component {
         let maxGoldScore = championData.reduce((acc, el) => {
           return acc > el.goldScore ? acc : el.goldScore;
         });
-        console.log(maxCsScore);
-        console.log(maxGoldScore);
         this.setState({
           championsData: championData,
           maxCsScore: maxCsScore,

@@ -77,9 +77,6 @@ export default class Main extends Component {
       summonerList
     } = this.state;
 
-    console.log("필터: ", this.state.filteredName);
-    console.log(this.state.finalList);
-
     const autoComplete = searchBoxValue
       ? summonerList
           .filter(el => el.name.startsWith(searchBoxValue))
