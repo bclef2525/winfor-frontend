@@ -4,7 +4,6 @@ import MainVideo from "../Main/main.mp4";
 import MainHeader from "./MainHeader/MainHeader";
 import "../../Components/AutoComplete/SummonersList";
 import AutoComplete from "../../Components/AutoComplete/AutoComplete";
-import SummonersList from "../../Components/AutoComplete/SummonersList";
 
 export default class Main extends Component {
   constructor() {
@@ -13,7 +12,7 @@ export default class Main extends Component {
       searchBoxMode: "",
       searchBoxClass: "search-box",
       searchBoxValue: "",
-      summonerList: SummonersList,
+      summonerList: [],
       filteredName: [],
       finalList: [],
       userName: "",
@@ -44,13 +43,39 @@ export default class Main extends Component {
         result = a + "%20" + b;
       }
     }
-    return result;
+    if (result === undefined) {
+      return imgUrl;
+    } else {
+      return result;
+    }
   };
   handleSearchBoxValue = e => {
-    this.setState({
-      searchBoxValue: e.target.value
-    });
+    this.setState(
+      {
+        searchBoxValue: e.target.value
+      },
+      () => {
+        if (this.state.searchBoxValue.length > 0) {
+          fetch(
+            `http://10.58.0.33:8000/main/search?keyword=${this.state.searchBoxValue}`,
+            {
+              method: "get"
+            }
+          )
+            .then(res => {
+              return res.json();
+            })
+            .then(res => {
+              this.setState({ summonerList: res.SEARCHED_SUMMONER });
+              console.log("res", res.SEARCHED_SUMMONER);
+            });
+        } else {
+          this.setState({ summonerList: "" });
+        }
+      }
+    );
   };
+
   handleSearchBox = e => {
     if (this.state.searchBoxMode === true || this.state.searchBoxMode === "") {
       this.setState({
@@ -102,7 +127,6 @@ export default class Main extends Component {
             userName: res.SUMMONER_NAME,
             profile: this.handleUrl(res.SUMMONER_PROFILE)
           });
-          console.log(this.state);
         });
     }
   }
@@ -114,24 +138,40 @@ export default class Main extends Component {
       profile,
       userName
     } = this.state;
+    console.log("3", summonerList[0], Array.isArray(this.state.summonerList));
 
-    console.log("필터: ", this.state.filteredName);
-    console.log(this.state.finalList);
-
-    const autoComplete = searchBoxValue
-      ? summonerList
-          .filter(el => el.name.startsWith(searchBoxValue))
-          .map((el, index) => (
-            <AutoComplete
-              id={index}
-              name={el.name}
-              level={el.level}
-              lp={el.lp}
-              image={el.image}
-              nameValue={searchBoxValue}
-            />
-          ))
+    const autoComplete = this.state.summonerList
+      ? this.state.summonerList.map(el => (
+          <AutoComplete
+            name={el.SUMMONER_NAME}
+            image={this.handleUrl(el.SUMMONER_PROFILE)}
+          />
+        ))
       : null;
+    // let autoComplete = "";
+    // if (this.state.summonerList) {
+    //   autoComplete = this.state.summonerList.map(el => (
+    //     <AutoComplete
+    //       name={el.SUMMONER_NAME}
+    //       image={this.handleUrl(el.SUMMONER_PROFILE)}
+    //     />
+    //   ));
+    // }
+
+    // const autoComplete = searchBoxValue
+    // ? summonerList
+    //     .filter(el => el.name.startsWith(searchBoxValue))
+    //     .map((el, index) => (
+    //       <AutoComplete
+    //         id={index}
+    //         name={el.name}
+    //         level={el.level}
+    //         lp={el.lp}
+    //         image={el.image}
+    //         nameValue={searchBoxValue}
+    //       />
+    //     ))
+    // : null;
     //콜백을 통과한 것만 먑으로 돌린다.
     //true면 랜더링 false면 null
     return (
@@ -148,8 +188,8 @@ export default class Main extends Component {
             type="text"
             placeholder="소환사 검색"
             vlaue={searchBoxValue}
-          ></input>
-          {autoComplete}
+          />
+          {this.state.summonerList && autoComplete}
         </div>
         <div onClick={this.handleSearchBox} className="main-img">
           <video id="main-video" autoPlay muted loop>
