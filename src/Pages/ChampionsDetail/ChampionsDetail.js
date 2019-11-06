@@ -3,6 +3,9 @@ import MainHeader from "../Main/MainHeader";
 import Main from "../Main";
 import "./ChampionsDetail.scss";
 export class ChampionsDetail extends Component {
+  componentDidMount() {
+    console.log(this.props);
+  }
   render() {
     return (
       <div>
