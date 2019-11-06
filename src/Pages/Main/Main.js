@@ -110,8 +110,9 @@ export default class Main extends Component {
     const {
       searchBoxClass,
       searchBoxValue,
-      finalList,
-      summonerList
+      summonerList,
+      profile,
+      userName
     } = this.state;
 
     console.log("필터: ", this.state.filteredName);
@@ -135,7 +136,11 @@ export default class Main extends Component {
     //true면 랜더링 false면 null
     return (
       <div className="main-page">
-        <MainHeader name={this.state.userName} profile={this.state.profile} />
+        <div className="click-me">
+          Clcik to Search
+          <div className="click-me-image"></div>
+        </div>
+        <MainHeader name={userName} profile={profile} />
         <div className="search-box-container">
           <input
             onChange={this.handleSearchBoxValue}
