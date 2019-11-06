@@ -42,33 +42,35 @@ export default class ChampionsList extends Component {
       <>
         <MainHeader />
         <div className="championList-background">
-          <div className="championList-body">
-            <div className="championList-left">
-              {championListData.map(el => {
-                let _data = [];
-                _data.push(
-                  <ChampionImg
-                    focusStatus={focusStatus}
-                    championID={el.id}
-                    championImgSrc={el.championsImgSrc[0].basicIconImg}
-                    championName={el.championTitle}
-                    championImgFocusOn={this.handlerChampionImgFocusOn}
-                    championImgFocusOff={this.handlerChampionImgFocusOff}
-                  />
-                );
-                return _data;
-              })}
-            </div>
-            <div className="championList-right">
-              <ChampionCard
-                focusStatus={focusStatus}
-                championCardImgSrc={
-                  selectedChampion[0].championsImgSrc[0].basicSkinImg
-                }
-                championTitle={selectedChampion[0].championTitle}
-                championSubTitle={selectedChampion[0].championSubTitle}
-                championDesc={selectedChampion[0].championDesc}
-              />
+          <div id="championList-background-opacity">
+            <div className="championList-body">
+              <div className="championList-left">
+                {championListData.map(el => {
+                  let _data = [];
+                  _data.push(
+                    <ChampionImg
+                      focusStatus={focusStatus}
+                      championID={el.id}
+                      championImgSrc={el.championsImgSrc[0].basicIconImg}
+                      championName={el.championTitle}
+                      championImgFocusOn={this.handlerChampionImgFocusOn}
+                      championImgFocusOff={this.handlerChampionImgFocusOff}
+                    />
+                  );
+                  return _data;
+                })}
+              </div>
+              <div className="championList-right">
+                <ChampionCard
+                  focusStatus={focusStatus}
+                  championCardImgSrc={
+                    selectedChampion[0].championsImgSrc[0].basicSkinImg
+                  }
+                  championTitle={selectedChampion[0].championTitle}
+                  championSubTitle={selectedChampion[0].championSubTitle}
+                  championDesc={selectedChampion[0].championDesc}
+                />
+              </div>
             </div>
           </div>
         </div>

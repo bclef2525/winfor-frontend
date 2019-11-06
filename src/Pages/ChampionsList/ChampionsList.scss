@@ -4,85 +4,96 @@
   margin-top: 85px;
   color: #fff;
 
-  .championList-body {
-    position: relative;
+  #championList-background-opacity {
     display: flex;
-    justify-content: flex-start;
-    width: 1245px;
+    justify-content: center;
+    width: 100%;
 
-    .championList-left {
-      margin-top: 50px;
+    .championList-body {
+      position: relative;
       display: flex;
-      flex-flow: row wrap;
       justify-content: flex-start;
-      min-width: 745px;
+      width: 1245px;
 
-      a {
-        text-decoration: none;
-        color: #ffffff;
-      }
-      a:hover {
-        font-size: 20px;
-        font-weight: bold;
-        text-decoration: none;
-        color: #07d1b2;
-      }
-
-      .championImgBox {
+      .championList-left {
+        margin-top: 50px;
         display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 12px;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        min-width: 745px;
 
-        img {
-          width: 100px;
-          height: 100px;
-          margin: 8px;
+        a {
+          text-decoration: none;
+          color: #ffffff;
+        }
+        a:hover {
+          font-size: 20px;
+          font-weight: bold;
+          text-decoration: none;
+          color: #07d1b2;
         }
 
-        &.on img:not([class="select"]) {
-          animation: handleChampionImg 0.7s;
-          animation-fill-mode: both;
-        }
+        .championImgBox {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 12px;
 
-        @keyframes handleChampionImg {
-          from {
+          img {
             width: 100px;
             height: 100px;
             margin: 8px;
           }
-          to {
-            width: 70px;
-            height: 70px;
-            margin: 20px;
+
+          &.on img:not([class="select"]) {
+            animation: handleChampionImg 0.7s;
+            animation-fill-mode: both;
+          }
+
+          @keyframes handleChampionImg {
+            from {
+              width: 100px;
+              height: 100px;
+              margin: 8px;
+            }
+            to {
+              width: 70px;
+              height: 70px;
+              margin: 20px;
+              opacity: 0.3;
+            }
           }
         }
       }
-    }
 
-    .championList-right {
-      margin-top: 80px;
-      display: flex;
-      justify-content: center;
-      min-width: 498px;
+      .championList-right {
+        margin-top: 80px;
+        display: flex;
+        justify-content: center;
+        min-width: 498px;
 
-      .championCardBox {
-        width: 495px;
-        position: fixed;
-
-        &.on {
-          animation: handleChampionCardImg 0.7s;
-          animation-fill-mode: both;
-        }
-      }
-
-      @keyframes handleChampionCardImg {
-        from {
+        .championCardBox {
           width: 495px;
+          position: fixed;
+
+          &.on {
+            animation: handleChampionCardImg 1s;
+            animation-fill-mode: both;
+          }
         }
-        to {
-          width: 530px;
+
+        @keyframes handleChampionCardImg {
+          from {
+            transform-style: preserve-3d;
+            transition: all 0.5s linear;
+            width: 495px;
+          }
+          to {
+            //border: 5px solid #07d1b2;
+            transform: rotateY(360deg);
+            width: 600px;
+          }
         }
       }
     }

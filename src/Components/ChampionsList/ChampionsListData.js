@@ -21,7 +21,7 @@ let championsDataSet = () => {
           basicIconImg:
             "https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Cassiopeia.png",
           basicSkinImg:
-            "https://gamepedia.cursecdn.com/lolesports_gamepedia_en/thumb/f/f8/Cassiopeia_0.jpg/200px-Cassiopeia_0.jpg?version=7fd29a45565cff46ff9925f475f179e3"
+            "https://files.slack.com/files-pri/TH0U6FBTN-FPVLG5SP5/cassiopeia_0.jpg"
         }
       ],
       championTitle: "Cassiopeia",
