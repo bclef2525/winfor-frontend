@@ -1,0 +1,144 @@
+.cd-page {
+  margin-top: 69px;
+  height: 200vh;
+
+  height: 200vh;
+  .cd-image-container {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    margin-bottom: 80px;
+    .cd-champ-name {
+      z-index: 1;
+      position: absolute;
+      bottom: 110px;
+      left: 1%;
+      font-size: 110px;
+      color: #75562a;
+      font-family: Beaufort for LOL, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .cd-detail-image {
+      position: absolute;
+      bottom: 79px;
+      width: 100%;
+      height: 50px;
+      background-image: url("https://universe.leagueoflegends.com/images/t1HeaderDivider.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+  .cd-nickname {
+    color: #75562a;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+  }
+  .cd-portrait-container {
+    position: relative;
+    z-index: 3;
+    margin: 20px auto;
+    width: 120px;
+    height: 120px;
+    background-image: url("https://universe.leagueoflegends.com/images/ChampionIconFrame.png");
+    background-size: 100%;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    padding: 10px;
+    overflow: hidden;
+    .cd-portrait {
+      width: 120px;
+      height: 120px;
+      background-repeat: no-repeat;
+      background: size 100%;
+      background-image: url("http://raw.communitydragon.org/latest/game/assets/characters/aurelionsol/hud/aurelionsol_square.png");
+      border-radius: 100%;
+    }
+  }
+}
+.cd-explain-container {
+  margin: -95px auto;
+  display: flex;
+  width: 80%;
+  height: 800px;
+  color: #75562a;
+
+  .cd-explain-skill-container {
+    background-color: #111317;
+    margin: 30px auto;
+    border: solid 1px #75562a;
+    width: 25%;
+    height: 90%;
+    .cd-explain-skill {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      border-bottom: solid 1px #75562a;
+      border-radius: 5px;
+      margin: auto;
+      span {
+        margin: 0 auto;
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+    .skill-container {
+      margin-top: 30px;
+      width: 100%;
+      height: 80%;
+
+      .skill-passive-container {
+        margin-left: 10px;
+        display: flex;
+        width: 100%;
+        height: 20%;
+
+        .skill-image-name {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 30%;
+          justify-content: center;
+          .skill-passive-image {
+            width: 85px;
+            height: 85px;
+            border: solid 1px #75562a;
+            background-image: url("http://raw.communitydragon.org/latest/game/assets/characters/aurelionsol/hud/icons2d/aurelionsol_passive.png");
+            background-size: 100%;
+            border-radius: 10px;
+          }
+          .skill-passive-name {
+            text-align: center;
+            margin-top: 3px;
+          }
+        }
+        .skill-passive-text {
+          margin: 18px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .cd-explain-history-container {
+    background-color: #111317;
+    margin: 30px auto;
+    border: solid 1px #75562a;
+    width: 40%;
+    height: 90%;
+    border-radius: 5px;
+  }
+  .cd-explain-logo-container {
+    background-color: #111317;
+    margin: 30px auto;
+    border: solid 1px #75562a;
+    width: 25%;
+    height: 90%;
+    border-radius: 5px;
+  }
+}
+
+video {
+  position: relative;
+  min-width: 100%;
+  height: 950px;
+}
