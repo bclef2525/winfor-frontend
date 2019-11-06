@@ -15,7 +15,9 @@ export default class Main extends Component {
       searchBoxValue: "",
       summonerList: SummonersList,
       filteredName: [],
-      finalList: []
+      finalList: [],
+      userName: "",
+      profile: ""
     };
   }
 
@@ -31,6 +33,19 @@ export default class Main extends Component {
   //   this.setState({ finalList: list });
   // };
 
+  handleUrl = imgUrl => {
+    let a;
+    let b;
+    let result;
+    for (let i = 0; i < imgUrl.length; i++) {
+      if (imgUrl[i] === " ") {
+        a = imgUrl.slice(0, i);
+        b = imgUrl.slice(i + 1);
+        result = a + "%20" + b;
+      }
+    }
+    return result;
+  };
   handleSearchBoxValue = e => {
     this.setState({
       searchBoxValue: e.target.value
@@ -69,6 +84,28 @@ export default class Main extends Component {
   //   console.log(nameArr);
   //   return nameArr;
   // };
+  componentDidMount() {
+    if (localStorage.getItem("winfor-token")) {
+      fetch("http://10.58.0.33:8000/main/checklogin", {
+        method: "get",
+        headers: {
+          Authorization: localStorage.getItem("winfor-token")
+        }
+      })
+        .then(res => {
+          return res.json();
+        })
+        .then(res => {
+          console.log(res);
+
+          this.setState({
+            userName: res.SUMMONER_NAME,
+            profile: this.handleUrl(res.SUMMONER_PROFILE)
+          });
+          console.log(this.state);
+        });
+    }
+  }
   render() {
     const {
       searchBoxClass,
@@ -98,7 +135,7 @@ export default class Main extends Component {
     //true면 랜더링 false면 null
     return (
       <div className="main-page">
-        <MainHeader />
+        <MainHeader name={this.state.userName} profile={this.state.profile} />
         <div className="search-box-container">
           <input
             onChange={this.handleSearchBoxValue}

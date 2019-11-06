@@ -34,7 +34,7 @@ class MainHeader extends Component {
           </div>
           <div className="main-nav-login-box">
             {localStorage.getItem("winfor-token") ? (
-              <LogoutBox />
+              <LogoutBox name={this.props.name} profile={this.props.profile} />
             ) : (
               <LoginBox />
             )}
