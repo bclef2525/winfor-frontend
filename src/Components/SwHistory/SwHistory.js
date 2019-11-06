@@ -35,6 +35,11 @@ export class SwHistory extends Component {
       focus: false
     });
   };
+  //   clearInput = () => {
+  //     this.setState({
+  //       commentValue: ""
+  //     });
+  //   };
   render() {
     let { index, info } = this.props;
     let kills = () => {
@@ -117,6 +122,7 @@ export class SwHistory extends Component {
                   <div className="sw-user-stats-engage">분당CS 8.3</div>
                 </div>
               </div>
+              <div className="sw-midline"></div>
 
               <div className="sw-user-players">
                 <div className="sw-players-my-team">
@@ -237,6 +243,7 @@ export class SwHistory extends Component {
                 댓글입력...
               </label>
               <button
+                // onClick={this.clearInput}
                 className={`sw-commentS-submit${
                   this.state.buttonStatus ? "" : "-none"
                 }`}
