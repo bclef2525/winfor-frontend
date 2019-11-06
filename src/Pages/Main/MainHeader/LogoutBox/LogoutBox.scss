@@ -1,0 +1,19 @@
+.logout-container {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  .login-box-logout {
+    border: solid 1px #07d1b2;
+    width: 35%;
+    height: 48%;
+    background-color: #27282d;
+    color: #07d1b2;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 700;
+  }
+  .wellcome-msg {
+    margin-right: 20px;
+  }
+}
