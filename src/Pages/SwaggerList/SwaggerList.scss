@@ -1,0 +1,30 @@
+::-webkit-scrollbar {
+  display: none;
+}
+.sw-page {
+  background-color: #121212;
+  width: 100%;
+  margin-top: 75px;
+
+  -ms-overflow-style: none;
+
+  .sw-view-page {
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    .sw-header {
+      width: 100%;
+      border-bottom: solid 10px#121212;
+      background-color: #121212;
+      padding-bottom: 15px;
+      padding-top: 30px;
+      display: block;
+    }
+    .sw-feeds {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

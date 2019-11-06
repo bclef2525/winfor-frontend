@@ -6,6 +6,7 @@ import Signin from "./Pages/Login/";
 import StaticsChampions from "./Pages/StaticsChampions/StaticsChampions";
 import StaticsTiers from "./Pages/StaticsTiers";
 import MyMatchList from "./Pages/MyMatchList/MyMatchList";
+import SwaggerList from "./Pages/SwaggerList/SwaggerList";
 
 class Routes extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class Routes extends React.Component {
             component={StaticsChampions}
           />
           <Route exact path="/StaticsTiers/:name" component={StaticsTiers} />
+          <Route exact path="/SwaggerList" component={SwaggerList} />
         </Switch>
       </Router>
     );

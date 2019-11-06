@@ -1,0 +1,369 @@
+.sw-whole {
+  display: flex;
+  justify-content: center;
+}
+.sw-user-history-container {
+  width: 750px;
+  color: #c5b998;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  border: 1px solid#75562a;
+}
+.sw-user-history {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid#75562a;
+}
+.sw-contents {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: #27282d;
+}
+.sw-result {
+  align-self: center;
+  margin-top: 13px;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  margin-left: 20px;
+  color: #af864c;
+}
+.sw-user-section {
+  display: flex;
+  justify-content: space-around;
+  height: 76%;
+}
+
+.sw-user-game-stats {
+  text-align: center;
+  width: 15%;
+  height: 100%;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+}
+.sw-stats-game-type {
+  font-weight: 600;
+  margin-bottom: 18px;
+  margin-top: 20px;
+}
+
+.sw-stats-game-day {
+  font-size: 13px;
+}
+
+.sw-border {
+  margin-top: 15px;
+  width: 60%;
+  border: solid 1px #c5b998;
+}
+
+.sw-stats-game-result {
+  margin: 24px;
+  color: #07d1b2;
+  display: none;
+}
+
+.sw-stats-game-time {
+  margin-top: 25px;
+}
+
+.sw-user-setting {
+  width: 16%;
+  height: 100%;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sw-setting-champ-image {
+  margin-top: 10px;
+  width: 55px;
+  height: 55px;
+
+  background-size: 100%;
+  border-radius: 100%;
+}
+
+.sw-setting-champ-skill-container {
+  width: 100%;
+  margin-top: 10px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+}
+
+.sw-setting-champ-skills {
+  width: 40%;
+  height: 40%;
+  border-radius: 5px;
+  margin: 5px 5px;
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.sw-thespell {
+  width: 45%;
+  height: 45%;
+}
+
+.sw-setting-champ-name {
+  margin-top: 13px;
+}
+
+.sw-user-KDA {
+  width: 15%;
+  height: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sw-KDA-container {
+  display: flex;
+  line-height: 10px;
+  font-weight: 700;
+  font-size: 21px;
+}
+.sw-KDA-kill {
+  margin: 0 9px;
+}
+
+.sw-KDA-death {
+  margin: 0 9px;
+  color: #f6a428;
+}
+
+.sw-KDA-assist {
+  margin: 0 9px;
+}
+
+.sw-kill-perfomence {
+  margin-top: 1px;
+  width: 72px;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: #cfa05f;
+  color: #4e3a1d;
+  margin-bottom: 1px;
+}
+
+.sw-user-stats {
+  width: 15%;
+  height: 100%;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sw-user-stats-level {
+  margin-top: 16px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.sw-user-stats-CS {
+  margin-top: 30px;
+}
+
+.sw-user-stats-engage {
+  margin-top: 30px;
+  color: #f6a428;
+}
+
+.sw-user-players {
+  width: 55%;
+  margin-left: 21px;
+  height: 100%;
+  align-self: center;
+  display: flex;
+  font-size: 19px;
+  justify-content: center;
+}
+.sw-players-my-team {
+  width: auto;
+  height: 100%;
+  margin-right: 40px;
+}
+.sw-verse {
+  font-weight: 700;
+  font-size: 44px;
+  align-self: center;
+  padding-bottom: 60px;
+}
+
+.sw-players-enemy-team {
+  width: auto;
+  height: 100%;
+  margin-left: 40px;
+}
+
+.sw-history-boast {
+  text-align: center;
+  width: 3%;
+  border: solid 1px #75562a;
+  background-color: #c5b998;
+  color: #a36c1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+.sw-history-boast:hover {
+  text-align: center;
+  width: 3%;
+  border: solid 1px #75562a;
+  background-color: #c5b998;
+  color: #a36c1a;
+  display: flex;
+  align-items: center;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 1;
+}
+.sw-players-container {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.sw-players2-container {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+.sw-player-image {
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+  background-size: 100%;
+}
+
+.sw-player-name {
+  display: flex;
+  align-items: center;
+  margin: 0 3px 0 3px;
+  font-size: 18px;
+}
+
+//---------------commentsection---------------//
+
+.sw-commentsection-hidden {
+  display: none;
+}
+.sw-commentsection {
+  width: 0;
+  height: 460px;
+  margin-left: 19px;
+  background-color: #27282d;
+  color: rgb(140, 147, 167);
+  border: 1px solid #75562a;
+  animation: handleList 1s;
+  animation-fill-mode: both;
+}
+@keyframes handleList {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 380px;
+  }
+}
+.sw-commentS-header {
+  width: 99.7%;
+  height: 13%;
+  background-color: #2f3138;
+  border: 1px solid #75562a;
+}
+.sw-commentS-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sw-commentS-name {
+  color: #cc9c58;
+  font-size: 25px;
+  font-weight: 700;
+  margin-left: 25px;
+}
+.sw-commentS-close {
+  border: none;
+  background-color: #2f3138;
+  margin-right: 25px;
+  margin-bottom: 2px;
+  font-size: 25px;
+  color: #cc9c58;
+}
+.sw-commentS-body {
+  width: 92%;
+  height: 71%;
+
+  margin-left: 15px;
+}
+.sw-commentS-inputS {
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sw-commentS-inputHolder {
+  border: 0;
+  border-bottom: 2px solid #75562a;
+  margin-left: 25px;
+  font-size: 22px;
+  width: 87%;
+  position: relative;
+}
+.sw-commentS-input {
+  border: 0;
+  background-color: transparent;
+  cursor: text;
+  color: #c5b998;
+  font-size: 19px;
+  padding-bottom: 14px;
+  padding-left: 6px;
+  width: 80%;
+}
+.sw-commentS-input:focus {
+  outline: none;
+}
+.sw-commentS-submit {
+  border: 1px solid #75562a;
+  background-color: transparent;
+  margin-left: 10px;
+  color: #cc9c58;
+  font-size: 17px;
+  border-radius: 10%;
+  height: 35px;
+  margin-bottom: 12px;
+  background-color: #32343b;
+}
+.sw-commentS-submit-none {
+  display: none;
+}
+.sw-commentS-label {
+  position: absolute;
+  left: 0;
+  margin-left: 5px;
+  margin-top: 6px;
+  font-size: 19px;
+  color: #c5b998;
+  opacity: 0.5;
+}
+.sw-commentS-label-none {
+  display: none;
+}
