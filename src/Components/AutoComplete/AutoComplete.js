@@ -33,10 +33,6 @@ export class AutoComplete extends Component {
           ></div>
           <div className="ac-name-container">
             <div className="ac-name">{this.props.name}</div>
-            <div className="ac-level">
-              {this.props.level}
-              <div className="ac-lp">-{this.props.lp}LP</div>
-            </div>
           </div>
         </div>
       </>
