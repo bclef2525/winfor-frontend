@@ -26,7 +26,7 @@ class Login extends Component {
       })
       .then(res => {
         console.log("worked");
-        if (res) {
+        if (res.JWT) {
           localStorage.setItem("winfor-token", res.JWT);
           this.props.history.push("/");
         }

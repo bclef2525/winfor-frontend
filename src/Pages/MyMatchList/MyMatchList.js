@@ -38,9 +38,9 @@ export class MyMatchList extends Component {
                   <div className="mml-user-name">
                     {this.state.mmldata[0].game[0].user[0].user_name}
                   </div>
-                  <div className="mml-user-rank">
+                  {/* <div className="mml-user-rank">
                     {this.state.mmldata[0].tier}
-                  </div>
+                  </div> */}
                   <div className="mml-user-button">
                     <button
                       onClick={this.reLoad}
