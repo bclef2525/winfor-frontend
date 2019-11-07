@@ -87,10 +87,11 @@ export default class ChampionsList extends Component {
                   }}
                   className="championList-content"
                 >
-                  {championListData.map(el => {
+                  {championListData.map((el, id) => {
                     let _data = [];
                     _data.push(
                       <ChampionImg
+                        key={id}
                         focusStatus={focusStatus}
                         championID={el.CHAMPION_ID}
                         championImgSrc={el.CHAMPION_IMG[0].LOADING_IMG}
