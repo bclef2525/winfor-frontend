@@ -29,11 +29,14 @@
   margin-bottom: 10px;
   font-size: 32px;
   font-weight: 700;
-  margin-left: 20px;
+  margin-left: 55px;
   color: #af864c;
   display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
 .heart {
+  padding-right: 255px;
 }
 .sw-user-section {
   display: flex;

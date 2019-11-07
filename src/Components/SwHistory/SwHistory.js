@@ -78,7 +78,7 @@ export class SwHistory extends Component {
           <div className="sw-user-history">
             <div className="sw-contents">
               <div className="sw-result">
-                <div className="heart">ㄴ</div>
+                <div className="heart"></div>
                 {info.user[0].user_name} - {info.win}!
               </div>
               <div className="sw-user-section">
