@@ -27,8 +27,9 @@ export class AutoComplete extends Component {
     return (
       <>
         <div
-          onClick={this.props.handleMatchList}
-          id={this.props.id}
+          onClick={() => {
+            this.props.handleMatchList(this.props.id);
+          }}
           className="auto-complete"
         >
           <div

@@ -93,8 +93,11 @@ export default class Main extends Component {
       });
     }
   };
-  handleMatchList = e => {
-    this.props.history.push(`"/MyMatchList/${e.target.id}"`);
+  handleMatchList = id => {
+    console.log(id);
+    if (id) {
+      this.props.history.push(`/MyMatchList/${id}`);
+    }
   };
   // sortNameArrFunc = name => {
   //   let sortNameArr = [];
