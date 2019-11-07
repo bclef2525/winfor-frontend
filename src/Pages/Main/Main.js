@@ -202,7 +202,20 @@ export default class Main extends Component {
           {this.state.summonerList && autoComplete}
         </div>
         <div onClick={this.handleSearchBox} className="main-img">
-          <video id="main-video" autoPlay muted loop>
+          <video
+            id="main-video"
+            autoPlay
+            muted
+            loop
+            style={{
+              display: "inliin-block",
+              width: "100%",
+              height: "auto",
+              minWidth: "100%",
+
+              zIndex: "1"
+            }}
+          >
             <source src={MainVideo} type="video/mp4" />
           </video>
         </div>
