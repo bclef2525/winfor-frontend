@@ -47,19 +47,6 @@ export default class Signup extends Component {
     });
   };
 
-  handleAlert = () => {
-    console.log(this.state.res);
-    if (this.state.resp.message === "EMAIL_ALREADY_EXISTS") {
-      alert("이메일이 이미 존재합니다.");
-    } else if (this.state.resp.message === "SUMMONER_EXISTS") {
-      alert("이미가입된 소환사이름입니다");
-    } else if (this.state.resp.message === "SUMMONER_NOT_FOUND") {
-      alert("소환사이름이 존재하지않습니다");
-    } else {
-      alert("회원가입을 축하드립니다!");
-    }
-  };
-
   goToMain() {
     fetch("http://10.58.0.33:8000/account/signup", {
       method: "post",
@@ -79,22 +66,18 @@ export default class Signup extends Component {
           alert("이미가입된 소환사이름입니다");
         } else if (res.message === "SUMMONER_NOT_FOUND") {
           alert("소환사이름이 존재하지않습니다");
-        } else if (res.message === "SUCCESS") {
+        } else if (res.message === "SIGNUP_SUCCESS") {
           alert("회원가입을 축하드립니다!");
           this.props.history.push("/");
+        } else if (res.mssage === "NOT_EMAIL") {
+          alert("이메일 양식이 바르지않습니다!!");
+        } else {
+          alert("입력하신정보에 문제가 있습니다");
         }
         console.log(res.message);
-        //     if (res.message === "SUMMONER_NOT_FOUND")
-        // this.props.history.push("/");
-        //       this.setState({ resp: res.message });
       });
-    // console.log(res, this.state.resp)?
   }
-  // "message": "SUMMONER_EXISTS"
-  // "message": "EMAIL_
-  // componentDidMount() {
-  //   this.handleAlert();
-  // }
+
   focusAcitve = () => {
     this.setState({
       focus: true

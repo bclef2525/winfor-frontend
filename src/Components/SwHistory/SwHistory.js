@@ -15,6 +15,19 @@ export class SwHistory extends Component {
       commentData: commentMock
     };
   }
+  // submitComment() {
+  //   fetch("주소주세용", {
+  //     method: "post",
+  //     body: JSON.stringify({
+  //       comment: this.state.commentValue,
+  //       그리고 유저정보도 보내야함
+  //     })
+  //   })
+  //     .then(function(res) {
+  //       return res.json();
+  //     })
+  //
+  // }
   handleComment = e => {
     this.setState({ commentValue: e.target.value }, () =>
       this.setState({
@@ -65,6 +78,7 @@ export class SwHistory extends Component {
           <div className="sw-user-history">
             <div className="sw-contents">
               <div className="sw-result">
+                <div className="heart">ㄴ</div>
                 {info.user[0].user_name} - {info.win}!
               </div>
               <div className="sw-user-section">
@@ -249,7 +263,7 @@ export class SwHistory extends Component {
                 댓글입력...
               </label>
               <button
-                // onClick={this.clearInput}
+                // onClick={this.submitComment.bind(this)}
                 className={`sw-commentS-submit${
                   this.state.buttonStatus ? "" : "-none"
                 }`}
