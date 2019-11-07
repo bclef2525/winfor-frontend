@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from "react";
 import "./SwHistory.scss";
+import SwHistoryComment from "./SwHistoryComment/SwHistoryComment";
+import commentMock from "./commentMock";
 
 export class SwHistory extends Component {
   constructor(props) {
@@ -9,7 +11,8 @@ export class SwHistory extends Component {
       commentValue: "",
       commentsectionStatus: false,
       focus: false,
-      buttonStatus: false
+      buttonStatus: false,
+      commentData: commentMock
     };
   }
   handleComment = e => {
@@ -20,7 +23,9 @@ export class SwHistory extends Component {
     );
   };
   openComment = e => {
-    this.setState({ commentsectionStatus: true });
+    this.setState({
+      commentsectionStatus: this.state.commentsectionStatus ? false : true
+    });
   };
   closeComment = e => {
     this.setState({ commentsectionStatus: false });
@@ -35,13 +40,9 @@ export class SwHistory extends Component {
       focus: false
     });
   };
-  //   clearInput = () => {
-  //     this.setState({
-  //       commentValue: ""
-  //     });
-  //   };
   render() {
     let { index, info } = this.props;
+    let { commentData } = this.state;
     let kills = () => {
       if (info.pentakill !== 0) {
         return "펜타킬";
@@ -224,7 +225,12 @@ export class SwHistory extends Component {
               X
             </button>
           </div>
-          <div className="sw-commentS-body"></div>
+          <div className="sw-commentS-body">
+            {commentData.map((el, idx) => {
+              console.log(el);
+              return <SwHistoryComment info={el} index={idx} />;
+            })}
+          </div>
           <div className="sw-commentS-inputS">
             <div className="sw-commentS-inputHolder">
               <input
