@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./MainHeader.scss";
+import LoginBox from "./LoginBox/LoginBox";
+import LogoutBox from "./LogoutBox/LogoutBox";
 
 class MainHeader extends Component {
   render() {
+    // const loginBox = this.state.loginBoxMode ? <LoginBox /> : <LogoutBox />;
+
     return (
       <div className="main-header">
         <div className="main-nav">
@@ -31,13 +35,11 @@ class MainHeader extends Component {
             </Link>
           </div>
           <div className="main-nav-login-box">
-            <Link to={"/signup"} className="login-box-signup">
-              회원가입
-              <div className="under-line" />
-            </Link>
-            <Link to={"/login"} className="login-box-login">
-              로그인
-            </Link>
+            {localStorage.getItem("winfor-token") ? (
+              <LogoutBox name={this.props.name} profile={this.props.profile} />
+            ) : (
+              <LoginBox />
+            )}
           </div>
         </div>
       </div>
