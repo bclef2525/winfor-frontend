@@ -20,9 +20,8 @@ export class ChampionsDetail extends Component {
               loop
               style={{
                 display: "inliin-block",
-                width: "auto",
+                width: "100%",
                 height: "auto",
-                maxHeight: "58%",
                 minWidth: "100%",
                 top: "0.277778%",
                 left: "53.6719%",
