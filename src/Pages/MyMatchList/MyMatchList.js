@@ -14,12 +14,12 @@ export class MyMatchList extends Component {
   goToMain = () => {
     this.props.history.push("/StaticsTiers/Tiers");
   };
-  comeHere = () => {
+  reLoad = () => {
     window.location.reload();
   };
 
   render() {
-    console.log(this.state.mmldata);
+    console.log(this.state.mmldata[0].game);
     return (
       <div className="mml-page">
         <MainHeader />
@@ -43,7 +43,7 @@ export class MyMatchList extends Component {
                   </div>
                   <div className="mml-user-button">
                     <button
-                      onClick={this.comeHere}
+                      onClick={this.reLoad}
                       className="mml-user-rank-refresh"
                     >
                       전적갱신
@@ -60,7 +60,7 @@ export class MyMatchList extends Component {
             </div>
           </div>
           {/* <UserHistory /> */}
-          {this.state.mmldata.map((el, idx) => {
+          {this.state.mmldata[0].game.map((el, idx) => {
             console.log(el);
             return <UserHistory info={el} index={idx} />;
           })}
