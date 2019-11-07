@@ -1,7 +1,7 @@
 import React from "react";
 import Flickity from "react-flickity-component";
 import "./ChampionCard.scss";
-import "../../../node_modules/flickity/css/flickity.css";
+import "../../Styles/flickity.css";
 
 export default function ChampionCard(props) {
   return (

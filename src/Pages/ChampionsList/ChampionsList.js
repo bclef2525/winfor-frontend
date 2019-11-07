@@ -7,9 +7,13 @@ import {
   defaultCardData
 } from "../../Components/ChampionsList/ChampionsListData";
 import ChampionCard from "../../Components/ChampionsList/ChampionCard";
+import Flickity from "react-flickity-component";
+import "../../Styles/flickity.css";
 
 export default class ChampionsList extends Component {
   constructor(props) {
+    console.log("constructor Render!");
+
     super(props);
     this.state = {
       championListData: championsData,
@@ -40,6 +44,7 @@ export default class ChampionsList extends Component {
   };
 
   render() {
+    // const Flky = new Flickity(".gallery", { wrapAround: true });
     const { championListData, focusStatus, selectedChampion } = this.state;
     return (
       <>
@@ -65,20 +70,30 @@ export default class ChampionsList extends Component {
                 />
               </div>
               <div className="championList-bottom">
-                {championListData.map(el => {
-                  let _data = [];
-                  _data.push(
-                    <ChampionImg
-                      focusStatus={focusStatus}
-                      championID={el.id}
-                      championImgSrc={el.championsImgSrc[0].basicLoadImg}
-                      championName={el.championTitle}
-                      championImgFocusOn={this.handlerChampionImgFocusOn}
-                      championImgFocusOff={this.handlerChampionImgFocusOff}
-                    />
-                  );
-                  return _data;
-                })}
+                <Flickity
+                  options={{
+                    wrapAround: true,
+                    initialIndex: Number(
+                      (championListData.length / 2).toFixed(0)
+                    )
+                  }}
+                  className="championList-content"
+                >
+                  {championListData.map(el => {
+                    let _data = [];
+                    _data.push(
+                      <ChampionImg
+                        focusStatus={focusStatus}
+                        championID={el.id}
+                        championImgSrc={el.championsImgSrc[0].basicLoadImg}
+                        championName={el.championTitle}
+                        championImgFocusOn={this.handlerChampionImgFocusOn}
+                        championImgFocusOff={this.handlerChampionImgFocusOff}
+                      />
+                    );
+                    return _data;
+                  })}
+                </Flickity>
               </div>
             </div>
           </div>

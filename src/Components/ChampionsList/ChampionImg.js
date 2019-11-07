@@ -9,6 +9,7 @@ class ChampionImg extends React.Component {
           className={`championImgBox ${this.props.focusStatus}`}
           to={`/ChampionsDetail/${this.props.championID.toString()}`}
         >
+          <div className="championImg-title">{this.props.championName}</div>
           <img
             className="default"
             name={this.props.championID}
@@ -18,7 +19,6 @@ class ChampionImg extends React.Component {
             onMouseOut={this.props.championImgFocusOff}
             //onClick={this.props.selectChampionCard}
           />
-          <div>{this.props.championName}</div>
         </Link>
       </div>
     );

@@ -20,7 +20,7 @@
     .championCardTextBox {
       display: flex;
       width: 50%;
-      height: 500px;
+      height: 525px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -28,8 +28,10 @@
 
       .championCardTitle {
         font-weight: 900;
-        font-size: 35px;
-        color: #c5b998;
+        font-size: 60px;
+        color: #75562a;
+        text-align: center;
+        margin: 0 auto;
       }
 
       img {
@@ -40,6 +42,7 @@
         font-weight: bold;
         font-style: italic;
         font-size: 20px;
+        color: #c5b998;
         margin: 50px 0;
       }
 
