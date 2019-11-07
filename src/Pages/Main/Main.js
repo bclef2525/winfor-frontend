@@ -148,8 +148,6 @@ export default class Main extends Component {
       userName
     } = this.state;
 
-    console.log("3", searchBoxValue);
-
     const autoComplete = this.state.summonerList
       ? this.state.summonerList.map(el => (
           <AutoComplete
