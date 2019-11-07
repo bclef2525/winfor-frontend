@@ -187,7 +187,7 @@ export default class Main extends Component {
     return (
       <div className="main-page">
         <div className="click-me">
-          Clcik
+          Click
           <div className="click-me-image"></div>
         </div>
         <MainHeader name={userName} profile={profile} />
