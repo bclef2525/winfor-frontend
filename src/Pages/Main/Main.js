@@ -4,6 +4,7 @@ import MainVideo from "../Main/main.mp4";
 import MainHeader from "./MainHeader/MainHeader";
 import "../../Components/AutoComplete/SummonersList";
 import AutoComplete from "../../Components/AutoComplete/AutoComplete";
+import { tsParenthesizedType, tsImportEqualsDeclaration } from "@babel/types";
 
 export default class Main extends Component {
   constructor() {
@@ -55,7 +56,7 @@ export default class Main extends Component {
         searchBoxValue: e.target.value
       },
       () => {
-        if (this.state.searchBoxValue.length > 0) {
+        if (this.state.searchBoxValue) {
           fetch(
             `http://10.58.0.33:8000/main/search?keyword=${this.state.searchBoxValue}`,
             {
@@ -67,10 +68,12 @@ export default class Main extends Component {
             })
             .then(res => {
               this.setState({ summonerList: res.SEARCHED_SUMMONER });
-              console.log("res", res.SEARCHED_SUMMONER);
+              console.log("reks", res.SEARCHED_SUMMONER);
             });
         } else {
-          this.setState({ summonerList: "" });
+          this.setState({
+            summonerList: ""
+          });
         }
       }
     );
@@ -86,9 +89,13 @@ export default class Main extends Component {
       this.setState({
         searchBoxMode: true,
         searchBoxClass: "search-box-off",
+        summonerList: "",
         searchBoxValue: ""
       });
     }
+  };
+  handleMatchList = e => {
+    this.props.history.push(`"/MyMatchList/${e.target.id}"`);
   };
   // sortNameArrFunc = name => {
   //   let sortNameArr = [];
@@ -121,7 +128,7 @@ export default class Main extends Component {
           return res.json();
         })
         .then(res => {
-          console.log(res);
+          console.log("fetch", res);
 
           this.setState({
             userName: res.SUMMONER_NAME,
@@ -138,11 +145,14 @@ export default class Main extends Component {
       profile,
       userName
     } = this.state;
-    console.log("3", summonerList[0], Array.isArray(this.state.summonerList));
+
+    console.log("3", searchBoxValue);
 
     const autoComplete = this.state.summonerList
       ? this.state.summonerList.map(el => (
           <AutoComplete
+            id={el.SUMMONER_PK}
+            handleMatchList={this.handleMatchList}
             name={el.SUMMONER_NAME}
             image={this.handleUrl(el.SUMMONER_PROFILE)}
           />
@@ -177,7 +187,7 @@ export default class Main extends Component {
     return (
       <div className="main-page">
         <div className="click-me">
-          Clcik to Search
+          Clcik
           <div className="click-me-image"></div>
         </div>
         <MainHeader name={userName} profile={profile} />
@@ -187,7 +197,7 @@ export default class Main extends Component {
             className={searchBoxClass}
             type="text"
             placeholder="소환사 검색"
-            vlaue={searchBoxValue}
+            value={searchBoxValue}
           />
           {this.state.summonerList && autoComplete}
         </div>
