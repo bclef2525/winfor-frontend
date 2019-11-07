@@ -24,7 +24,10 @@ export default class ChampionsList extends Component {
   };
   handlerChampionImgFocusOff = e => {
     e.target.className = "notselcted";
-    this.setState({ focusStatus: "off", selectedChampion: defaultCardData });
+    this.setState({
+      focusStatus: "off"
+      //selectedChampion: defaultCardData
+    });
   };
 
   handlerShowChampionCard = e => {
@@ -44,23 +47,7 @@ export default class ChampionsList extends Component {
         <div className="championList-background">
           <div id="championList-background-opacity">
             <div className="championList-body">
-              <div className="championList-left">
-                {championListData.map(el => {
-                  let _data = [];
-                  _data.push(
-                    <ChampionImg
-                      focusStatus={focusStatus}
-                      championID={el.id}
-                      championImgSrc={el.championsImgSrc[0].basicIconImg}
-                      championName={el.championTitle}
-                      championImgFocusOn={this.handlerChampionImgFocusOn}
-                      championImgFocusOff={this.handlerChampionImgFocusOff}
-                    />
-                  );
-                  return _data;
-                })}
-              </div>
-              <div className="championList-right">
+              <div className="championList-top">
                 <ChampionCard
                   focusStatus={focusStatus}
                   championCardImgSrc={
@@ -70,6 +57,28 @@ export default class ChampionsList extends Component {
                   championSubTitle={selectedChampion[0].championSubTitle}
                   championDesc={selectedChampion[0].championDesc}
                 />
+              </div>
+              <div className="championList-divideBar">
+                <img
+                  src="https://universe.leagueoflegends.com/images/t1HeaderDivider.png"
+                  alt="divbar"
+                />
+              </div>
+              <div className="championList-bottom">
+                {championListData.map(el => {
+                  let _data = [];
+                  _data.push(
+                    <ChampionImg
+                      focusStatus={focusStatus}
+                      championID={el.id}
+                      championImgSrc={el.championsImgSrc[0].basicLoadImg}
+                      championName={el.championTitle}
+                      championImgFocusOn={this.handlerChampionImgFocusOn}
+                      championImgFocusOff={this.handlerChampionImgFocusOff}
+                    />
+                  );
+                  return _data;
+                })}
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@
   z-index: 10;
   position: fixed;
   width: 100vw;
+  min-width: 810px;
   top: 0;
   background-color: #27282d;
   font-weight: 800;
@@ -23,9 +24,10 @@
   }
   .main-nav-tab {
     width: 70%;
+    min-width: 330px;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     margin-left: 2vw;
 
     a {

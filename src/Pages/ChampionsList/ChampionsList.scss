@@ -10,17 +10,73 @@
     width: 100%;
 
     .championList-body {
-      position: relative;
       display: flex;
-      justify-content: flex-start;
-      width: 1245px;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 90%;
+      min-width: 800px;
 
-      .championList-left {
-        margin-top: 50px;
+      .championList-top {
+        z-index: 2;
+        position: sticky;
+        top: 85px;
+        margin: auto;
+        padding-bottom: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+        //min-width: 1270px;
+        max-width: 1271px;
+        height: 525px;
+        background-color: #111318;
+
+        .championCardBox {
+          width: 100%;
+          max-height: 1270px;
+
+          &.on {
+            animation: handleChampionCardImg 0.5s;
+            animation-fill-mode: both;
+          }
+        }
+
+        @keyframes handleChampionCardImg {
+          from {
+            transform-style: preserve-3d;
+            //transition: all 0.5s linear;
+            width: 100%;
+          }
+          to {
+            //border: 5px solid #07d1b2;
+            transform: rotateX(720deg);
+            width: 100%;
+          }
+        }
+      }
+
+      .championList-divideBar {
+        z-index: 2;
+        position: sticky;
+        top: 645px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        //background-color: #111318;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .championList-bottom {
+        margin: 50px auto;
         display: flex;
         flex-flow: row wrap;
-        justify-content: flex-start;
-        min-width: 745px;
+        justify-content: space-between;
+        width: 100%;
 
         a {
           text-decoration: none;
@@ -33,67 +89,112 @@
           color: #07d1b2;
         }
 
-        .championImgBox {
+        .championImgContainer {
           display: flex;
           justify-content: center;
-          flex-direction: column;
           align-items: center;
-          margin-bottom: 12px;
+          width: 130px;
+          height: 240px;
+          margin: 10px 9px;
 
-          img {
-            width: 100px;
-            height: 100px;
-            margin: 8px;
-          }
+          .championImgBox {
+            z-index: 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 12px;
 
-          &.on img:not([class="select"]) {
-            animation: handleChampionImg 0.7s;
-            animation-fill-mode: both;
-          }
-
-          @keyframes handleChampionImg {
-            from {
-              width: 100px;
-              height: 100px;
-              margin: 8px;
+            img {
+              width: 100%;
             }
-            to {
-              width: 70px;
-              height: 70px;
-              margin: 20px;
-              opacity: 0.3;
+
+            &.on img:not([class="select"]) {
+              animation: handleChampionImg 0.7s;
+              animation-fill-mode: both;
+            }
+
+            &.off img {
+              animation: handleChampionImgBack 0.7s;
+              animation-fill-mode: both;
+            }
+
+            @keyframes handleChampionImg {
+              from {
+                width: 100%;
+              }
+              to {
+                width: 70%;
+                opacity: 0.3;
+              }
+            }
+            @keyframes handleChampionImgBack {
+              from {
+                width: 70%;
+                opacity: 0.3;
+              }
+              to {
+                width: 100%;
+              }
             }
           }
         }
       }
 
-      .championList-right {
-        margin-top: 80px;
-        display: flex;
-        justify-content: center;
-        min-width: 498px;
+      @media only screen and (max-width: 1750px) {
+        .championList-body {
+          display: flex;
+          justify-content: center;
+          margin: auto;
+        }
 
-        .championCardBox {
-          width: 495px;
-          position: fixed;
+        .championList-top {
+          min-width: 800px;
+          width: 800px;
+          height: auto;
+          margin: auto;
 
-          &.on {
-            animation: handleChampionCardImg 1s;
-            animation-fill-mode: both;
+          .championCard-flickity {
+            img {
+              width: 100%;
+              height: 300px;
+            }
+          }
+
+          .championCardTextBox {
+            height: auto;
+            font-size: 10px;
+
+            .championCardTitle {
+              font-weight: 900;
+              font-size: 30px;
+              margin: 10px 0;
+              //padding-top: 40px;
+            }
+
+            .championCardSubTitle {
+              font-weight: bold;
+              font-style: italic;
+              font-size: 15px;
+              margin: 20px 0;
+            }
+
+            .championCardDescription {
+              text-align: center;
+              font-style: italic;
+              padding: 0 50px;
+              font-size: 10px;
+              margin: 10px 0;
+            }
           }
         }
 
-        @keyframes handleChampionCardImg {
-          from {
-            transform-style: preserve-3d;
-            transition: all 0.5s linear;
-            width: 495px;
-          }
-          to {
-            //border: 5px solid #07d1b2;
-            transform: rotateY(360deg);
-            width: 600px;
-          }
+        .championList-divideBar {
+          top: 420px;
+        }
+
+        .championList-bottom {
+          width: 800px;
         }
       }
     }
