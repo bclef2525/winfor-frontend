@@ -4,7 +4,6 @@ import MainVideo from "../Main/main.mp4";
 import MainHeader from "./MainHeader/MainHeader";
 import "../../Components/AutoComplete/SummonersList";
 import AutoComplete from "../../Components/AutoComplete/AutoComplete";
-import { tsParenthesizedType, tsImportEqualsDeclaration } from "@babel/types";
 
 export default class Main extends Component {
   constructor() {
