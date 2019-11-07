@@ -11,7 +11,9 @@ class MainHeader extends Component {
     return (
       <div className="main-header">
         <div className="main-nav">
-          <div className="main-logo">Winfor.GG</div>
+          <Link to={"/"} className="main-logo">
+            Winfor.GG
+          </Link>
           <div className="main-nav-tab">
             <Link to={"/"} className="main-nav-home">
               홈<div className="under-line" />
@@ -23,8 +25,8 @@ class MainHeader extends Component {
               통계
               <div className="under-line" />
             </Link>
-            <Link className="main-nav-rank">
-              랭킹
+            <Link to={"/ChampionsList"} className="main-nav-rank">
+              챔피언
               <div className="under-line" />
             </Link>
             <Link className="main-nav-comunity">
@@ -34,7 +36,7 @@ class MainHeader extends Component {
           </div>
           <div className="main-nav-login-box">
             {localStorage.getItem("winfor-token") ? (
-              <LogoutBox />
+              <LogoutBox name={this.props.name} profile={this.props.profile} />
             ) : (
               <LoginBox />
             )}

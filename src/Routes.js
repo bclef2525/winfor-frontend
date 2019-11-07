@@ -5,8 +5,9 @@ import Signup from "./Pages/Signup/";
 import Signin from "./Pages/Login/";
 import StaticsChampions from "./Pages/StaticsChampions/StaticsChampions";
 import StaticsTiers from "./Pages/StaticsTiers";
-import MyMatchList from "./Pages/MyMatchList/MyMatchList";
 import SwaggerList from "./Pages/SwaggerList/SwaggerList";
+import MyMatchList from "./Pages/MyMatchList";
+import ChampionsList from "./Pages/ChampionsList";
 
 class Routes extends React.Component {
   render() {
@@ -17,6 +18,7 @@ class Routes extends React.Component {
           <Route exact path="/Signup" component={Signup} />
           <Route exact path="/Login" component={Signin} />
           <Route exact path="/MyMatchList" component={MyMatchList} />
+          <Route exact path="/ChampionsList" component={ChampionsList} />
           <Route
             exact
             path="/StaticsChampions/:name"
@@ -24,6 +26,8 @@ class Routes extends React.Component {
           />
           <Route exact path="/StaticsTiers/:name" component={StaticsTiers} />
           <Route exact path="/SwaggerList" component={SwaggerList} />
+          <Route exact path="/ChampionsDetail/:id" />
+          {/*인호님컴포넌트(챔피언상세)*/}
         </Switch>
       </Router>
     );
