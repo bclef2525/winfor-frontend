@@ -42,8 +42,10 @@
         font-weight: bold;
         font-style: italic;
         font-size: 20px;
+        text-align: center;
+        width: 70%;
         color: #c5b998;
-        margin: 50px 0;
+        margin: 50px auto;
       }
 
       .championCardDescription {
@@ -51,6 +53,8 @@
         font-style: italic;
         padding: 0 50px;
         font-size: 15px;
+        height: 25%;
+        overflow: scroll;
       }
     }
   }
