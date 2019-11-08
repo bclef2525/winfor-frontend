@@ -1,9 +1,19 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "./UserHistoru.scss";
 
-export class UserHistory extends Component {
+class UserHistory extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  goSwag = () => {
+    this.props.history.push("/SwaggerList");
+    console.log(this.props.history);
+  };
+
   render() {
-    let { index } = this.props;
     let { info } = this.props;
     let kills = () => {
       if (info.pentakill !== 0) {
@@ -18,8 +28,8 @@ export class UserHistory extends Component {
         return "싱글킬";
       }
     };
-    console.log(kills);
-    console.log(this.props.info.id);
+    // console.log(kills);
+    console.log(this.props);
     return (
       <>
         <div className="mml-user-history-container">
@@ -162,7 +172,9 @@ export class UserHistory extends Component {
                 </div>
               </div>
             </div>
-            <button className="history-boast">자랑하기</button>
+            <button onClick={this.goSwag.bind(this)} className="history-boast">
+              자랑하기
+            </button>
           </div>
         </div>
       </>
@@ -170,4 +182,4 @@ export class UserHistory extends Component {
   }
 }
 
-export default UserHistory;
+export default withRouter(UserHistory);

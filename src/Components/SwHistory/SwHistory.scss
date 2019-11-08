@@ -16,7 +16,6 @@
   display: flex;
   width: 100%;
   border-bottom: 1px solid#75562a;
-  border-left: 1px solid#75562a;
 }
 .sw-contents {
   display: flex;
@@ -30,9 +29,39 @@
   margin-bottom: 10px;
   font-size: 32px;
   font-weight: 700;
-  margin-left: 20px;
+  margin-left: 55px;
   color: #af864c;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
+// .heart {
+//   padding-right: 255px;
+.heart {
+  width: 15px;
+  height: 15px;
+  background: #af864c;
+  position: relative;
+  transform: rotate(45deg);
+  margin-right: 241px;
+  margin-top: 8px;
+}
+.heart::before,
+.heart::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-radius: 50%;
+  background: #af864c;
+}
+.heart::before {
+  left: -50%;
+}
+.heart::after {
+  top: -50%;
+}
+
 .sw-user-section {
   display: flex;
   justify-content: space-around;
@@ -337,7 +366,7 @@
 .sw-commentS-body {
   width: 92%;
   height: 67%;
-  overflow: hidden;
+  overflow: auto;
   margin-left: 15px;
   margin-bottom: 10px;
 }

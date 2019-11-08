@@ -16,7 +16,7 @@ export class SwaggerList extends Component {
       <div className="sw-page">
         <MainHeader />
         <div className="sw-header1">
-          <div className="sw-header1-content">내게임 자랑하기</div>
+          <div className="sw-header1-content">내 게임 자랑하기</div>
         </div>
         <div className="sw-view-page">
           <div className="sw-header"></div>

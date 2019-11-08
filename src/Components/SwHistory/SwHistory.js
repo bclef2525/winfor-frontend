@@ -2,7 +2,6 @@
 import React, { Component } from "react";
 import "./SwHistory.scss";
 import SwHistoryComment from "./SwHistoryComment/SwHistoryComment";
-import commentMock from "./commentMock";
 
 export class SwHistory extends Component {
   constructor(props) {
@@ -12,9 +11,31 @@ export class SwHistory extends Component {
       commentsectionStatus: false,
       focus: false,
       buttonStatus: false,
-      commentData: commentMock
+      eachDataComment: this.props.info.comment
     };
   }
+  //
+  submitComment = e => {
+    let currentComData = this.state.eachDataComment;
+    currentComData.push({
+      user_img:
+        "https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Xayah.png",
+      user_name: "세환 박",
+      value: this.state.commentValue
+    });
+    console.log("test", currentComData);
+    console.log("window", window);
+    return this.setState(
+      {
+        eachDataComment: currentComData
+      },
+      this.gotoBottom(this.props.index)
+    );
+  };
+  gotoBottom = idx => {
+    var element = document.getElementsByClassName("sw-commentS-body")[idx];
+    element.scrollTop = element.scrollHeight - element.clientHeight;
+  };
   handleComment = e => {
     this.setState({ commentValue: e.target.value }, () =>
       this.setState({
@@ -56,15 +77,14 @@ export class SwHistory extends Component {
         return "싱글킬";
       }
     };
-    console.log(this.state);
-    console.log(kills);
-    console.log(this.props.info.id);
+    console.log("eachdata", this.state.eachData);
     return (
       <div className="sw-whole">
         <div className="sw-user-history-container">
           <div className="sw-user-history">
             <div className="sw-contents">
               <div className="sw-result">
+                <div className="heart"></div>
                 {info.user[0].user_name} - {info.win}!
               </div>
               <div className="sw-user-section">
@@ -118,7 +138,9 @@ export class SwHistory extends Component {
                   <div className="sw-kill-perfomence">{kills()}</div>
                 </div>
                 <div className="sw-user-stats">
-                  <div className="sw-user-stats-level">레벨 18</div>
+                  <div className="sw-user-stats-level">
+                    레벨{info.champion_level}
+                  </div>
                   <div className="sw-user-stats-CS">{info.cs} CS</div>
                   <div className="sw-user-stats-engage">분당CS 8.3</div>
                 </div>
@@ -226,7 +248,7 @@ export class SwHistory extends Component {
             </button>
           </div>
           <div className="sw-commentS-body">
-            {commentData.map((el, idx) => {
+            {this.state.eachDataComment.map((el, idx) => {
               console.log(el);
               return <SwHistoryComment info={el} index={idx} />;
             })}
@@ -249,7 +271,7 @@ export class SwHistory extends Component {
                 댓글입력...
               </label>
               <button
-                // onClick={this.clearInput}
+                onClick={this.submitComment}
                 className={`sw-commentS-submit${
                   this.state.buttonStatus ? "" : "-none"
                 }`}

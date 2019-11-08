@@ -13,7 +13,8 @@ export default class Signup extends Component {
       focus2: false,
       focus3: false,
       idNotion: false,
-      pwNotion: false
+      pwNotion: false,
+      resp: "응없어"
     };
   }
   handleId = e => {
@@ -47,19 +48,34 @@ export default class Signup extends Component {
   };
 
   goToMain() {
-    this.props.history.push("/");
     fetch("http://10.58.0.33:8000/account/signup", {
       method: "post",
       body: JSON.stringify({
         email: this.state.idValue,
-        password: this.state.pwValue
-        // name: this.state.nameValue
+        password: this.state.pwValue,
+        summoner_name: this.state.nameValue
       })
     })
       .then(function(res) {
         return res.json();
       })
-      .then(res => console.log(res));
+      .then(res => {
+        if (res.message === "EMAIL_ALREADY_EXISTS") {
+          alert("이메일이 이미 존재합니다.");
+        } else if (res.message === "SUMMONER_EXISTS") {
+          alert("이미가입된 소환사이름입니다");
+        } else if (res.message === "SUMMONER_NOT_FOUND") {
+          alert("소환사이름이 존재하지않습니다");
+        } else if (res.message === "SIGNUP_SUCCESS") {
+          alert("회원가입을 축하드립니다!");
+          this.props.history.push("/");
+        } else if (res.mssage === "NOT_EMAIL") {
+          alert("이메일 양식이 바르지않습니다!!");
+        } else {
+          alert("이메일 양식이 바르지않습니다!!");
+        }
+        console.log(res.message);
+      });
   }
 
   focusAcitve = () => {
@@ -109,6 +125,7 @@ export default class Signup extends Component {
       idNotion,
       pwNotion
     } = this.state;
+    console.log(this.state.resp.message);
 
     return (
       <div className="signup-body">

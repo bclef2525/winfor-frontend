@@ -1,17 +1,18 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import MainHeader from "../Main/MainHeader/MainHeader";
 import "./MyMatchList.scss";
 import UserHistory from "../../Components/UserHistory/UserHistory";
 import mmlMock from "./MyMatchListMock";
 
-export class MyMatchList extends Component {
+class MyMatchList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       mmldata: mmlMock
     };
   }
-  goToMain = () => {
+  goSwag = () => {
     this.props.history.push("/StaticsTiers/Tiers");
   };
   reLoad = () => {
@@ -38,9 +39,9 @@ export class MyMatchList extends Component {
                   <div className="mml-user-name">
                     {this.state.mmldata[0].game[0].user[0].user_name}
                   </div>
-                  <div className="mml-user-rank">
+                  {/* <div className="mml-user-rank">
                     {this.state.mmldata[0].tier}
-                  </div>
+                  </div> */}
                   <div className="mml-user-button">
                     <button
                       onClick={this.reLoad}
@@ -49,7 +50,7 @@ export class MyMatchList extends Component {
                       전적갱신
                     </button>
                     <button
-                      onClick={this.goToMain.bind(this)}
+                      onClick={this.goSwag.bind(this)}
                       className="mml-user-rank-graph"
                     >
                       전체티어통계
@@ -70,4 +71,4 @@ export class MyMatchList extends Component {
   }
 }
 
-export default MyMatchList;
+export default withRouter(MyMatchList);
