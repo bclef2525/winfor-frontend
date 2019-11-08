@@ -2,7 +2,6 @@
   position: fixed;
   top: 80px;
   width: 100%;
-  min-width: 1030px;
   //margin-top: 60px;
   display: flex;
   justify-content: center;
@@ -14,7 +13,6 @@
     display: flex;
     justify-content: flex-start;
     width: 70%;
-    min-width: 450px;
 
     .nav-title {
       display: flex;
@@ -37,22 +35,22 @@
 
   &.champions-selected {
     .statics-nav-champions-title {
-      border-bottom: 5px solid #07d1b2;
+      border-bottom: 5px solid #fff;
 
       a {
         font-weight: 900;
-        color: #07d1b2;
+        color: #fff;
       }
     }
   }
 
   &.tiers-selected {
     .statics-nav-tiers-title {
-      border-bottom: 5px solid #07d1b2;
+      border-bottom: 5px solid #fff;
 
       a {
         font-weight: 900;
-        color: #07d1b2;
+        color: #fff;
       }
     }
   }

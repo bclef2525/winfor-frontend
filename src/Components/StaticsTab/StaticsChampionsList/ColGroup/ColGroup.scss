@@ -1,31 +1,31 @@
 .colgroup {
-  display: table-column-group;
+    display: table-column-group;
 
-  .rank {
-    width: 40px;
-  }
+    .rank {
+        width: 50px;
+    }
 
-  .champion {
-    width: 140px;
-  }
+    .champion {
+        width: 175px;
+    }
 
-  .win-rate {
-    width: 173px;
-  }
+    .win-rate {
+        width: 173px;
+    }
 
-  .play-count {
-    width: 70px;
-  }
+    .play-count {
+        width: 133px;
+    }
 
-  .average-score {
-    width: 70px;
-  }
+    .average-score {
+        width: 133px;
+    }
 
-  .cs-score {
-    width: 170px;
-  }
+    .cs-score {
+        width: 153px;
+    }
 
-  .gold-score {
-    width: 170px;
-  }
+    .gold-score {
+        width: 153px;
+    }
 }

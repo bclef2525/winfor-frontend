@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     padding: 5px 10px;
-    color: #fff;
+    color: #555e5e;
   }
 
   .champion {
@@ -26,33 +26,26 @@
 
     .champion-name {
       font-weight: bold;
-      color: #fff;
+      color: #555e5e;
     }
   }
 
   .win-rate {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 5px 7px;
 
-    .winRate-graph-maxGraph {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      width: 70%;
-      .winRate-graph {
-        background: #db0542;
-        border: 1px solid #db0542;
-        height: 15px;
-        margin-right: 5px;
-      }
+    .winRate-graph {
+      background: #1f8ecd;
+      border: 1px solid #1f8ecd;
+      height: 15px;
+      margin-right: 5px;
     }
 
     .winRate-number {
-      color: #db0542;
+      color: #555e5e;
       font-weight: bold;
-      width: 30%;
     }
   }
 
@@ -61,7 +54,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 5px 7px;
-    color: #fff;
+    color: #555e5e;
   }
 
   .average-score {
@@ -70,7 +63,7 @@
     align-items: center;
     padding: 5px 7px;
     font-weight: bold;
-    color: #fff;
+    color: #555e5e;
   }
 
   .cs-score {
@@ -79,23 +72,16 @@
     align-items: center;
     padding: 5px 15px;
 
-    .cs-score-maxGraph {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      width: 70%;
-      .cs-score-graph {
-        background: #07d1b2;
-        border: 1px solid #07d1b2;
-        height: 15px;
-        margin-right: 5px;
-      }
+    .cs-score-graph {
+      background: #2daf7f;
+      border: 1px solid #2daf7f;
+      height: 15px;
+      margin-right: 5px;
     }
 
     .cs-score-number {
-      color: #07d1b2;
+      color: #2daf7f;
       font-weight: bold;
-      width: 30%;
     }
   }
 
@@ -105,60 +91,26 @@
     align-items: center;
     padding: 5px 15px;
 
-    .gold-score-maxGraph {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      width: 70%;
-      .gold-score-graph {
-        background: #c9aa70;
-        border: 1px solid #c9aa70;
-        height: 15px;
-        margin-right: 5px;
-      }
+    .gold-score-graph {
+      background: #f6af2e;
+      border: 1px solid #f6af2e;
+      height: 15px;
+      margin-right: 5px;
     }
 
     .gold-score-number {
-      color: #c9aa70;
+      color: #f6af2e;
       font-weight: bold;
-      width: 30%;
     }
   }
 }
 
-// tbody {
-//   #top1,
-//   #top2,
-//   #top3,
-//   #top4,
-//   #top5 {
-//     background-color: #fdf2d2;
-//     div {
-//       color: black;
-//     }
-//   }
-// }
-
-.statics-listContentBar-background:hover {
-  td div {
-    color: black;
-    .champion-name {
-      color: black;
-    }
-  }
-  height: 80px;
-  cursor: pointer;
-  animation: handleStaticChampionTR 0.7s;
-  animation-fill-mode: both;
-}
-
-@keyframes handleStaticChampionTR {
-  from {
-    height: 47px;
-  }
-  to {
+tbody {
+  #top1,
+  #top2,
+  #top3,
+  #top4,
+  #top5 {
     background-color: #fdf2d2;
-    height: 60px;
-    transform: rotateX(360deg);
   }
 }

@@ -2,33 +2,25 @@ import React, { Component } from "react";
 import MainHeader from "../Main/MainHeader";
 import "./ChampionsList.scss";
 import ChampionImg from "../../Components/ChampionsList/ChampionImg";
-import { defaultCardData } from "../../Components/ChampionsList/ChampionsListData";
+import {
+  championsData,
+  defaultCardData
+} from "../../Components/ChampionsList/ChampionsListData";
 import ChampionCard from "../../Components/ChampionsList/ChampionCard";
 import Flickity from "react-flickity-component";
 import "../../Styles/flickity.css";
 
 export default class ChampionsList extends Component {
   constructor(props) {
+    console.log("constructor Render!");
+
     super(props);
     this.state = {
-      championListData: [],
+      championListData: championsData,
       selectedChampion: defaultCardData,
       focusStatus: "off"
     };
   }
-  componentDidMount = () => {
-    fetch("http://10.58.0.33:8000/champ_info/list", {
-      method: "get"
-    })
-      .then(function(res) {
-        return res.json();
-      })
-      .then(res => {
-        this.setState({
-          championListData: res.champ_info_data
-        });
-      });
-  };
 
   handlerChampionImgFocusOn = e => {
     e.target.className = "select";
@@ -44,7 +36,7 @@ export default class ChampionsList extends Component {
 
   handlerShowChampionCard = e => {
     let result = this.state.championListData.filter(el => {
-      return el.CHAMPION_ID === Number(e.target.name);
+      return el.id === Number(e.target.name);
     });
     this.setState({
       selectedChampion: result
@@ -64,11 +56,11 @@ export default class ChampionsList extends Component {
                 <ChampionCard
                   focusStatus={focusStatus}
                   championCardImgSrc={
-                    selectedChampion[0].CHAMPION_IMG[0].SKIN_SPLASHES
+                    selectedChampion[0].championsImgSrc[0].basicSkinImg
                   }
-                  championTitle={selectedChampion[0].CHAMPION_NAME}
-                  championSubTitle={selectedChampion[0].CHAMPION_LINE}
-                  championDesc={selectedChampion[0].CHAMPION_STORY}
+                  championTitle={selectedChampion[0].championTitle}
+                  championSubTitle={selectedChampion[0].championSubTitle}
+                  championDesc={selectedChampion[0].championDesc}
                 />
               </div>
               <div className="championList-divideBar">
@@ -87,15 +79,14 @@ export default class ChampionsList extends Component {
                   }}
                   className="championList-content"
                 >
-                  {championListData.map((el, id) => {
+                  {championListData.map(el => {
                     let _data = [];
                     _data.push(
                       <ChampionImg
-                        key={id}
                         focusStatus={focusStatus}
-                        championID={el.CHAMPION_ID}
-                        championImgSrc={el.CHAMPION_IMG[0].LOADING_IMG}
-                        championName={el.CHAMPION_NAME}
+                        championID={el.id}
+                        championImgSrc={el.championsImgSrc[0].basicLoadImg}
+                        championName={el.championTitle}
                         championImgFocusOn={this.handlerChampionImgFocusOn}
                         championImgFocusOff={this.handlerChampionImgFocusOff}
                       />

@@ -7,19 +7,9 @@ export default function ChampionCard(props) {
   return (
     <div className={`championCardBox ${props.focusStatus}`}>
       <div className="championCardContent">
-        <Flickity
-          className="championCard-flickity"
-          options={{
-            wrapAround: true
-          }}
-        >
-          {props.championCardImgSrc.map((el, id) => {
-            let _skinImgArr = [];
-            if (el.length !== 0) {
-              _skinImgArr.push(<img src={el} alt="hi" key={id} />);
-            }
-            return _skinImgArr;
-          })}
+        <Flickity className="championCard-flickity">
+          <img src={props.championCardImgSrc} alt="hi" />
+          <img src={props.championCardImgSrc} alt="hi" />
         </Flickity>
         <div className="championCardTextBox">
           <div className="championCardTitle">{props.championTitle}</div>

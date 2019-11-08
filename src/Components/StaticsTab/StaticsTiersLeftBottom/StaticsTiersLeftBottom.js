@@ -11,7 +11,7 @@ const options = {
   },
   chart: {
     type: "column",
-    height: (14 / 24) * 100 + "%"
+    height: (9 / 24) * 100 + "%"
   },
   title: {
     text: null
