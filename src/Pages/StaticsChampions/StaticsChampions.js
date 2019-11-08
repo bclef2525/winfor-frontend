@@ -30,7 +30,7 @@ export default class StaticsChampions extends Component {
   }
 
   componentDidMount = () => {
-    fetch("http://10.58.7.189:8000/statistics/champion", {
+    fetch("http://10.58.1.41:8000/statistics/champion", {
       method: "get"
     })
       .then(function(res) {
@@ -81,48 +81,90 @@ export default class StaticsChampions extends Component {
     let data = this.state.championsData;
     let _data = [];
     let sortedData = [];
-    for (let i = 0; i < data.length; i++) {
-      if (!_data.includes(data[i][selectedCategory])) {
-        _data.push(data[i][selectedCategory]);
-      }
-    }
-    _data.sort((a, b) => b - a);
-    for (let i = 0; i < _data.length; i++) {
-      for (let j = 0; j < data.length; j++) {
-        if (_data[i] === data[j][selectedCategory]) {
-          sortedData.push(data[j]);
+    if (selectedCategory === "championName") {
+      for (let i = 0; i < data.length; i++) {
+        if (!_data.includes(data[i][selectedCategory])) {
+          _data.push(data[i][selectedCategory][0].champion_name);
         }
       }
+      _data.sort();
+      for (let i = 0; i < _data.length; i++) {
+        for (let j = 0; j < data.length; j++) {
+          if (_data[i] === data[j][selectedCategory][0].champion_name) {
+            sortedData.push(data[j]);
+          }
+        }
+      }
+      return this.setState({
+        activeCategory: selectedCategory,
+        championsData: sortedData,
+        sortBtn: "high"
+      });
+    } else {
+      for (let i = 0; i < data.length; i++) {
+        if (!_data.includes(data[i][selectedCategory])) {
+          _data.push(data[i][selectedCategory]);
+        }
+      }
+      _data.sort((a, b) => b - a);
+      for (let i = 0; i < _data.length; i++) {
+        for (let j = 0; j < data.length; j++) {
+          if (_data[i] === data[j][selectedCategory]) {
+            sortedData.push(data[j]);
+          }
+        }
+      }
+      return this.setState({
+        activeCategory: selectedCategory,
+        championsData: sortedData,
+        sortBtn: "high"
+      });
     }
-    return this.setState({
-      activeCategory: selectedCategory,
-      championsData: sortedData,
-      sortBtn: "high"
-    });
   };
 
   handlerSortLow = selectedCategory => {
     let data = this.state.championsData;
     let _data = [];
     let sortedData = [];
-    for (let i = 0; i < data.length; i++) {
-      if (!_data.includes(data[i][selectedCategory])) {
-        _data.push(data[i][selectedCategory]);
-      }
-    }
-    _data.sort((a, b) => a - b);
-    for (let i = 0; i < _data.length; i++) {
-      for (let j = 0; j < data.length; j++) {
-        if (_data[i] === data[j][selectedCategory]) {
-          sortedData.push(data[j]);
+    if (selectedCategory === "championName") {
+      for (let i = 0; i < data.length; i++) {
+        if (!_data.includes(data[i][selectedCategory])) {
+          _data.push(data[i][selectedCategory][0].champion_name);
         }
       }
+      _data.sort().reverse();
+      for (let i = 0; i < _data.length; i++) {
+        for (let j = 0; j < data.length; j++) {
+          if (_data[i] === data[j][selectedCategory][0].champion_name) {
+            sortedData.push(data[j]);
+          }
+        }
+      }
+      return this.setState({
+        activeCategory: selectedCategory,
+        championsData: sortedData,
+        sortBtn: "low"
+      });
+    } else {
+      for (let i = 0; i < data.length; i++) {
+        if (!_data.includes(data[i][selectedCategory])) {
+          _data.push(data[i][selectedCategory]);
+        }
+      }
+      _data.sort((a, b) => a - b);
+      for (let i = 0; i < _data.length; i++) {
+        for (let j = 0; j < data.length; j++) {
+          if (_data[i] === data[j][selectedCategory]) {
+            sortedData.push(data[j]);
+          }
+        }
+      }
+      return this.setState({
+        activeCategory: selectedCategory,
+        championsData: sortedData,
+        sortBtn: "low"
+      });
     }
-    return this.setState({
-      activeCategory: selectedCategory,
-      championsData: sortedData,
-      sortBtn: "low"
-    });
   };
 
   render() {

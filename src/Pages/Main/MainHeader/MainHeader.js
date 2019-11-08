@@ -11,28 +11,30 @@ class MainHeader extends Component {
     return (
       <div className="main-header">
         <div className="main-nav">
-          <Link to={"/"} className="main-logo">
-            Winfor.GG
-          </Link>
-          <div className="main-nav-tab">
-            <Link to={"/"} className="main-nav-home">
-              홈<div className="under-line" />
+          <div className="main-nav-left">
+            <Link to={"/"} className="main-logo">
+              Winfor.GG
             </Link>
-            <Link
-              to={"/StaticsChampions/Champions"}
-              className="main-nav-static"
-            >
-              통계
-              <div className="under-line" />
-            </Link>
-            <Link to={"/ChampionsList"} className="main-nav-rank">
-              챔피언
-              <div className="under-line" />
-            </Link>
-            <Link className="main-nav-comunity">
-              커뮤니티
-              <div className="under-line" />
-            </Link>
+            <div className="main-nav-tab">
+              <Link to={"/"} className="main-nav-home">
+                홈<div className="under-line" />
+              </Link>
+              <Link
+                to={"/StaticsChampions/Champions"}
+                className="main-nav-static"
+              >
+                통계
+                <div className="under-line" />
+              </Link>
+              <Link to={"/ChampionsList"} className="main-nav-rank">
+                챔피언
+                <div className="under-line" />
+              </Link>
+              <Link to={"/"} className="main-nav-comunity">
+                커뮤니티
+                <div className="under-line" />
+              </Link>
+            </div>
           </div>
           <div className="main-nav-login-box">
             {localStorage.getItem("winfor-token") ? (
