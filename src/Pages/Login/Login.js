@@ -27,9 +27,14 @@ class Login extends Component {
       })
       .then(res => {
         console.log("worked");
-        if (res) {
+        if (res.JWT) {
           localStorage.setItem("winfor-token", res.JWT);
           this.props.history.push("/");
+        } else {
+          this.setState({
+            denied: false,
+            failedMode: true
+          });
         }
       });
     // if (
@@ -126,7 +131,7 @@ class Login extends Component {
           <div className="login-inner">
             <div className="login-logo">Winfor.GG</div>
             <div className="login-form-container">
-              <form>
+              <form onSubmit={this.submitLogin}>
                 <div className="login-title">Social Login</div>
                 <button className="login-facebook"></button>
                 <div className="login-or-container">

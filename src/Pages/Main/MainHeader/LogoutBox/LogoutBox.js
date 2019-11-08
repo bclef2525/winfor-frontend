@@ -12,7 +12,7 @@ export class LogoutBox extends Component {
     window.location.reload();
   };
   render() {
-    console.log(this.props.profile);
+    console.log(this.props.name);
     return (
       <div className="logout-container">
         <div
