@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../Main/Main.scss";
-import MainVideo from "../Main/main.mp4";
+import MainVideo from "../Main/main2.mov";
 import MainHeader from "./MainHeader/MainHeader";
 import "../../Components/AutoComplete/SummonersList";
 import AutoComplete from "../../Components/AutoComplete/AutoComplete";
@@ -181,7 +181,7 @@ export default class Main extends Component {
     //콜백을 통과한 것만 먑으로 돌린다.
     //true면 랜더링 false면 null
     return (
-      <div className="main-page" onClick={this.handleSearchBox}>
+      <div className="main-page">
         <div className="click-me">
           Click
           <div className="click-me-image"></div>
@@ -197,7 +197,7 @@ export default class Main extends Component {
           />
           {this.state.summonerList && autoComplete}
         </div>
-        <div className="main-img">
+        <div className="main-img" onClick={this.handleSearchBox}>
           <video id="main-video" autoPlay muted loop>
             <source src={MainVideo} type="video/mp4" />
           </video>
