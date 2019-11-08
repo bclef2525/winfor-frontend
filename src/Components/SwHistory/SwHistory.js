@@ -16,12 +16,13 @@ export class SwHistory extends Component {
       eachDataComment: this.props.info.comment
     };
   }
+  //
   submitComment = e => {
     let currentComData = this.state.eachDataComment;
     currentComData.push({
       user_img:
-        "https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Sejuani.png",
-      user_name: "테스트최초",
+        "https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Xayah.png",
+      user_name: "세환 박",
       value: this.state.commentValue
     });
     console.log("test", currentComData);
@@ -139,7 +140,9 @@ export class SwHistory extends Component {
                   <div className="sw-kill-perfomence">{kills()}</div>
                 </div>
                 <div className="sw-user-stats">
-                  <div className="sw-user-stats-level">레벨 18</div>
+                  <div className="sw-user-stats-level">
+                    레벨{info.champion_level}
+                  </div>
                   <div className="sw-user-stats-CS">{info.cs} CS</div>
                   <div className="sw-user-stats-engage">분당CS 8.3</div>
                 </div>
