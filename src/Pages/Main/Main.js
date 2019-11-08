@@ -116,25 +116,7 @@ export default class Main extends Component {
   //   console.log(nameArr);
   //   return nameArr;
   // };
-  componentDidMount() {
-    if (localStorage.getItem("winfor-token")) {
-      fetch("http://10.58.0.33:8000/main/checklogin", {
-        method: "get",
-        headers: {
-          Authorization: localStorage.getItem("winfor-token")
-        }
-      })
-        .then(res => {
-          return res.json();
-        })
-        .then(res => {
-          this.setState({
-            userName: res.SUMMONER_NAME,
-            profile: this.handleUrl(res.SUMMONER_PROFILE)
-          });
-        });
-    }
-  }
+
   render() {
     const {
       searchBoxClass,

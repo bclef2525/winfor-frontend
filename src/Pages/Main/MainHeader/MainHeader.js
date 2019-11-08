@@ -5,7 +5,57 @@ import LoginBox from "./LoginBox/LoginBox";
 import LogoutBox from "./LogoutBox/LogoutBox";
 
 class MainHeader extends Component {
+  constructor() {
+    super();
+    this.state = {
+      searchBoxMode: "",
+      searchBoxClass: "search-box",
+      searchBoxValue: "",
+      summonerList: [],
+      filteredName: [],
+      finalList: [],
+      userName: "",
+      profile: ""
+    };
+  }
+  handleUrl = imgUrl => {
+    let a;
+    let b;
+    let result;
+    for (let i = 0; i < imgUrl.length; i++) {
+      if (imgUrl[i] === " ") {
+        a = imgUrl.slice(0, i);
+        b = imgUrl.slice(i + 1);
+        result = a + "%20" + b;
+      }
+    }
+    if (result === undefined) {
+      return imgUrl;
+    } else {
+      return result;
+    }
+  };
+  componentDidMount() {
+    if (localStorage.getItem("winfor-token")) {
+      fetch("http://10.58.0.33:8000/main/checklogin", {
+        method: "get",
+        headers: {
+          Authorization: localStorage.getItem("winfor-token")
+        }
+      })
+        .then(res => {
+          return res.json();
+        })
+        .then(res => {
+          this.setState({
+            userName: res.SUMMONER_NAME,
+            profile: this.handleUrl(res.SUMMONER_PROFILE)
+          });
+        });
+    }
+  }
   render() {
+    console.log(this.state.userName);
     // const loginBox = this.state.loginBoxMode ? <LoginBox /> : <LogoutBox />;
 
     return (
@@ -38,7 +88,10 @@ class MainHeader extends Component {
           </div>
           <div className="main-nav-login-box">
             {localStorage.getItem("winfor-token") ? (
-              <LogoutBox name={this.props.name} profile={this.props.profile} />
+              <LogoutBox
+                name={this.state.userName}
+                profile={this.state.profile}
+              />
             ) : (
               <LoginBox />
             )}
