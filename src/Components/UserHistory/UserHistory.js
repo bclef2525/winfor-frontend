@@ -1,26 +1,19 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import "./UserHistoru.scss";
 
-export class UserHistory extends Component {
+class UserHistory extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-  // goSwag() {
-  //   fetch("주소주세용", {
-  //     method: "post",
-  //     body: JSON.stringify({
-  //       info: this.props.info
-  //     })
-  //   }).then(function(res) {
-  //     return res.json();
-  //   });
-  // }
+  goSwag = () => {
+    this.props.history.push("/SwaggerList");
+    console.log(this.props.history);
+  };
 
   render() {
-    let { index } = this.props;
     let { info } = this.props;
     let kills = () => {
       if (info.pentakill !== 0) {
@@ -179,10 +172,7 @@ export class UserHistory extends Component {
                 </div>
               </div>
             </div>
-            <button
-              // onClick={this.goSwag.bind(this)}
-              className="history-boast"
-            >
+            <button onClick={this.goSwag.bind(this)} className="history-boast">
               자랑하기
             </button>
           </div>
@@ -192,4 +182,4 @@ export class UserHistory extends Component {
   }
 }
 
-export default UserHistory;
+export default withRouter(UserHistory);

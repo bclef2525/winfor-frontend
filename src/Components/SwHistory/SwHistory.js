@@ -2,15 +2,13 @@
 import React, { Component } from "react";
 import "./SwHistory.scss";
 import SwHistoryComment from "./SwHistoryComment/SwHistoryComment";
-import commentMock from "./commentMock";
-import { each } from "highcharts";
 
 export class SwHistory extends Component {
   constructor(props) {
     super(props);
     this.state = {
       commentValue: "",
-      commentsectionStatus: true,
+      commentsectionStatus: false,
       focus: false,
       buttonStatus: false,
       eachDataComment: this.props.info.comment
