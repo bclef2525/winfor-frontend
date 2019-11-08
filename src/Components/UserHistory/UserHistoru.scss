@@ -47,9 +47,10 @@
         margin-top: 10px;
         width: 55px;
         height: 55px;
-        background-image: url("https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Cassiopeia.png");
+        // background-image: url("https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Cassiopeia.png");
         background-size: 100%;
         border-radius: 100%;
+        padding-right: 11px;
       }
       .setting-champ-skill-container {
         width: 100%;
@@ -59,13 +60,17 @@
         flex-wrap: wrap;
       }
       .setting-champ-skills {
-        width: 40px;
-        height: 40px;
+        width: 30%;
+        height: 45%;
         border-radius: 5px;
         margin: 5px 11px;
-        background-image: url("https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=w_22&v=15354684000");
+        // background-image: url("https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=w_22&v=15354684000");
         background-repeat: no-repeat;
         background-size: 100%;
+      }
+      .thespell {
+        width: 27%;
+        height: 42%;
       }
       .setting-champ-name {
         margin-top: 13px;
@@ -173,5 +178,20 @@
       font-weight: 700;
       opacity: 1;
     }
+  }
+}
+.players-container {
+  display: flex;
+  width: 100%;
+  .player-image {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    background-size: 100%;
+  }
+  .player-name {
+    display: flex;
+    align-items: center;
+    margin-left: 3px;
   }
 }

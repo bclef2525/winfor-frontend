@@ -1,18 +1,36 @@
 import React, { Component } from "react";
 import MainHeader from "../Main/MainHeader";
-import Main from "../Main";
 import "./ChampionsDetail.scss";
+
 export class ChampionsDetail extends Component {
+  constructor() {
+    super();
+    this.state = {
+      champData: ""
+    };
+  }
   componentDidMount() {
-    console.log(this.props);
+    fetch("http://10.58.0.33:8000/champ_info/detail?champ_detail=7", {
+      method: "get"
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        this.setState({
+          champData: res
+        });
+      });
   }
   render() {
+    const { champData } = this.state;
+    console.log("로그", champData.MOVIE);
     return (
       <div>
         <MainHeader />
         <div className="cd-page">
           <div className="cd-image-container">
-            <div className="cd-champ-name">아우렐리온 솔</div>
+            <div className="cd-champ-name">{champData.NAME}</div>
             <video
               className="cd-image"
               autoPlay
@@ -29,17 +47,21 @@ export class ChampionsDetail extends Component {
                 zIndex: "1"
               }}
             >
-              <source
-                src="https://universe-meeps.leagueoflegends.com/v1/assets/videos/aurelionsol-splashvideo.webm"
-                type="video/mp4"
-              />
+              {this.state.champData && (
+                <source src={champData.MOVIE} type="video/mp4" />
+              )}
             </video>
           </div>
 
           <div className="cd-detail-image"></div>
-          <div className="cd-nickname">"별의 창조자"</div>
+          <div className="cd-nickname">"{champData.TITLE}"</div>
           <div className="cd-portrait-container">
-            <div className="cd-portrait"></div>
+            <div
+              className="cd-portrait"
+              style={{
+                backgroundImage: `url(${champData.ICON})`
+              }}
+            ></div>
           </div>
           <div className="cd-explain-container">
             <div className="cd-explain-skill-container">
@@ -49,89 +71,105 @@ export class ChampionsDetail extends Component {
               <div className="skill-container">
                 <div className="skill-passive-container">
                   <div className="skill-image-name">
-                    <div className="skill-passive-image"></div>
-                    <div className="skill-passive-name">우주의 중심</div>
+                    <div
+                      className="skill-passive-image"
+                      style={{
+                        backgroundImage: `url(${champData.PASSIVE_ICON})`
+                      }}
+                    ></div>
+                    <div className="skill-passive-name">
+                      {champData.PASSIVE_NAME}
+                    </div>
                   </div>
                   <div className="skill-passive-text">
-                    위성이 아우렐리온 솔의 주위를 돌며 충돌하는 적들에게 마법
-                    피해를 입힙니다.
+                    {champData.PASSIVE_DESC}
                   </div>
                 </div>
                 <div className="skill-q-container">
                   <div className="qskill-image-name">
-                    <div className="skill-q-image"></div>
-                    <div className="skill-q-name">은하 해일</div>
+                    <div
+                      className="skill-q-image"
+                      style={{
+                        backgroundImage: `url(${champData.Q_SKILL_ICON})`
+                      }}
+                    >
+                      {" "}
+                    </div>
+                    <div className="skill-q-name">{champData.Q_SKILL_NAME}</div>
                   </div>
-                  <div className="skill-q-text">
-                    아우렐리온 솔이 팽창하는 원반을 만들어냅니다. 원반은
-                    아우렐리온 솔과 아주 멀어지면 폭발하여 적을 기절시키고
-                    피해를 입힙니다.
-                  </div>
+                  <div className="skill-q-text">{champData.Q_SKILL_DESC}</div>
                 </div>
                 <div className="skill-w-container">
                   <div className="wskill-image-name">
-                    <div className="skill-w-image"></div>
-                    <div className="skill-w-name">우주 팽창</div>
+                    <div
+                      className="skill-w-image"
+                      style={{
+                        backgroundImage: `url(${champData.W_SKILL_ICON})`
+                      }}
+                    ></div>
+                    <div className="skill-w-name">{champData.W_SKILL_NAME}</div>
                   </div>
-                  <div className="skill-w-text">
-                    아우렐리온 솔이 주위를 도는 위성들을 더 멀리 밀어내며
-                    피해량과 공전 속도를 증가시킵니다.
-                  </div>
+                  <div className="skill-w-text">{champData.W_SKILL_DESC}</div>
                 </div>
                 <div className="skill-e-container">
                   <div className="eskill-image-name">
-                    <div className="skill-e-image"></div>
-                    <div className="skill-e-name">혜성 전설</div>
+                    <div
+                      className="skill-e-image"
+                      style={{
+                        backgroundImage: `url(${champData.E_SKILL_ICON})`
+                      }}
+                    ></div>
+                    <div className="skill-e-name">{champData.E_SKILL_NAME}</div>
                   </div>
-                  <div className="skill-e-text">
-                    아우렐리온 솔이 날아올라 먼 거리를 비행합니다.
-                  </div>
+                  <div className="skill-e-text">{champData.E_SKILL_DESC}</div>
                 </div>
                 <div className="skill-r-container">
                   <div className="rskill-image-name">
-                    <div className="skill-r-image"></div>
-                    <div className="skill-r-name">성운의 공명</div>
+                    <div
+                      className="skill-r-image"
+                      style={{
+                        backgroundImage: `url(${champData.R_SKILL_ICON})`
+                      }}
+                    ></div>
+                    <div className="skill-r-name">{champData.R_SKILL_NAME}</div>
                   </div>
-                  <div className="skill-r-text">
-                    아우렐리온 솔이 성운파를 발사하여 적중하는 모든 적에게
-                    피해를 입히고 둔화시키며 가까이 있는 적들을 안전 거리로
-                    밀어냅니다.
-                  </div>
+                  <div className="skill-r-text">{champData.R_SKILL_DESC}</div>
                 </div>
               </div>
               <div></div>
             </div>
             <div className="cd-explain-history-container">
               <div className="cd-word-container">
-                <div className="cd-text">
-                  "웅크리고,찬양하고,애원하지,내가 기대했던 대로다."
-                </div>
-                <div className="cd-text-author">~아우렐리온 솔</div>
+                <div className="cd-text">"{champData.LINE}"</div>
+                <div className="cd-text-author">~{champData.NAME}</div>
               </div>
               <div className="cd-champ-history-container">
-                <div className="cd-champ-history">
-                  "아우렐리온 솔은 천상의 경이로운 별들을 손수 빚어 한때 텅
-                  비어있던 광활한 우주를 수놓았다. 그러나 이제 그는 속임수로
-                  자신을 복종시킨 우주 제국의 명령에 따라 자신의 막강한 힘을
-                  발휘해야 하는 처지가 되었다. 별을 만들던 때로 돌아가려는
-                  열망에 불타는 아우렐리온 솔은 자신의 자유를 되찾기 위해서라면
-                  자신의 창조물인 별들을 하늘에서 없앨 각오마저 되어 있다"
-                </div>
+                <div className="cd-champ-history">"{champData.STORY}"</div>
               </div>
             </div>
             <div className="cd-explain-logo-container">
               <div className="cd-role-container">
-                <div className="cd-role-image"></div>
+                <div
+                  className="cd-role-image"
+                  style={{
+                    backgroundImage: `url(${champData.ROLE_IMG})`
+                  }}
+                ></div>
                 <div className="cd-role-text-container">
                   <div className="cd-text-role">역할군</div>
-                  <div>마법사</div>
+                  <div>{champData.ROLE}</div>
                 </div>
               </div>
               <div className="cd-location-container">
-                <div className="cd-location-img"></div>
+                <div
+                  className="cd-location-img"
+                  style={{
+                    backgroundImage: `url(${champData.REGION_IMG})`
+                  }}
+                ></div>
                 <div className="cd-location-text-container">
                   <div className="location-text">지역</div>
-                  <div className="location-text2">룬테라</div>
+                  <div className="location-text2">{champData.REGION}</div>
                 </div>
               </div>
             </div>

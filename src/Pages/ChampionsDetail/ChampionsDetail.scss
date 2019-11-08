@@ -2,13 +2,18 @@
 //   font-family: Beaufort for LOL, Arial, sans-serif;
 //   -webkit-font-smoothing: antialiased;
 // }
+@import "./mediaQuery.scss";
+@media only screen and (max-width: 375px) {
+}
+
 .cd-page {
-  margin-top: 85px;
+  background-color: #111317;
 
   .cd-image-container {
     overflow: hidden;
-    height: 750px;
+    height: 80%;
     position: relative;
+
     .cd-champ-name {
       z-index: 2;
       position: absolute;
@@ -16,13 +21,15 @@
       left: 2%;
       font-size: 110px;
       color: #75562a;
+      @media only screen and (max-width: 1024px) {
+        font-size: 60px;
+      }
     }
   }
-
   .cd-detail-image {
     z-index: 1;
-    margin-top: -10px;
-    min-width: 100%;
+    margin: -10px 6.5%;
+    min-width: 90%;
     height: 50px;
     background-image: url("https://universe.leagueoflegends.com/images/t1HeaderDivider.png");
     background-size: 100%;
@@ -33,12 +40,16 @@
     flex-direction: column;
     text-align: center;
     font-size: 20px;
-    margin-top: 3%;
+    min-width: 250px;
+    margin: 3% 44%;
+    @media only screen and (max-width: 1024px) {
+      margin: 3% 40.5%;
+    }
   }
   .cd-portrait-container {
     position: relative;
     z-index: 3;
-    margin: 20px auto;
+    margin: 20px 47%;
     width: 120px;
     height: 120px;
     background-image: url("https://universe.leagueoflegends.com/images/ChampionIconFrame.png");
@@ -58,9 +69,9 @@
   }
 }
 .cd-explain-container {
-  margin: -95px auto;
+  margin: -15px 0 0 165px;
   display: flex;
-  width: 80%;
+  width: 85%;
   height: 800px;
   color: #c5b998;
 
@@ -71,8 +82,8 @@
     background-color: #111317;
     margin: 30px 15px;
     border: solid 1px #75562a;
-    width: 25%;
-    height: 90%;
+    width: 55%;
+    height: 100%;
 
     .cd-explain-skill {
       display: flex;
@@ -81,6 +92,7 @@
       border-bottom: solid 1px #75562a;
       border-radius: 5px;
       margin: auto;
+      color: #75562a;
       span {
         margin: 0 auto;
         font-size: 18px;
@@ -97,6 +109,9 @@
         display: flex;
         width: 100%;
         height: 20%;
+        @media only screen and (max-width: 1024px) {
+          justify-content: center;
+        }
 
         .skill-image-name {
           display: flex;
@@ -111,15 +126,26 @@
             background-image: url("http://raw.communitydragon.org/latest/game/assets/characters/aurelionsol/hud/icons2d/aurelionsol_passive.png");
             background-size: 100%;
             border-radius: 10px;
+            @media only screen and (max-width: 1024px) {
+              justify-content: center;
+            }
           }
           .skill-passive-name {
             text-align: center;
-            margin-top: 3px;
+            margin: 15px;
+            min-width: 200px;
+            @media only screen and (max-width: 1024px) {
+              min-width: 200px;
+              margin: 15px;
+            }
           }
         }
         .skill-passive-text {
-          margin: 18px;
+          margin: 15px 35px 35px 35px;
           font-size: 15px;
+          @media only screen and (max-width: 1024px) {
+            display: none;
+          }
         }
       }
       .skill-q-container {
@@ -127,6 +153,9 @@
         display: flex;
         width: 100%;
         height: 20%;
+        @media only screen and (max-width: 1024px) {
+          justify-content: center;
+        }
 
         .qskill-image-name {
           display: flex;
@@ -145,11 +174,19 @@
           .skill-q-name {
             text-align: center;
             margin-top: 3px;
+            min-width: 200px;
+            @media only screen and (max-width: 1024px) {
+              min-width: 200px;
+              margin: 15px;
+            }
           }
         }
         .skill-q-text {
-          margin: 18px;
+          margin: 15px 35px 35px 35px;
           font-size: 15px;
+          @media only screen and (max-width: 1024px) {
+            display: none;
+          }
         }
       }
       .skill-w-container {
@@ -157,7 +194,9 @@
         display: flex;
         width: 100%;
         height: 20%;
-
+        @media only screen and (max-width: 1024px) {
+          justify-content: center;
+        }
         .wskill-image-name {
           display: flex;
           flex-direction: column;
@@ -175,11 +214,19 @@
           .skill-w-name {
             text-align: center;
             margin-top: 3px;
+            min-width: 200px;
+            @media only screen and (max-width: 1024px) {
+              min-width: 200px;
+              margin: 15px;
+            }
           }
         }
         .skill-w-text {
-          margin: 18px;
+          margin: 15px 35px 35px 35px;
           font-size: 15px;
+          @media only screen and (max-width: 1024px) {
+            display: none;
+          }
         }
       }
       .skill-e-container {
@@ -187,7 +234,9 @@
         display: flex;
         width: 100%;
         height: 20%;
-
+        @media only screen and (max-width: 1024px) {
+          justify-content: center;
+        }
         .eskill-image-name {
           display: flex;
           flex-direction: column;
@@ -205,11 +254,19 @@
           .skill-e-name {
             text-align: center;
             margin-top: 3px;
+            min-width: 200px;
+            @media only screen and (max-width: 1024px) {
+              min-width: 200px;
+              margin: 15px;
+            }
           }
         }
         .skill-e-text {
-          margin: 18px;
+          margin: 15px 35px 35px 35px;
           font-size: 15px;
+          @media only screen and (max-width: 1024px) {
+            display: none;
+          }
         }
       }
       .skill-r-container {
@@ -217,7 +274,9 @@
         display: flex;
         width: 100%;
         height: 20%;
-
+        @media only screen and (max-width: 1024px) {
+          justify-content: center;
+        }
         .rskill-image-name {
           display: flex;
           flex-direction: column;
@@ -235,11 +294,19 @@
           .skill-r-name {
             text-align: center;
             margin-top: 3px;
+            min-width: 200px;
+            @media only screen and (max-width: 1024px) {
+              min-width: 200px;
+              margin: 15px;
+            }
           }
         }
         .skill-r-text {
-          margin: 18px;
+          margin: 15px 35px 35px 35px;
           font-size: 15px;
+          @media only screen and (max-width: 1024px) {
+            display: none;
+          }
         }
       }
     }
@@ -266,6 +333,11 @@
       .cd-text {
         font-weight: 500;
         font-size: 23px;
+        margin: 30px;
+        @media only screen and (max-width: 1024px) {
+          font-size: 15px;
+          margin: 25px;
+        }
       }
       .cd-text-author {
         font-weight: 700;
@@ -291,6 +363,10 @@
       .cd-champ-history {
         font-size: 20px;
         margin: 0 60px;
+        @media only screen and (max-width: 1024px) {
+          margin: 25px;
+          font-size: 18px;
+        }
       }
     }
   }
@@ -320,6 +396,10 @@
       height: 75px;
       margin: 20px;
       background-image: url("https://universe.leagueoflegends.com/images/role_icon_mage.png");
+      @media only screen and (max-width: 1024px) {
+        width: 65px;
+        height: 50px;
+      }
     }
     .cd-role-text-container {
       width: 100%;
@@ -358,6 +438,10 @@
       width: 275px;
       height: 275px;
       margin: 20px;
+      @media only screen and (max-width: 1024px) {
+        width: 175px;
+        height: 175px;
+      }
     }
     .cd-location-text-container {
       display: flex;

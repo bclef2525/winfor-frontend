@@ -9,7 +9,7 @@ import ArrowUp from "../../Img/up.png";
 import ArrowDefault from "../../Img/default.png";
 import "./StaticsChampions.scss";
 
-export default class staticsChampions extends Component {
+export default class StaticsChampions extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,8 +44,6 @@ export default class staticsChampions extends Component {
         let maxGoldScore = championData.reduce((acc, el) => {
           return acc > el.goldScore ? acc : el.goldScore;
         });
-        console.log(maxCsScore);
-        console.log(maxGoldScore);
         this.setState({
           championsData: championData,
           maxCsScore: maxCsScore,

@@ -26,10 +26,15 @@ export class AutoComplete extends Component {
 
     return (
       <>
-        <div className="auto-complete">
+        <div
+          onClick={() => {
+            this.props.handleMatchList(this.props.id);
+          }}
+          className="auto-complete"
+        >
           <div
             className="ac-img"
-            style={{ backgroundImage: this.props.image }}
+            style={{ backgroundImage: `url(${this.props.image})` }}
           ></div>
           <div className="ac-name-container">
             <div className="ac-name">{this.props.name}</div>

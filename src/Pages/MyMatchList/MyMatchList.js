@@ -2,42 +2,68 @@ import React, { Component } from "react";
 import MainHeader from "../Main/MainHeader/MainHeader";
 import "./MyMatchList.scss";
 import UserHistory from "../../Components/UserHistory/UserHistory";
+import mmlMock from "./MyMatchListMock";
+
 export class MyMatchList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mmldata: mmlMock
+    };
+  }
+  goToMain = () => {
+    this.props.history.push("/StaticsTiers/Tiers");
+  };
+  reLoad = () => {
+    window.location.reload();
+  };
+
   render() {
+    console.log(this.state.mmldata[0].game);
     return (
       <div className="mml-page">
         <MainHeader />
         <div className="mml-view-page">
           <div className="mml-header">
             <div className="mml-user-info">
-              <div className="mml-rank-tag-container">
+              {/* <div className="mml-rank-tag-container">
                 <div className="mml-rank-tag">S5 Silver</div>
                 <div className="mml-rank-tag">S6 Bronze</div>
                 <div className="mml-rank-tag">S7 Bronze</div>
                 <div className="mml-rank-tag">S8 Silver</div>
-              </div>
+              </div> */}
               <div className="mml-user-container">
                 <div className="mml-user-image"></div>
                 <div className="mml-user-box">
-                  <div className="mml-user-name">조인호</div>
+                  <div className="mml-user-name">
+                    {this.state.mmldata[0].game[0].user[0].user_name}
+                  </div>
                   <div className="mml-user-rank">
-                    레더랭킹 1,247,872위 (상위 42%)
+                    {this.state.mmldata[0].tier}
                   </div>
                   <div className="mml-user-button">
-                    <div className="mml-user-rank-refresh">전적갱신</div>
-                    <div className="mml-user-rank-graph">티어 그래프</div>
+                    <button
+                      onClick={this.reLoad}
+                      className="mml-user-rank-refresh"
+                    >
+                      전적갱신
+                    </button>
+                    <button
+                      onClick={this.goToMain.bind(this)}
+                      className="mml-user-rank-graph"
+                    >
+                      전체티어통계
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <UserHistory />
-          <UserHistory />
-          <UserHistory />
-          <UserHistory />
-          <UserHistory />
-          <UserHistory />
-          <UserHistory />
+          {/* <UserHistory /> */}
+          {this.state.mmldata[0].game.map((el, idx) => {
+            console.log(el);
+            return <UserHistory info={el} index={idx} />;
+          })}
         </div>
       </div>
     );

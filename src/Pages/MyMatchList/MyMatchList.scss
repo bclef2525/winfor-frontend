@@ -16,36 +16,36 @@
 
     .mml-header {
       width: 100%;
-      height: 30vh;
-      margin-top: 20px;
       border-bottom: solid 10px#121212;
       background-color: #121212;
+      padding-bottom: 15px;
+      padding-top: 30px;
       .mml-user-info {
         width: 100%;
-        height: 35vh;
-
+        height: auto;
         margin: 0 auto;
 
-        .mml-rank-tag-container {
-          width: 60%;
-          height: 20%;
-          display: flex;
+        // .mml-rank-tag-container {
+        //   width: 60%;
+        //   height: 20%;
+        //   display: flex;
 
-          .mml-rank-tag {
-            width: 31%;
-            height: 35%;
-            margin: auto 10px;
-            padding: auto auto;
-            border: solid 1px #07d1b2;
-            border-radius: 5px;
-            color: #07d1b2;
-            font-size: 18px;
-            text-align: center;
-            font-weight: 700;
-          }
-        }
+        //   .mml-rank-tag {
+        //     width: 31%;
+        //     height: 35%;
+        //     margin: auto 10px;
+        //     padding: auto auto;
+        //     border: solid 1px #07d1b2;
+        //     border-radius: 5px;
+        //     color: #07d1b2;
+        //     font-size: 18px;
+        //     text-align: center;
+        //     font-weight: 700;
+        //   }
+        // }
         .mml-user-container {
           display: flex;
+
           .mml-user-image {
             width: 195px;
             height: 195px;
@@ -59,6 +59,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            margin-left: 5px;
             .mml-user-name {
               margin: 5px 0 40px 20px;
               width: 100px;
@@ -74,7 +75,7 @@
             .mml-user-button {
               display: flex;
               .mml-user-rank-refresh {
-                width: 100px;
+                width: 130px;
                 height: 30px;
                 margin: auto 22px;
                 color: white;
@@ -89,16 +90,16 @@
                 border-radius: 3px;
               }
               .mml-user-rank-graph {
-                width: 110px;
+                width: 130px;
                 height: 30px;
                 margin: auto;
                 color: gray;
-                font-size: 19px;
+                font-size: 18px;
                 border: solid 2px #ffffff;
                 text-align: center;
                 display: flex;
                 align-items: center;
-                padding-left: 20px;
+                padding-left: 17px;
                 background-color: #ffffff;
                 font-weight: 700;
                 border-radius: 3px;

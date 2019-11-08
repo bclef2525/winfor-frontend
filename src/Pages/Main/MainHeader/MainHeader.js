@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./MainHeader.scss";
+import LoginBox from "./LoginBox/LoginBox";
+import LogoutBox from "./LogoutBox/LogoutBox";
 
 class MainHeader extends Component {
   render() {
+    // const loginBox = this.state.loginBoxMode ? <LoginBox /> : <LogoutBox />;
+
     return (
       <div className="main-header">
         <div className="main-nav">
-          <div className="main-logo">Winfor.GG</div>
+          <Link to={"/"} className="main-logo">
+            Winfor.GG
+          </Link>
           <div className="main-nav-tab">
             <Link to={"/"} className="main-nav-home">
               홈<div className="under-line" />
@@ -19,8 +25,8 @@ class MainHeader extends Component {
               통계
               <div className="under-line" />
             </Link>
-            <Link className="main-nav-rank">
-              랭킹
+            <Link to={"/ChampionsList"} className="main-nav-rank">
+              챔피언
               <div className="under-line" />
             </Link>
             <Link className="main-nav-comunity">
@@ -29,13 +35,11 @@ class MainHeader extends Component {
             </Link>
           </div>
           <div className="main-nav-login-box">
-            <Link to={"/signup"} className="login-box-signup">
-              회원가입
-              <div className="under-line" />
-            </Link>
-            <Link to={"/login"} className="login-box-login">
-              로그인
-            </Link>
+            {localStorage.getItem("winfor-token") ? (
+              <LogoutBox name={this.props.name} profile={this.props.profile} />
+            ) : (
+              <LoginBox />
+            )}
           </div>
         </div>
       </div>
