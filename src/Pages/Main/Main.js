@@ -67,7 +67,6 @@ export default class Main extends Component {
             })
             .then(res => {
               this.setState({ summonerList: res.SEARCHED_SUMMONER });
-              console.log("reks", res.SEARCHED_SUMMONER);
             });
         } else {
           this.setState({
@@ -94,7 +93,6 @@ export default class Main extends Component {
     }
   };
   handleMatchList = id => {
-    console.log(id);
     if (id) {
       this.props.history.push(`/MyMatchList/${id}`);
     }
@@ -130,8 +128,6 @@ export default class Main extends Component {
           return res.json();
         })
         .then(res => {
-          console.log("fetch", res);
-
           this.setState({
             userName: res.SUMMONER_NAME,
             profile: this.handleUrl(res.SUMMONER_PROFILE)
@@ -185,7 +181,7 @@ export default class Main extends Component {
     //콜백을 통과한 것만 먑으로 돌린다.
     //true면 랜더링 false면 null
     return (
-      <div className="main-page">
+      <div className="main-page" onClick={this.handleSearchBox}>
         <div className="click-me">
           Click
           <div className="click-me-image"></div>
@@ -201,21 +197,8 @@ export default class Main extends Component {
           />
           {this.state.summonerList && autoComplete}
         </div>
-        <div onClick={this.handleSearchBox} className="main-img">
-          <video
-            id="main-video"
-            autoPlay
-            muted
-            loop
-            style={{
-              display: "inliin-block",
-              width: "100%",
-              height: "auto",
-              minWidth: "100%",
-
-              zIndex: "1"
-            }}
-          >
+        <div className="main-img">
+          <video id="main-video" autoPlay muted loop>
             <source src={MainVideo} type="video/mp4" />
           </video>
         </div>

@@ -1,7 +1,7 @@
 .championList-background {
   display: flex;
   justify-content: center;
-  margin-top: 85px;
+  padding-top: 150px;
   color: #fff;
 
   #championList-background-opacity {
@@ -29,7 +29,9 @@
         height: 525px;
 
         .championCardBox {
+          border: 3px solid #75562a;
           width: 100%;
+          height: 100%;
           max-height: 1270px;
 
           &.on {
@@ -65,6 +67,7 @@
       }
 
       .championList-bottom {
+        border: 3px solid #75562a;
         margin: 20px auto;
         display: flex;
         justify-content: space-between;
@@ -113,6 +116,7 @@
           }
 
           .championImgContainer {
+            background-image: url("https://raw.communitydragon.org/7.20/plugins/rcp-fe-lol-missions/global/default/championframe_4k.png");
             display: flex;
             justify-content: center;
             align-items: center;
@@ -200,7 +204,7 @@
             .championCardSubTitle {
               font-weight: bold;
               font-style: italic;
-              font-size: 15px;
+              font-size: 12px;
               margin: 20px 0;
             }
 
@@ -210,6 +214,8 @@
               padding: 0 50px;
               font-size: 10px;
               margin: 10px 0;
+              overflow: scroll;
+              height: 20%;
             }
           }
         }

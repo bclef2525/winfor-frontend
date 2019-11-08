@@ -42,7 +42,6 @@ export default class StaticsTiersRight extends Component {
   };
 
   render() {
-    console.log(this.state.strdata);
     return (
       <div>
         <div className="STRBox">
@@ -65,7 +64,6 @@ export default class StaticsTiersRight extends Component {
             <tbody className="STRBody">
               {/* <StaticsTiersRightData /> */}
               {this.state.strdata.map((el, idx) => {
-                console.log(el);
                 return <StaticsTiersRightData info={el} index={idx} />;
               })}
             </tbody>
