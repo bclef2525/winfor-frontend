@@ -28,7 +28,11 @@ class Routes extends React.Component {
           <Route exact path="/ChampionsDetail" component={ChampionsDetail} />
           <Route exact path="/StaticsTiers/:name" component={StaticsTiers} />
           <Route exact path="/SwaggerList" component={SwaggerList} />
-          <Route exact path="/ChampionsDetail/:id" />
+          <Route
+            exact
+            path="/ChampionsDetail/:id"
+            component={ChampionsDetail}
+          />
           {/*인호님컴포넌트(챔피언상세)*/}
         </Switch>
       </Router>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import MainHeader from "../Main/MainHeader";
 import "./ChampionsDetail.scss";
-
+import { withRouter } from "react-router-dom";
 export class ChampionsDetail extends Component {
   constructor() {
     super();
@@ -10,9 +10,17 @@ export class ChampionsDetail extends Component {
     };
   }
   componentDidMount() {
-    fetch("http://10.58.0.33:8000/champ_info/detail?champ_detail=7", {
-      method: "get"
-    })
+    console.log("params", this.props.location.search.slice(1));
+    let params = new URLSearchParams(this.props.location.search.slice(1));
+    console.log("!!", params);
+    fetch(
+      `http://10.58.0.33:8000/champ_info/detail?${this.props.location.search.slice(
+        1
+      )}`,
+      {
+        method: "get"
+      }
+    )
       .then(res => {
         return res.json();
       })
@@ -24,9 +32,9 @@ export class ChampionsDetail extends Component {
   }
   render() {
     const { champData } = this.state;
-    console.log("로그", champData.MOVIE);
+
     return (
-      <div>
+      <div className="cd-total-page">
         <MainHeader />
         <div className="cd-page">
           <div className="cd-image-container">
@@ -180,4 +188,4 @@ export class ChampionsDetail extends Component {
   }
 }
 
-export default ChampionsDetail;
+export default withRouter(ChampionsDetail);
