@@ -55,6 +55,7 @@ class MainHeader extends Component {
     }
   }
   render() {
+    console.log(this.state.userName);
     // const loginBox = this.state.loginBoxMode ? <LoginBox /> : <LogoutBox />;
 
     return (
@@ -87,7 +88,10 @@ class MainHeader extends Component {
           </div>
           <div className="main-nav-login-box">
             {localStorage.getItem("winfor-token") ? (
-              <LogoutBox name={this.state.name} profile={this.state.profile} />
+              <LogoutBox
+                name={this.state.userName}
+                profile={this.state.profile}
+              />
             ) : (
               <LoginBox />
             )}
