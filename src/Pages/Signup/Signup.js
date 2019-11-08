@@ -72,7 +72,7 @@ export default class Signup extends Component {
         } else if (res.mssage === "NOT_EMAIL") {
           alert("이메일 양식이 바르지않습니다!!");
         } else {
-          alert("입력하신정보에 문제가 있습니다");
+          alert("이메일 양식이 바르지않습니다!!");
         }
         console.log(res.message);
       });
