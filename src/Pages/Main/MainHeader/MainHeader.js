@@ -80,8 +80,8 @@ class MainHeader extends Component {
                 챔피언
                 <div className="under-line" />
               </Link>
-              <Link to={"/"} className="main-nav-comunity">
-                커뮤니티
+              <Link to={"/SwaggerList"} className="main-nav-comunity">
+                피드
                 <div className="under-line" />
               </Link>
             </div>
