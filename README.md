@@ -1,7 +1,8 @@
 
 WECODE 1ST PROJECT
 
-게임정보 사이트인 OP.GG를 참고하여 클론한 WINFOR.GG 입니다. 
+게임정보 사이트인 OP.GG를 참고하여 클론한 WINFOR.GG 입니다.
+
 Front-End 
 
 조인호 : mainpage(/main), championDetailpage(/championDetail), chartPage(/StaticsChampions), signIn(/signin)
